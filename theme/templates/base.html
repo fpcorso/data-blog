@@ -7,68 +7,79 @@
         <meta charset="utf-8" />
     {% endblock head %}
      <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/site.css" />
 </head>
 <body>
-    <header class="navbar is-spaced">
-        <div class="navbar-brand">
-             {% if GRAVATAR %}
-                <a href="/"><img src="{{ GRAVATAR }}" alt="Frank Corso" class="gravatar"></a>
-            {% else %}
-                <p class="navbar-item title is-4"><a href="/">{{ SITENAME }}</a></p>
-            {% endif %}
-        </div>
-        <div class="navbar-menu is-active">
-            <nav class="navbar-end">
-                {% for title, link in MENUITEMS %}
-                    <a class="navbar-item" href="{{ link }}">{{ title }}</a>
-                {% endfor %}
-                {% if DISPLAY_PAGES_ON_MENU %}
-                  {% for p in pages %}
-                    <a class="navbar-item" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
-                  {% endfor %}
-                {% endif %}
-                {% if DISPLAY_CATEGORIES_ON_MENU %}
-                  {% for cat, null in categories %}
-                    <a class="navbar-item" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
-                  {% endfor %}
-                {% endif %}
-            </nav>
-        </div>
-    </header>
-    <section class="section">
-        <div class="container">
-            {% block content %}
-            {% endblock content %}
-        </div>
-    </section>
-    <footer class="footer">
-        <div class="content has-text-centered">
-            <div class="icons">
-                {% if TWITTER %}
-                <a href="{{ TWITTER }}" target="_blank"><div class="icon-twitter icon"></div></a>
-                {% endif %}
-                {% if GITHUB %}
-                <a href="{{ GITHUB }}" target="_blank"><div class="icon-github icon"></div></a>
-                {% endif %}
-                {% if INSTAGRAM %}
-                <a href="{{ INSTAGRAM }}" target="_blank"><div class="icon-instagram icon"></div></a>
-                {% endif %}
-                {% if GOODREADS %}
-                <a href="{{ GOODREADS }}" target="_blank"><div class="icon-goodreads icon"></div></a>
-                {% endif %}
-                {% if FOURSQUARE %}
-                <a href="{{ FOURSQUARE }}" target="_blank"><div class="icon-foursquare icon"></div></a>
-                {% endif %}
-                {% if UNTAPPD %}
-                <a href="{{ UNTAPPD }}" target="_blank"><div class="icon-untappd icon"></div></a>
-                {% endif %}
+    <div id="page">
+        <header class="section">
+            <div class="level">
+                <div class="level-left">
+                    {% if GRAVATAR %}
+                    <div class="level-item">
+                        <a href="/"><img src="{{ GRAVATAR }}" alt="Frank Corso" class="gravatar"></a>
+                    </div>
+                    {% endif %}
+                    <div class="level-item">
+                        <div class="has-text-centered-mobile">
+                            <p class="title is-2"><a href="/">{{ SITENAME }}</a></p>
+                            <p class="subtitle is-marginless is-4">Data lover | Python dev</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p>© 2020 {{ AUTHOR }}</p>
-            <address>
-            Proudly powered by <a href="https://getpelican.com/">Pelican</a>,
-            which takes great advantage of <a href="https://www.python.org/">Python</a>.
-            </address>
-        </div>
-    </footer>
+            <div class="level">
+                <div class="level-left">
+                    {% for title, link in MENUITEMS %}
+                        <a class="level-item" href="{{ link }}">{{ title }}</a>
+                    {% endfor %}
+                    {% if DISPLAY_PAGES_ON_MENU %}
+                      {% for p in pages %}
+                        <a class="level-item" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+                      {% endfor %}
+                    {% endif %}
+                    {% if DISPLAY_CATEGORIES_ON_MENU %}
+                      {% for cat, null in categories %}
+                        <a class="level-item" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+                      {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+        <section class="section">
+            <div class="container">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <div class="icons">
+                    {% if TWITTER %}
+                    <a href="{{ TWITTER }}" target="_blank"><div class="icon-twitter icon"></div></a>
+                    {% endif %}
+                    {% if GITHUB %}
+                    <a href="{{ GITHUB }}" target="_blank"><div class="icon-github icon"></div></a>
+                    {% endif %}
+                    {% if INSTAGRAM %}
+                    <a href="{{ INSTAGRAM }}" target="_blank"><div class="icon-instagram icon"></div></a>
+                    {% endif %}
+                    {% if GOODREADS %}
+                    <a href="{{ GOODREADS }}" target="_blank"><div class="icon-goodreads icon"></div></a>
+                    {% endif %}
+                    {% if FOURSQUARE %}
+                    <a href="{{ FOURSQUARE }}" target="_blank"><div class="icon-foursquare icon"></div></a>
+                    {% endif %}
+                    {% if UNTAPPD %}
+                    <a href="{{ UNTAPPD }}" target="_blank"><div class="icon-untappd icon"></div></a>
+                    {% endif %}
+                </div>
+                <p>© 2020 {{ AUTHOR }}</p>
+                <address>
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

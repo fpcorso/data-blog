@@ -6,6 +6,7 @@ AUTHOR = 'Frank Corso'
 SITENAME = "Frank's Blog"
 SITEURL = ''
 THEME = 'theme'
+GRAVATAR = 'https://secure.gravatar.com/avatar/3c79ff484379feb07f575dadee9b3562?s=100'
 
 PATH = 'content'
 

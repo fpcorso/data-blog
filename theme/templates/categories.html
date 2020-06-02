@@ -1,1 +1,11 @@
 {% extends "base.html" %}
+{% block title %}{{ SITENAME }} - Topics{% endblock %}
+{% block content %}
+    <h1 class="title is-2">My Topics</h1>
+    <p>I write about a few different topics on this site. Here is the list of my most recent topics.</p>
+    <ul>
+    {% for category, articles in categories|sort %}
+        <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a> ({{ articles|count }})</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

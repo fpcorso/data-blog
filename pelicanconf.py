@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Frank Corso'
 SITENAME = "Frank's Blog"
+SITESUBTITLE = 'Data lover | Python dev'
 SITEURL = ''
 THEME = 'theme'
 GRAVATAR = 'https://secure.gravatar.com/avatar/3c79ff484379feb07f575dadee9b3562?s=100'
@@ -25,8 +26,7 @@ LINKS = (('You can modify those links in your config file', '#'),)
 # Navigation settings
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = True
-MENUITEMS = (('My Articles', SITEURL),
-             ('Topics', 'categories.html'))
+MENUITEMS = (('Topics', 'categories.html'),)
 
 DEFAULT_PAGINATION = False
 

@@ -34,7 +34,7 @@
                     {% endfor %}
                     {% if DISPLAY_PAGES_ON_MENU %}
                       {% for p in pages %}
-                        <a class="level-item" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+                        <a class="level-item" href="{{ SITEURL }}/{{ p.url }}">{{ p.nav }}</a>
                       {% endfor %}
                     {% endif %}
                     {% if DISPLAY_CATEGORIES_ON_MENU %}

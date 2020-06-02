@@ -1,1 +1,6 @@
 {% extends "base.html" %}
+{% block title %}{{ SITENAME }} - {{ category }} category{% endblock title %}
+{% block content %}
+<h1 class="title is-2">Articles about {{ category }}</h1>
+{% include 'article_list.html' %}
+{% endblock content %}

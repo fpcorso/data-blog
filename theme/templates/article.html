@@ -1,26 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-<h1 class="title">{{ article.title }}</h1>
-<time class="published" datetime="{{ article.date.isoformat() }}">
-  {{ article.locale_date }}
-</time>
-{% if article.modified %}
-    <time class="modified" datetime="{{ article.modified.isoformat() }}">
-      {{ article.locale_modified }}
-    </time>
-{% endif %}
-{% if article.category %}
-    <div class="category">
-        Category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-    </div>
-{% endif %}
-{% if article.tags %}
-    <div class="tags">
-        Tags:
-        {% for tag in article.tags %}
-            <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-        {% endfor %}
-    </div>
-{% endif %}
+<h1 class="title is-2">{{ article.title }}</h1>
+<div class="has-text-grey" style="margin-bottom: 10px;">
+    <time class="published" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+    {% if article.modified %}
+        (Last modified: <time class="modified" datetime="{{ article.modified.isoformat() }}">
+          {{ article.locale_modified }}
+        </time>)
+    {% endif %} /
+    {% if article.category %}
+        <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+    {% endif %}
+</div>
 {{ article.content }}
 {% endblock content %}

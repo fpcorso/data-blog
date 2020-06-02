@@ -10,7 +10,8 @@ GRAVATAR = 'https://secure.gravatar.com/avatar/3c79ff484379feb07f575dadee9b3562?
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'America/New_York'
+DEFAULT_DATE_FORMAT = '%B %d, %Y'
 
 DEFAULT_LANG = 'en'
 

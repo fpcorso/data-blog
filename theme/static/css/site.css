@@ -1,3 +1,7 @@
+a {
+    color: #2a8737;
+}
+
 #page {
     width: 100%;
     margin: 0 auto;
@@ -11,4 +15,31 @@
 
 header {
     padding-bottom: 0px;
+}
+
+main {
+    padding: 0 1.5rem;
+}
+
+.post {
+    margin-bottom: 10px;
+    transition: all 0.2s;
+}
+
+.post:hover, .post:focus-within {
+    padding: 10px;
+    box-shadow: 1px 1px 15px #2a8737;
+}
+
+.post .meta {
+    line-height: 32px;
+    padding-bottom: 5px;
+}
+
+.post .summary {
+    margin-bottom: 20px;
+}
+
+footer {
+    padding: 20px 0;
 }

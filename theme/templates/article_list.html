@@ -1,0 +1,13 @@
+{% for article in articles_page.object_list %}
+    <article class="post">
+        <p class="meta has-text-grey">
+            <time class="published" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+            {% if article.category %}
+                in <a href="{{ SITEURL }}/{{ article.category.url }}"><span class="has-text-weight-medium">{{ article.category }}</span></a>
+            {% endif %}
+        </p>
+        <h2 class="title is-2"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a></h2>
+        <div class="summary">{{ article.summary }}</div>
+        <p class="has-text-right"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">Read more...</a></p>
+    </article>
+{% endfor %}

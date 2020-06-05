@@ -1,6 +1,21 @@
+/**
+Sitewide HTML Elements
+**/
 a {
     color: #2a8737;
 }
+
+main {
+    padding: 0 1.5rem;
+}
+
+footer {
+    padding: 20px 0;
+}
+
+/*****
+Sitewide Classes/IDs
+*****/
 
 #page {
     width: 100%;
@@ -13,13 +28,15 @@ a {
 	}
 }
 
-header {
-    padding-bottom: 0px;
-}
+/*****
+Header
+*****/
 
-main {
-    padding: 0 1.5rem;
-}
+
+
+/*****
+Archives
+*****/
 
 .post {
     margin-bottom: 10px;
@@ -40,10 +57,19 @@ main {
     margin-bottom: 20px;
 }
 
+/*****
+Single Article
+*****/
+
+.entry .entry-title {
+    margin: 0;
+}
+
+.entry .entry-header {
+    margin-bottom: 2em;
+}
+
 .entry img {
     box-shadow: 3px 3px 15px -3px;
 }
 
-footer {
-    padding: 20px 0;
-}

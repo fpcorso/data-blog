@@ -26,17 +26,17 @@ From there, you can go to the directory you are setting up in and use this comma
 
 This command will trigger a series of questions in the terminal to set up your site. For now, you can keep most of the defaults.
 
-TODO: INSERT IMAGE HERE
+![Terminal showing several questions asked by Pelican]({static}/images/pelican-quickstart-questions.png)
 
 Once you have finished answering the questions, you will see two new folders and two files.
 
-TODO: INSERT IMAGE HERE
+![Directory showing two folders of content and output]({static}/images/pelican-quickstart-structure.png)
 
 The `content` directory is where you will create your posts and pages. The `output` directory is where the site will be generated to.
 
 The `pelicanconf.py` and `publishconf.py` files are where you can customize the settings and values Pelican uses to create your site. For example, within `pelicanconf.py`, you will be able to edit the values you entered during the quickstart.
 
-TODO: INSERT IMAGE HERE
+![Pelican's settings file]({static}/images/pelican-pelicanconf-example.png)
 
 Before you can see your new site, you need to create your first article. Go into the `content` directory and create a Markdown file. I'll call mine `my-post.md`.
 
@@ -67,11 +67,11 @@ Hey there! My name is Frank Corso and it's nice to meet you.
 
 Once you have your Markdown files created, let's use `pelican content` to generate our content. By default, Pelican will use the built-in "simple" theme to generate your content and then place the HTML files into the `output` directory.
 
-TODO: INSERT IMAGE
+![The new HTML files are now within the output folder]({static}/images/pelican-site-output.png)
 
 Once our content is created, we can use `pelican --listen` to set up a simple server so we can see our new content. By default, this will be at ` http://localhost:8000/`.
 
-TODO: INSERT IMAGE
+![Example site created by Pelican showing heading and first post]({static}/images/pelican-example-preview.png)
 
 ## Next Steps
 You now have your basic site! You can now add more articles and more pages. The next big step will be to research either downloading or creating a theme. I found a [Pelican Themes site](http://pelicanthemes.com) which displays screenshots for a lot of pelican themes and links to GitHub repositories.

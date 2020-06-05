@@ -40,6 +40,10 @@ main {
     margin-bottom: 20px;
 }
 
+.entry img {
+    box-shadow: 3px 3px 15px -3px;
+}
+
 footer {
     padding: 20px 0;
 }

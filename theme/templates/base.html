@@ -8,6 +8,8 @@
     {% endblock head %}
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/site.css" />
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
     <div id="page">
@@ -51,22 +53,13 @@
             <div class="has-text-centered">
                 <div class="icons">
                     {% if TWITTER %}
-                    <a href="{{ TWITTER }}" target="_blank"><div class="icon-twitter icon"></div></a>
+                    <a href="{{ TWITTER }}" target="_blank"><div class="fa fa-twitter icon"></div></a>
                     {% endif %}
                     {% if GITHUB %}
-                    <a href="{{ GITHUB }}" target="_blank"><div class="icon-github icon"></div></a>
+                    <a href="{{ GITHUB }}" target="_blank"><div class="fa fa-github icon"></div></a>
                     {% endif %}
                     {% if INSTAGRAM %}
-                    <a href="{{ INSTAGRAM }}" target="_blank"><div class="icon-instagram icon"></div></a>
-                    {% endif %}
-                    {% if GOODREADS %}
-                    <a href="{{ GOODREADS }}" target="_blank"><div class="icon-goodreads icon"></div></a>
-                    {% endif %}
-                    {% if FOURSQUARE %}
-                    <a href="{{ FOURSQUARE }}" target="_blank"><div class="icon-foursquare icon"></div></a>
-                    {% endif %}
-                    {% if UNTAPPD %}
-                    <a href="{{ UNTAPPD }}" target="_blank"><div class="icon-untappd icon"></div></a>
+                    <a href="{{ INSTAGRAM }}" target="_blank"><div class="fa fa-instagram icon"></div></a>
                     {% endif %}
                 </div>
                 <p>© 2020 {{ AUTHOR }}</p>

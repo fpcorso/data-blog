@@ -13,6 +13,11 @@ TIMEZONE = 'America/New_York'
 DEFAULT_DATE_FORMAT = '%B %d, %Y'
 DEFAULT_LANG = 'en'
 
+# Social Networks
+TWITTER ='https://twitter.com/fpcorso'
+GITHUB = 'https://github.com/fpcorso'
+INSTAGRAM = 'https://www.instagram.com/fpcorso/'
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 FEED_ALL_RSS = 'feeds/all.rss.xml'

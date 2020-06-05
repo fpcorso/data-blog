@@ -16,6 +16,7 @@
         </div>
     </header>
     <div class="entry-content content">
+        <p>This post will take {{ (article.content|wordcount / 200)|round(0, 'ceil')|int }} minutes to read.</p>
         {{ article.content }}
     </div>
 </article>

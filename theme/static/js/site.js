@@ -6,7 +6,7 @@ document.querySelector( '#dark-switch' ).addEventListener( 'change', function( e
 // Sets up the scroll indicator.
 var p_elements = document.querySelectorAll('p');
 document.querySelector('#scroll-indicator').style.display = 'block';
-document.addEventListener( 'scroll', function() {
+document.addEventListener('wheel', (evt) => {
     var seen = 0;
 
     // Determine which p elements are visible and calculate seen percentage.
@@ -32,4 +32,4 @@ document.addEventListener( 'scroll', function() {
         seen = 100;
     }
     document.querySelector('#scroll-indicator').value = seen;
-});
+}, { capture: false, passive: true})

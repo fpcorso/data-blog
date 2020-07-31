@@ -5,6 +5,10 @@ a {
     color: #2a8737;
 }
 
+a:hover {
+    color: #226c2c;
+}
+
 #page main h1, #page main h2 {
     color: #2a8737;
 }
@@ -35,15 +39,6 @@ Sitewide Classes/IDs
 body {
     background-color: #ffffff;
     color: #000000
-}
-
-body.dark {
-    background-color: #000000;
-    color: #ffffff;
-}
-
-body.dark .subtitle {
-    color: #ffffff;
 }
 
 /*****
@@ -112,6 +107,20 @@ Single Article
 /****
 Dark Mode
 ****/
+
+body.dark {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.dark .subtitle {
+    color: #ffffff;
+}
+
+body.dark a:hover {
+    color: #559f5f;
+}
+
 .dark-mode {
     position: fixed;
     top: 10px;

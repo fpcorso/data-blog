@@ -14,7 +14,7 @@ DEFAULT_DATE_FORMAT = '%B %d, %Y'
 DEFAULT_LANG = 'en'
 
 # Social Networks
-TWITTER ='https://twitter.com/fpcorso'
+TWITTER = 'https://twitter.com/fpcorso'
 GITHUB = 'https://github.com/fpcorso'
 INSTAGRAM = 'https://www.instagram.com/fpcorso/'
 

@@ -33,7 +33,7 @@
                 <div class="level-left">
                     <a class="level-item" href="/">My Articles</a>
                     {% for title, link in MENUITEMS %}
-                        <a class="level-item" href="{{ link }}">{{ title }}</a>
+                        <a class="level-item" href="{{ SITEURL }}/{{ link }}">{{ title }}</a>
                     {% endfor %}
                     {% if DISPLAY_PAGES_ON_MENU %}
                       {% for p in pages %}

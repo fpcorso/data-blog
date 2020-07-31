@@ -1,6 +1,48 @@
+/*********
+JS for Blog ✔
+**********/
+
+function saveDarkModePreference( enabled ) {
+    if ( enabled ) {
+        localStorage.setItem( 'darkModeEnabled', 1 );
+    } else {
+        localStorage.setItem( 'darkModeEnabled', 0 );
+    }
+}
+
+function loadDarkModePreference() {
+    let preference = localStorage.getItem( 'darkModeEnabled' );
+    if ( preference === null || parseInt(preference) === 0 ) {
+        return false;
+    }
+    return true;
+}
+
+function enableDarkMode() {
+    document.body.classList.add('dark');
+}
+
+function disableDarkMode() {
+    document.body.classList.remove('dark');
+}
+
+window.addEventListener('load', (event) => {
+    if (loadDarkModePreference()) {
+        enableDarkMode();
+    } else {
+        disableDarkMode();
+    }
+});
+
 // Sets up dark mode switcher.
 document.querySelector( '#dark-switch' ).addEventListener( 'change', function( event ) {
-    event.target.checked ? document.body.classList.add('dark') : document.body.classList.remove('dark');
+    if (event.target.checked) {
+        enableDarkMode();
+        saveDarkModePreference(true);
+    } else {
+        disableDarkMode();
+        saveDarkModePreference(false);
+    }
 });
 
 // Sets up the scroll indicator.

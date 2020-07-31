@@ -1,6 +1,6 @@
 Title: A little about me...
 Nav: About
-Date: 2020-05-27 10:20
+Date: 2020-07-31 10:20
 Slug: about
 Authors: Frank Corso
 Summary: Short version for index and feeds

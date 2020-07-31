@@ -2,6 +2,8 @@
 JS for Blog ✔
 **********/
 
+// Saves dark mode preference to local storage to be checked in
+// future page loads.
 function saveDarkModePreference( enabled ) {
     if ( enabled ) {
         localStorage.setItem( 'darkModeEnabled', 1 );
@@ -10,6 +12,7 @@ function saveDarkModePreference( enabled ) {
     }
 }
 
+// Loads the dark mode preference.
 function loadDarkModePreference() {
     let preference = localStorage.getItem( 'darkModeEnabled' );
     if ( preference === null || parseInt(preference) === 0 ) {
@@ -18,14 +21,19 @@ function loadDarkModePreference() {
     return true;
 }
 
+// Switches toggle to on and adds dark mode class to body.
 function enableDarkMode() {
+    document.querySelector('#dark-switch').checked = true;
     document.body.classList.add('dark');
 }
 
+// Switches toggle to off and removes dark mode class to body.
 function disableDarkMode() {
+document.querySelector('#dark-switch').checked = false;
     document.body.classList.remove('dark');
 }
 
+// During the onload event, check if dark mode should be on.
 window.addEventListener('load', (event) => {
     if (loadDarkModePreference()) {
         enableDarkMode();

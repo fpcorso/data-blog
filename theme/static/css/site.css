@@ -5,7 +5,7 @@ a {
     color: #2a8737;
 }
 
-.content h1, .content h2 {
+main h1, main h2 {
     color: #2a8737;
 }
 
@@ -73,12 +73,14 @@ Archives
 
 .post {
     margin-bottom: 10px;
+    border-radius: 3px;
+    padding: 10px;
     transition: all 0.2s;
+    box-shadow: 0 0 10px #2a8737;
 }
 
 .post:hover, .post:focus-within {
-    padding: 10px;
-    box-shadow: 1px 1px 15px #2a8737;
+    box-shadow: 0 0 30px #2a8737;
 }
 
 .post .meta {

@@ -1,8 +1,8 @@
-Title: Setting Up Pelican
+Title: Setting Up Pelican Static Site Generator
 Date: 2020-09-01 10:20
 Category: Python
 Tags: blog, tutorial
-Slug: setting-up-pelican
+Slug: setting-up-pelican-static-site-generator
 Authors: Frank Corso
 Summary: Interested in setting up a static site using Pelican? Check out how I set up this site!
 

@@ -33,7 +33,7 @@ Since this also gets called when you check out a file, such as rolling back a fi
 
 Inside my `if`, I then added our gulp task, which builds all of our assets, `gulp prebuild`.
 
-```shell script
+```
 #!/bin/sh
 #
 # Builds our assets upon checkout

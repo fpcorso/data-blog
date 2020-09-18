@@ -1,8 +1,8 @@
-Title: Automatically Running Build Script When Switching Branchs Using Git Hooks
+Title: Automatically Run Build Script When Switching Branchs Using Git Hooks
 Date: 2020-09-18 15:00
 Category: Development Tools
 Tags: git, hooks, 
-Slug: automatically-running-build-scripts-switching-branches-git-hooks
+Slug: automatically-run-build-scripts-switching-branches-git-hooks
 Authors: Frank Corso
 Summary: Have build scripts that you have to run every time you switch branches in git? Use git hooks to run them automatically!
 

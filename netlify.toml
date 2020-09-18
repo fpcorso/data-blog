@@ -1,3 +1,6 @@
 [build]
     publish = "output/"
     command = "pelican content"
+
+[context.production]
+    environment = { PYTHON_VERSION  = "3.6.5" }

@@ -1,5 +1,5 @@
 Title: Setting Up Pelican
-Date: 2020-07-31 10:20
+Date: 2020-09-01 10:20
 Category: Python
 Tags: blog, tutorial
 Slug: setting-up-pelican

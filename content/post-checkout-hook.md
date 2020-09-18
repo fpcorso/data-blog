@@ -25,6 +25,7 @@ In order to run code upon switching branches, we need the `post-checkout` hook. 
 Inside the `.git/hooks` directory, I added a new file named `post-checkout`.
 
 The post-checkout script gets called with three parameters:
+
 1. The previous HEAD
 2. The new HEAD
 3. A flag for if it's a branch that is being checked out. 1 for branch and 0 for not.

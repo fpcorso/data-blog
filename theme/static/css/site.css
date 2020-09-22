@@ -75,7 +75,7 @@ Archives
 }
 
 .post:hover, .post:focus-within {
-    box-shadow: 0 0 30px #2a8737;
+    box-shadow: 0 0.7em 1.5em 0 #2a8737;
 }
 
 .post .meta {

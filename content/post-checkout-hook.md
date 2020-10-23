@@ -16,6 +16,7 @@ So, I started looking into git hooks to see what my options were.
 Within git, there are [17 events that fire upon different actions](https://www.git-scm.com/docs/githooks#_post_checkout) being taken. During each event, there is a "hook" that anyone can hook scripts into.
 
 Some of these hooks include:
+
 * post-checkout: Ran after checking out a branch
 * post-merge: Ran after a `git pull` is run
 * pre-commit: Ran prior to a commit being created

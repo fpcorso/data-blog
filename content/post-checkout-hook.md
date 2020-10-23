@@ -15,6 +15,12 @@ So, I started looking into git hooks to see what my options were.
 ## What are git hooks?
 Within git, there are [17 events that fire upon different actions](https://www.git-scm.com/docs/githooks#_post_checkout) being taken. During each event, there is a "hook" that anyone can hook scripts into.
 
+Some of these hooks include:
+* post-checkout: Ran after checking out a branch
+* post-merge: Ran after a `git pull` is run
+* pre-commit: Ran prior to a commit being created
+* post-commit: Ran after the commit is created
+
 Each git repo has a `.git/hooks` directory that can contain scripts to be hooked into any of the hooks. You can drop a script that matches a hook's name into this folder.
 
 Since this was a simple gulp command, I used a bash script. But, you could also use other languages, including Ruby or Python.

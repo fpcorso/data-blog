@@ -5,7 +5,7 @@ Tags: blog, tutorial, pelican
 Slug: deploying-your-pelican-static-site-to-netlify
 Authors: Frank Corso
 Summary: Ready to deploy your static site built by Pelican? Learn how to deploy to Netlify!
-Status: draft
+Status: published
 
 In [my previous article](https://frankcorso.dev/setting-up-pelican-static-site-generator.html), I wrote about how to create a Pelican site. But, creating a site is only half the setup. You need to host the site somewhere in order for people to actually see it.
 

@@ -7,4 +7,39 @@ Authors: Frank Corso
 Summary: Ready to deploy your static site built by Pelican? Learn how to deploy to Netlify!
 Status: draft
 
-XXX
+In [my previous article](https://frankcorso.dev/setting-up-pelican-static-site-generator.html), I wrote about how to create a Pelican site. But, creating a site is only half the setup. You need to host the site somewhere in order for people to actually see it.
+
+There are many different ways to host a site including: hosting on GitHub Pages, AWS, and Digital Ocean. But, one of the simplest solutions for a static site is using [Netlify](https://www.netlify.com). Even better, they have a free plan!
+
+## Add A Requirements File
+First, we want to make sure we have our `requirements.txt` file added to our project. This is a standard file in Python projects to ensure the environment the script is run contains all the dependencies needed.
+
+Netlify will install the dependencies (specifically Pelican) when deploying so it's important we have this file.
+
+The file itself only needs to have pelican but you may need to add others if you have added other packages for running your site.
+
+```
+pelican[Markdown]
+```
+
+## Setting Up Your GitHub Repo
+In order to continuously deploy your site over to Netlify, you will want to set up a repo on GitHub that contains your site. This repo can be public or private. 
+
+Since we will be building the files when deploying, you can ignore the `output` directory if you want to do so. 
+
+## Creating Your Netlify Account
+If you haven't already, you will need to create a new Netlify account. You can go over to [their signup page](https://app.netlify.com/signup) and sign in with GitHub:
+
+![Netlify sign up page]({static}/images/netlify-signup.png)
+
+Once signed up, you will need to grant Netlify access to your GitHub repos. You can either grant Netlify access to all repositories or just grant access to your specific repo for the site.
+
+![Netlify sign up page]({static}/images/netlify-github-permissions.png)
+
+Next, if Netlify did not start the "Create a new site" wizard automatically (or if you already had a Netlify account), you will need to click the "New site from Git" button.
+
+![Netlify sign up page]({static}/images/netlify-new-site-from-git.png)
+
+On the next screen, you may need to click the GitHub button. From there, you should see a place to select your site's repo.
+
+![Netlify sign up page]({static}/images/netlify-select-repo.png)

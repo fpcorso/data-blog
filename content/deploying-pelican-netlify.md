@@ -70,9 +70,11 @@ Now that we have the settings entered, click the "Deploy site" button.
 
 You should see your new site in Netlify and the deployment should be starting up.
 
-![Siteoverview showing new site with a build starting up.]({static}/images/netlify-new-site-starting-up.png)
+![Site overview showing new site with a build starting up.]({static}/images/netlify-new-site-starting-up.png)
 
 Depending on the size of your site, the build may take a few minutes. Once finished, it should say "Published" and a URL should be available.
+
+![Site overview showing site is published and URL is now available.]({static}/images/netlify-site-deployed.png)
 
 Your site is now deployed!
 

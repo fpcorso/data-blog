@@ -7,16 +7,16 @@ Authors: Frank Corso
 Summary: Ready to deploy your static site built by Pelican? Learn how to deploy to Netlify!
 Status: published
 
-In [my previous article](https://frankcorso.dev/setting-up-pelican-static-site-generator.html), I wrote about how to create a Pelican site. But, creating a site is only half the setup. You need to host the site somewhere in order for people to actually see it.
+In [my previous article](https://frankcorso.dev/setting-up-pelican-static-site-generator.html), I wrote about how to create a Pelican site. But, creating a site is only half the setup. You need to host the site somewhere in order for people actually to see it.
 
 There are many different ways to host a site including: hosting on GitHub Pages, AWS, and Digital Ocean. But, one of the simplest solutions for a static site is using [Netlify](https://www.netlify.com). Even better, they have a free plan!
 
 ## Add A Requirements File
-First, we want to make sure we have our `requirements.txt` file added to our project. This is a standard file in Python projects to ensure the environment the script is run contains all the dependencies needed.
+First, we want to make sure we have our `requirements.txt` file added to our project. This is a standard file in Python projects to ensure that the environment the script is run in contains all the dependencies needed.
 
-Netlify will install the dependencies (specifically Pelican) when deploying so it's important we have this file.
+Netlify will install the dependencies (specifically Pelican) when deploying, so it's important we have this file.
 
-The file itself only needs to have pelican but you may need to add others if you have added other packages for running your site.
+The file itself only needs to have pelican, but you may need to add others if you have added other packages for running your site.
 
 ```
 pelican[Markdown]
@@ -58,7 +58,7 @@ In the "Publish directory" setting, enter in `output/`.
 
 Click the "Show advanced" button. 
 
-Since the newer versions of Pelican require Python 3.7+, we need to make sure Netlify uses a recent version of Python. By default, it currently doesn't which will cause errors when building your site causing the deployment to fail.
+Since the newer versions of Pelican require Python 3.7+, we need to make sure Netlify uses a recent version of Python. By default, it currently doesn't, which will cause errors when building your site, causing the deployment to fail.
 
 Netlify uses environment variables to allow you to switch versions of its available platforms. Review Netlify's [manage dependencies docs if you want to know more](https://docs.netlify.com/configure-builds/manage-dependencies/#python).
 
@@ -68,9 +68,9 @@ Click the "New variable" button and enter in `PYTHON_VERSION` and set it to 3.7.
 
 Now that we have the settings entered, click the "Deploy site" button.
 
-You should see your new site in Netlify and the deployment should be starting up.
+You should see your new site in Netlify, and the deployment should be starting up.
 
-![Site overview showing new site with a build starting up.]({static}/images/netlify-new-site-starting-up.png)
+![Site overview showing a new site with a build starting up.]({static}/images/netlify-new-site-starting-up.png)
 
 Depending on the size of your site, the build may take a few minutes. Once finished, it should say "Published" and a URL should be available.
 

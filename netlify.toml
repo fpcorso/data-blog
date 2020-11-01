@@ -3,4 +3,4 @@
     command = "pelican content -s publishconf.py"
 
 [context.production]
-    environment = { PYTHON_VERSION  = "3.9" }
+    environment = { PYTHON_VERSION  = "3.7" }

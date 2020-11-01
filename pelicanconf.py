@@ -17,6 +17,7 @@ DEFAULT_LANG = 'en'
 TWITTER = 'https://twitter.com/fpcorso'
 GITHUB = 'https://github.com/fpcorso'
 INSTAGRAM = 'https://www.instagram.com/fpcorso/'
+DEVTO = 'https://dev.to/fpcorso'
 
 # Navigation settings
 DISPLAY_CATEGORIES_ON_MENU = False

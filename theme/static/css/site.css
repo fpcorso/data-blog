@@ -53,12 +53,11 @@ Footer
     margin: 2em 0;
 }
 
-.icon.fa {
-    width: 2em;
-    height: 2em;
-    font-size: 25px !important;
-    display: inline-block;
+.icons svg {
+    width: 2.5em;
+    height: 2.5em;
     padding: 0 0.5em;
+    fill: #2a8737;
 }
 
 

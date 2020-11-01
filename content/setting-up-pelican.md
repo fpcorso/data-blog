@@ -34,7 +34,9 @@ Once you have finished answering the questions, you will see two new folders and
 
 The `content` directory is where you will create your posts and pages. The `output` directory is where the site will be generated to.
 
-The `pelicanconf.py` and `publishconf.py` files are where you can customize the settings and values Pelican uses to create your site. For example, within `pelicanconf.py`, you will be able to edit the values you entered during the quickstart.
+The `pelicanconf.py` and `publishconf.py` files are where you can customize the settings and values Pelican uses to create your site. Most of the settings will be in the `pelicanconf.py` file. For example, within `pelicanconf.py`, you will be able to edit the values you entered during the quickstart. 
+
+The `publishconf.py` imports the settings from `pelicanconf.py` and can overwrite some settings as well as set new settings. This way, you can use `pelicanconf.py` for development and `publishconf.py` for production. For example, you may disable feed generation in `pelicanconf.py` to speed up development builds and then have them enabled in `publishconf.py`.
 
 ![Pelican's settings file]({static}/images/pelican-pelicanconf-example.png)
 
@@ -72,6 +74,8 @@ Once you have your Markdown files created, let's use `pelican content` to genera
 Once our content is created, we can use `pelican --listen` to set up a simple server so we can see our new content. By default, this will be at ` http://localhost:8000/`.
 
 ![Example site created by Pelican showing heading and first post]({static}/images/pelican-example-preview.png)
+
+When you go to publish the site, if you are using the `publishconf.py` (or another file) for production settings, you would use `pelican content -s publishconf.py` to use that file's settings.
 
 ## Next Steps
 You now have your basic site! You can now add more articles and more pages. The next big step will be to research either downloading or creating a theme. I found a [Pelican Themes site](http://pelicanthemes.com) which displays screenshots for a lot of pelican themes and links to GitHub repositories.

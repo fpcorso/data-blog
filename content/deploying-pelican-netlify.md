@@ -60,7 +60,7 @@ Click the "Show advanced" button.
 
 Since the newer versions of Pelican require Python 3.7+, we need to make sure Netlify uses a recent version of Python. By default, it currently doesn't, which will cause errors when building your site, causing the deployment to fail.
 
-Netlify uses environment variables to allow you to switch versions of its available platforms. Review Netlify's [manage dependencies docs if you want to know more](https://docs.netlify.com/configure-builds/manage-dependencies/#python).
+Netlify uses environment variables to allow you to switch versions of its available platforms. Right now, the newest Python version available in Netlify is 3.7 so we will use that. Review Netlify's [manage dependencies docs if you want to know more](https://docs.netlify.com/configure-builds/manage-dependencies/#python).
 
 Click the "New variable" button and enter in `PYTHON_VERSION` and set it to 3.7.
 

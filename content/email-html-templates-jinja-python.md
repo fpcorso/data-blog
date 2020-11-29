@@ -62,6 +62,7 @@ First, import the relevant modules:
 Then, we will use Jinja's Environment to tell it where the template files are. In my case, the email templates directory is within our project module. For security, it is recommended to always have Jinja autoescape the templates for you.
 
 ```
+:::python
 env = Environment(
     loader=PackageLoader('project', 'email_templates'),
     autoescape=select_autoescape(['html', 'xml'])
@@ -83,6 +84,7 @@ Since these templates will be dynamic, Jinja will let you pass kwargs to `render
 To make this re-usable and easier to implement, I wrap all of this in a function within my utils.py file. Here is the final code for this part:
 
 ```
+:::python
 from jinja2 import Environment, PackageLoader, select_autoescape
 
 def send_template_email(template, to, subj, **kwargs):
@@ -142,6 +144,7 @@ The function we defined earlier takes `template, to, subj, **kwargs` as argument
 So, within our code for adding the new site, we will call this function using this:
 
 ```
+:::python
 send_template_email(
     template='new_site.html',
     to=user.email,

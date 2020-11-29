@@ -22,18 +22,18 @@ def send_new_site_user_email(user, site_url):
         name = 'there'
     body = '<p>Hey {}!</p>'.format(name)
     body += '<p>You just added a new site to your SiteAlert account: {}</p>'.format(site_url)
-    body += '<p>Now, you can sit back and relax as SiteAlert begins monitoring your site for:</p>'
-    body += '<ul>'
-    body += '<li>Broken links</li>'
-    body += '<li>Broken images</li>'
-    body += '<li>Blacklists</li>'
-    body += '<li>Accessibility</li>'
-    body += '<li>And more!</li>'
-    body += '</ul>'
-    body += '<p>This may take some time, so feel free to go about your day. We will email if we find an issue.</p>'
-    body += '<p>As always, feel free to reach out if you ever need anything!</p>'
-    body += '<p>~Frank Corso</p>'
-    body += '<p><a href="https://sitealert.io">SiteAlert</a></p>'
+    body += """<p>Now, you can sit back and relax as SiteAlert begins monitoring your site for:</p>
+       <ul>
+          <li>Broken links</li>
+          <li>Broken images</li>
+          <li>Blacklists</li>
+          <li>Accessibility</li>
+          <li>And more!</li>
+       </ul>
+     <p>This may take some time, so feel free to go about your day. We will email if we find an issue.</p>
+     <p>As always, feel free to reach out if you ever need anything!</p>
+     <p>~Frank Corso</p>
+     <p><a href="https://sitealert.io">SiteAlert</a></p>"""
     send_email(user.email, subj, body)
 ```
 

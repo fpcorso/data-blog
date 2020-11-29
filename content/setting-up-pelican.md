@@ -52,9 +52,12 @@ Tags: blog, tutorial
 Slug: my-first-post
 Authors: Frank Corso
 Summary: Check out my first post!
+Status: published
 
 This is some super awesome content within my post!
 ```
+
+The tags and categories will automatically be parsed and archive pages for each will be created. The `Status` allows you to pass `draft` to it prevent this post from appearing on the site. Instead, drafts are put into a `drafts` directory that you can access to see how it would look.
 
 In addition to this first post, we can create our first page. By default, Pelican will look for the `pages` directory inside `content` for any pages and automatically add them to the site's main navigation. I'll create an `about.md` file to set up a basic about page.
 

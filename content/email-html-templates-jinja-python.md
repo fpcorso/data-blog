@@ -16,11 +16,7 @@ For example, one of my original email functions in my SAAS app, [SiteAlert](http
 def send_new_site_user_email(user, site_url):
     """Sends an email to the user when they add a site."""
     subj = 'You added a site!'
-    if user.first_name != '':
-        name = user.first_name
-    else:
-        name = 'there'
-    body = '<p>Hey {}!</p>'.format(name)
+    body = '<p>Hey {}!</p>'.format(user.first_name if user.first_name != '' else 'there')
     body += '<p>You just added a new site to your SiteAlert account: {}</p>'.format(site_url)
     body += """<p>Now, you can sit back and relax as SiteAlert begins monitoring your site for:</p>
        <ul>

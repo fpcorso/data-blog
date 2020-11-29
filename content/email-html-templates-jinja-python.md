@@ -12,6 +12,7 @@ When creating emails in Python, I usually start by creating the email text withi
 For example, one of my original email functions in my SAAS app, [SiteAlert](https://sitealert.io), looked like this:
 
 ```
+:::python
 def send_new_site_user_email(user, site_url):
     """Sends an email to the user when they add a site."""
     subj = 'You added a site!'

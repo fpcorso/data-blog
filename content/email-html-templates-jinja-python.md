@@ -57,7 +57,10 @@ Now that you have the directory set up, you will need some code to find the temp
 
 First, import the relevant modules:
 
-`from jinja2 import Environment, PackageLoader, select_autoescape`
+```
+:::python
+from jinja2 import Environment, PackageLoader, select_autoescape
+```
 
 Then, we will use Jinja's Environment to tell it where the template files are. In my case, the email templates directory is within our project module. For security, it is recommended to always have Jinja autoescape the templates for you.
 
@@ -71,15 +74,24 @@ env = Environment(
 
 Once we have our `env` variable, we can use that to create our template using:
 
-`template = env.get_template('your-template.html')`
+```
+:::python
+template = env.get_template('your-template.html')
+```
 
 To create the final HTML, you can use the `render` method:
 
-`html = template.render()`
+```
+:::python
+html = template.render()
+```
 
 Since these templates will be dynamic, Jinja will let you pass kwargs to `render` which will get passed to the template. For example, we use the user's name in the email, so it looks like this:
 
-`html = template.render(first_name="Steve")`
+```
+:::python
+html = template.render(first_name="Steve")
+```
 
 To make this re-usable and easier to implement, I wrap all of this in a function within my utils.py file. Here is the final code for this part:
 

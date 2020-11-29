@@ -5,7 +5,7 @@ Tags: jinja, email, html
 Slug: email-html-templates-jinja-python
 Authors: Frank Corso
 Summary: Instead of hardcoding your emails within Python, you can move them to HTML templates using Jinja!
-Status: draft
+Status: published
 
 When creating emails in Python, I usually start by creating the email text within the Python code itself. This is quick and easy and gets the job done. 
 
@@ -44,7 +44,7 @@ Instead, we can break these out into HTML files using [Jinja](https://palletspro
 
 ## Setting Up Jinja and the Templates Directory
 
-First, we want to set up a directory that will hold the HTML files inside your project. I created an `email_templates` directory, but you can name it anything that works for you.
+First, we want to set up a directory that will hold the HTML templates for your emails inside your project. I created an `email_templates` directory, but you can name it anything that works for you.
 
 Next, make sure Jinja is installed in your environment using:
 

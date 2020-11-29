@@ -1,16 +1,23 @@
 /**
 Sitewide HTML Elements
 **/
+
+html, body {
+    height: 100%,
+    margin: 0;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000
+}
+
 a {
     color: #2a8737;
 }
 
 a:hover {
     color: #226c2c;
-}
-
-#page main h1, #page main h2 {
-    color: #2a8737;
 }
 
 main {
@@ -26,19 +33,23 @@ Sitewide Classes/IDs
 *****/
 
 #page {
+    min-height: 100%;
+    margin-bottom: -200px;
+}
+
+#page, footer {
     width: 100%;
     margin: 0 auto;
 }
 
-@media screen and (min-width: 800px) {
-	#page {
-		width: 800px;
-	}
+#page main h1, #page main h2 {
+    color: #2a8737;
 }
 
-body {
-    background-color: #ffffff;
-    color: #000000
+@media screen and (min-width: 800px) {
+	#page, footer  {
+		width: 800px;
+	}
 }
 
 /*****

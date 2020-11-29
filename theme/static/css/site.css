@@ -32,14 +32,14 @@ footer {
 Sitewide Classes/IDs
 *****/
 
-#page {
-    min-height: 100%;
-    margin-bottom: -200px;
-}
-
 #page, footer {
     width: 100%;
     margin: 0 auto;
+}
+
+#page {
+    min-height: 100%;
+    margin-bottom: -200px;
 }
 
 #page main h1, #page main h2 {

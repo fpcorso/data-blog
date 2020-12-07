@@ -7,7 +7,7 @@ Authors: Frank Corso
 Summary: Instead of hardcoding your emails within Python, you can move them to HTML templates using Jinja!
 Status: published
 
-When creating emails in Python, I usually start by creating the email text within the Python code itself. This is quick and easy and gets the job done. 
+When first creating emails in a new project in Python, I usually start by creating the email text within the Python code itself. This is quick and easy and gets the job done. 
 
 For example, one of my original email functions in my SAAS app, [SiteAlert](https://sitealert.io), looked like this:
 

@@ -1,4 +1,8 @@
 {% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <meta name="description" content="Frank Corso is a data lover and python developer. Read his articles about python and data.">
+{% endblock head %}
 {% block content %}
 {% include 'article_list.html' %}
 {% endblock content %}

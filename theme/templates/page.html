@@ -2,7 +2,7 @@
 {% block pagetitle %}{{ page.title }} - {% endblock pagetitle %}
 {% block head %}
     {{ super() }}
-    <meta name="description" content="{{ page.summary }}">
+    <meta name="description" content="{{ page.summary|striptags }}">
 {% endblock head %}
 {% block content %}
 <article class="entry">

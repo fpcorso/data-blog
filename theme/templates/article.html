@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 {% block pagetitle %}{{ article.title }} - {% endblock pagetitle %}
+{% block head %}
+    {{ super() }}
+    <meta name="description" content="{{ article.summary }}">
+{% endblock head %}
 {% block content %}
 <article class="entry">
     <header class="entry-header">

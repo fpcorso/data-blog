@@ -3,7 +3,7 @@ Nav: About
 Date: 2020-07-31 10:20
 Slug: about
 Authors: Frank Corso
-Summary: Short version for index and feeds
+Summary: Want to know more about Frank Corso? Check out his about page!
 
 Hey there! My name is Frank Corso and it is a pleasure to meet you. My career in tech started a long time again back in high school with this:
 

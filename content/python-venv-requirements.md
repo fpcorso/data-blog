@@ -9,7 +9,7 @@ Status: draft
 
 By default, all the Python packages you install on your computer are used within all of your projects. But, what if one project requires version 1 of a package and another project requires version 2?
 
-Or, if you have multiple people working on a project, how do you help they which dependencies are needed and make sure everyone is using the same versions?
+Or, if you have multiple people working on a project, how do you tell them which dependencies are needed and make sure everyone is using the same versions?
 
 This is where using requirements.txt and virtual environments come in.
 

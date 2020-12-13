@@ -9,7 +9,7 @@ Status: draft
 
 By default, all the Python packages you install on your computer are used within all of your projects. But, what if one project requires version 1 of a package and another project requires version 2?
 
-Or, if you have multiple people working on a project, how do you make sure everyone is using the same versions?
+Or, if you have multiple people working on a project, how do you help they which dependencies are needed and make sure everyone is using the same versions?
 
 This is where using requirements.txt and virtual environments come in.
 
@@ -27,16 +27,18 @@ With requirements.txt, you can list all the required packages for your project a
 
 In your project, you can create a `requirements.txt` file. Inside, you can list each package that is needed.
 
-```text
+```
+:::text
 matplotlib
 numpy
 openpyxl
 pandas
 ```
 
-This is normally done alphabetically. If you want a specific version, you could add an equal sign like this:
+To make it easy to scan and read, the list is normally alphabetical. If you want a specific version, you could add an equal sign like this:
 
-```text
+```
+:::text
 matplotlib==3.3.3
 numpy==1.19.3
 openpyxl==3.0.5
@@ -47,7 +49,8 @@ Now, it would be challenging to manually write out all your dependencies and rem
 
 If you ever want to see what packages you have installed, you can run `pip list`. This will output all the packages install and their version numbers.
 
-```text
+```
+:::text
 Package         Version
 --------------- ---------
 matplotlib      3.3.3
@@ -84,7 +87,14 @@ If you are on Windows, you will use `.venv\Scripts\activate.bat`.
 
 On other OSes, you will use `source .venv/bin/activate`.
 
-Once activated, you will be able to install packages and run Python within the environment.
+Once activated, you will see the name of the environment within the terminal.
+
+```
+:::console
+(.venv) fpcorso:~$ pip install -r requirements.txt
+```
+
+Now, you will be able to install packages and run Python within the environment without interfering with packages installed globally.
 
 Once you are finished, just use the `deactivate` command to exit the virtual environment.
 

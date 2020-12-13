@@ -13,7 +13,7 @@ Or, if you have multiple people working on a project, how do you tell them which
 
 This is where using requirements.txt and virtual environments come in.
 
-## What is requirements.txt?
+## What Is requirements.txt?
 
 When you usually install a package, you probably do something like:
 
@@ -23,7 +23,7 @@ But, imagine if you have someone else working on the project and they also insta
 
 With requirements.txt, you can list all the required packages for your project and what version is needed. If you are familiar with NPM or Composer, you may have seen a similar concept in their package.json or composer.json files.
 
-## Creating your requirements.txt
+## Creating Your requirements.txt
 
 In your project, you can create a `requirements.txt` file. Inside, you can list each package that is needed.
 
@@ -63,13 +63,13 @@ Even better, you can use `pip freeze > requirements.txt` to automatically take t
 
 As you add, update, and remove packages, you can run that command again to update your `requirements.txt` file.
 
-## Installing from your requirements.txt
+## Installing From Your requirements.txt
 
 Let's say you just cloned a git repo. This repo contains a `requirements.txt` file. What do you do next?
 
 Once again, `pip` is here to help. We can run `pip install -r requirements.txt` to have pip automatically install all dependencies listed in the `requirements.txt` file.
 
-## Using virtual environments
+## Using Virtual Environments
 
 Now, if you only have one Python project on your computer, this may be fine as-is. But, what if you start cloning or creating several projects all with their own `requirements.txt` files? You can quickly end up with package versions that are not compatible with each other.
 
@@ -98,6 +98,6 @@ Now, you will be able to install packages and run Python within the environment 
 
 Once you are finished, just use the `deactivate` command to exit the virtual environment.
 
-## Next steps
+## Next Steps
 
 Going forward, you will want to install a virtual environment within all of your projects and install packages within. Then, use the `pip freeze > requirements.txt` command to generate your `requirements.txt` file to keep everyone working on the project in-sync.

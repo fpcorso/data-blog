@@ -21,7 +21,7 @@ When you usually install a package, you probably do something like:
 
 But, imagine if you have someone else working on the project and they also install pandas. Or, maybe you are deploying your project to Netlify or are using Docker. How do you make sure the right dependencies get installed and the correct version?
 
-With requirements.txt, you can list all the packages that are required for your project and as well what version is needed. If you are familiar with NPM or Composer, you may have seen a similar concept in their package.json or composer.json files.
+With requirements.txt, you can list all the required packages for your project and what version is needed. If you are familiar with NPM or Composer, you may have seen a similar concept in their package.json or composer.json files.
 
 ## Creating your requirements.txt
 
@@ -43,7 +43,7 @@ openpyxl==3.0.5
 pandas==1.0.5
 ```
 
-Now, it would challenging to manually write out all your dependencies and remember to change the version number when you upgrade. Luckily, `pip` can help with this.
+Now, it would be challenging to manually write out all your dependencies and remember to change the version number when you upgrade. Luckily, `pip` can help with this.
 
 If you ever want to see what packages you have installed, you can run `pip list`. This will output all the packages install and their version numbers.
 
@@ -68,15 +68,15 @@ Once again, `pip` is here to help. We can run `pip install -r requirements.txt` 
 
 ## Using virtual environments
 
-Now, if you only have one Python project on your computer, this my be fine as-is. But, what if you start cloning or creating several projects all with their own `requirements.txt` files? You can quickly end up with package versions that are not compatibile with each other.
+Now, if you only have one Python project on your computer, this may be fine as-is. But, what if you start cloning or creating several projects all with their own `requirements.txt` files? You can quickly end up with package versions that are not compatible with each other.
 
-This is where virtual environments come in. You can set up your project to exist within its own environment and packages only installed within that environment. Each project will have its own environment and own packages installed within it.
+This is where virtual environments come in. You can set up your project to exist within its own environment and packages only installed within that environment. Each project will have its own environment and its own packages installed within it.
 
 To create your virtual environment, go into your project and run:
 
 `python -m venv .venv`
 
-The last parameter, `.venv`, is the name of the directory to install the virtual environment into. You can name this whatever you would like but I like to stick with `.venv` as it's easy to tell what it is and it doesn't conflict with directory names I use with other systems.
+The last parameter, `.venv`, is the name of the directory to install the virtual environment into. You can name this whatever you would like, but I like to stick with `.venv` as it's easy to tell what it is and it doesn't conflict with directory names I use with other systems.
 
 Once the command is finished, your virtual environment will be ready. Next, you can "activate" it by running the activation script.
 

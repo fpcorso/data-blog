@@ -5,7 +5,7 @@ Tags: venv, requirements, pip
 Slug: setting-up-python-environment-venv-requirements
 Authors: Frank Corso
 Summary: Learn how to use virtual environments and requirements.txt to maintain your projects better.
-Status: draft
+Status: published
 
 By default, all the Python packages you install on your computer are used within all of your projects. But, what if one project requires version 1 of a package and another project requires version 2?
 

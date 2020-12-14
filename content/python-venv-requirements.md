@@ -47,7 +47,7 @@ pandas==1.0.5
 
 Now, it would be challenging to manually write out all your dependencies and remember to change the version number when you upgrade. Luckily, `pip` can help with this.
 
-If you ever want to see what packages you have installed, you can run `pip list`. This will output all the packages install and their version numbers.
+If you ever want to see what packages you have installed, you can run `pip list`. This will output all the packages installed and their version numbers.
 
 ```
 :::text

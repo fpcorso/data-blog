@@ -46,6 +46,7 @@ Before you can see your new site, you need to create your first article. Go into
 Inside your content Markdown files, you will use a series of key and value pairs in the header to set up your content. Underneath, you will add your content.
 
 ```
+:::markdown
 Title: My first post
 Date: 2020-06-01 10:20
 Category: Python
@@ -63,6 +64,7 @@ The tags and categories will automatically be parsed and archive pages for each 
 In addition to this first post, we can create our first page. By default, Pelican will look for the `pages` directory inside `content` for any pages and automatically add them to the site's main navigation. I'll create an `about.md` file to set up a basic about page.
 
 ```
+:::markdown
 Title: About Me
 Date: 2020-05-27 10:20
 Slug: about

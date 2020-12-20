@@ -2,11 +2,12 @@ blinker==1.4
 docutils==0.16
 feedgenerator==1.9.1
 Jinja2==2.11.2
-Markdown==3.1.1
+Markdown==3.3.3
 MarkupSafe==1.1.1
-pelican==4.5.0
+pelican==4.5.3
+pelican-series-plugin==1.0.2
 pelican-sitemap==1.0.2
-Pygments==2.7.2
+Pygments==2.6.1
 python-dateutil==2.8.1
 pytz==2020.1
 six==1.15.0

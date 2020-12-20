@@ -22,6 +22,16 @@
     </header>
     <div class="entry-content content">
         <p>This post will take {{ (article.content|wordcount / 250)|round(0, 'ceil')|int }} minutes to read.</p>
+        {% if article.series %}
+            <p>This post is part {{ article.series.index }} of my {{ article.series.name }} series:</p>
+            <ol class="parts">
+                {% for part_article in article.series.all %}
+                    <li {% if part_article == article %}class="active"{% endif %}>
+                        <a href='{{ SITEURL }}/{{ part_article.url }}'>{{ part_article.title }}</a>
+                    </li>
+                {% endfor %}
+            </ol>
+        {% endif %}
         {{ article.content }}
     </div>
 </article>

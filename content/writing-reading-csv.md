@@ -6,7 +6,7 @@ Slug: reading-from-writing-to-csv-files-python
 Series: Python 101
 Authors: Frank Corso
 Summary: Need to work with CSV files in Python? Learn how to open, read, and write to CSV files!
-Status: draft
+Status: published
 
 One of the most common things you will do in Python is working with CSV files. Whether it is to create a CSV file with data from an API or perform some analysis on an existing CSV, working with CSV files is an essential step in learning Python.
 

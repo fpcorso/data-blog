@@ -3,6 +3,7 @@ Date: 2020-12-14 08:20
 Category: Python
 Tags: venv, requirements, pip
 Slug: setting-up-python-environment-venv-requirements
+Series: Python 101
 Authors: Frank Corso
 Summary: Learn how to use virtual environments and requirements.txt to maintain your projects better.
 Status: published

@@ -20,5 +20,3 @@ But, most of my other sites are focused on marketing, business, or WordPress rel
 I'll be occasionally writing articles about data analysis, data warehousing, data visualization, and Python so check back!
 
 If you would like to learn more about me or see my articles on marketing, [check out my main site](https://frankcorso.me).
-
-If you want to reach out, you can do so [on my contact page](https://frankcorso.me/contact/).

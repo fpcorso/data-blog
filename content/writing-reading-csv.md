@@ -1,4 +1,4 @@
-Title: Reading From and Writing To CSV Files in Python
+Title: Reading From and Writing to CSV Files in Python
 Date: 2021-01-11 08:20
 Category: Python
 Tags: csv

@@ -2,7 +2,7 @@ Title: XXXXXX
 Date: 2021-01-20 08:20
 Category: Python
 Tags: API
-Slug: setting-up-python-environment-venv-requirements
+Slug: help-scout-api-csv
 Authors: Frank Corso
 Summary: XXXX
 Status: draft

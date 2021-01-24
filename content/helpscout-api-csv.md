@@ -1,42 +1,50 @@
-Title: XXXXXX
-Date: 2021-01-20 08:20
+Title: How To Save Data From Help Scout’s API to CSV in Python
+Date: 2021-01-25 08:20
 Category: Python
 Tags: API
 Slug: help-scout-api-csv
 Authors: Frank Corso
-Summary: XXXX
+Summary: Learn how to download your conversations from Help Scout using their API and store them in a CSV file using Python.
 Status: draft
 
-INTRO
+There are many times where you need to download data from an API and store it into a CSV. Perhaps, you want to analyze some data. Or, you want to combine the data with other data sets.
 
-GETTING APP ID AND SECRET
+In this article, we are going to explore how to do this while using Help Scout's API. [Help Scout](https://www.helpscout.com/) is a help desk solution that teams use when communicating with their customers.
 
-Before we can begin getting data from the Help Scout API, we need to generate an app ID and secret. First, log into HelpScout and go to "Your Profile".
+We will retrieve the "conversations" from one of our Help Scout mailboxes and store that data into a CSV. These conversations will include who sent the email, the subject, dates, which of our team members were assigned the conversation, and when it was closed.
 
-INSERT IMAGE
+## Getting Your App ID and Secret
+
+Before we can begin getting data from the Help Scout API, we need to generate an app ID and secret. First, log into HelpScout and go to "Your Profile."
+
+![Help Scout's profile page]({static}/images/help-scout-profile.png)
 
 Click the "My Apps" in the left menu.
 
-INSERT IMAGE
+![Help Scout's My Apps page with a "Create My App" button.]({static}/images/help-scout-my-apps.png)
 
 Click the "Create My App" button and fill in a name. Since we won't have users authenticating with this app, you can enter any URL for the redirect. I usually just put the URL for the company's site.
 
-INSERT IMAGE
+![Creating an app in Help Scout with two required fields: Name and redirect URL.]({static}/images/help-scout-create-custom-app.png)
 
 Click the "Create" button. Once created, you will see your app's ID and Secret.
 
-While in Help Scout, open the Mailbox you want to retrieve the conversation for. In the URL, you will find the mailbox's ID which we will need later:
+![My Apps page with the new app listed and showing its credentials.]({static}/images/help-scout-app-credentials.png)
 
-INSERT IMAGE
+While in Help Scout, open the mailbox you want to retrieve the conversation for. In the URL, you will find the mailbox's ID, which we will need later:
 
-GETTING AUTHORIZATION TOKEN
+![Firefox's address bar with the URL ending in your mailbox id.]({static}/images/help-scout-mailbox-id.png)
+
+## Getting Your Access Token
 
 Since we won't be authenticating users, we will use Help Scout's [client credentials flow](https://developer.helpscout.com/mailbox-api/overview/authentication/#client-credentials-flow) for authentication. To do so, we first need to get an access token.
 
-First, I almost always use the `requests` package when working with APIs so we need to import that first:
+First, we need to import any packages we need. I almost always use [the "requests" package](https://pypi.org/project/requests/) when working with APIs. Additionally, since we have the created time and closed time, I like to go ahead and calculate resolution time here. To do so, I recommend installing and importing [the "python-dateutil" package](https://pypi.org/project/python-dateutil/).
 
 ```
 :::python
+import csv
+import dateutil.parser as parser
 import requests
 ```
 
@@ -50,8 +58,8 @@ auth_endpoint = 'https://api.helpscout.net/v2/oauth2/token'
 # Preparing our POST data.
 post_data = ({
     'grant_type': 'client_credentials',
-    'client_id': HELPSCOUT_APP_ID,
-    'client_secret': HELPSCOUT_APP_SECRET
+    'client_id': YOUR_HELPSCOUT_APP_ID,
+    'client_secret': YOUR_HELPSCOUT_APP_SECRET
 })
 
 # Send the data.
@@ -61,35 +69,35 @@ r = requests.post(auth_endpoint, data=post_data)
 token = r.json()['access_token']
 ```
 
-Next, we will define a starting page and a flag for if we have already retrieved all conversations. Then, we need to prepare our authorization headers.
+We need way to keep going through our loop until we have downloaded all the conversations. The Help Scout api contains a `totalPages` key that we can check against.
+
+There are a few different ways we could handle this but I like to just set a self-explanatory flag to false.
 
 ```
 :::python
 all_conversations = False
 page = 1
+```
 
+Then, we need to prepare our authorization headers.
+
+```
+:::python
 # Prepare our headers for all endpoints using token.
 endpoint_headers = {
     'Authorization': 'Bearer {}'.format(token)
 }
 ```
 
-PREPARING CSV FILE
+# Preparing the CSV File
 
-Now that we have our token, we can set up our CSV file. If you haven't worked with CSV's in Python before, check out my article ....
+Now that we have our token, we can set up our CSV file. If you haven't worked with CSV's in Python before, [check out my "Reading From and Writing to CSV Files in Python" article](https://frankcorso.dev/reading-from-writing-to-csv-files-python.html).
 
-First, make sure to import the package:
-
-```
-:::python
-import csv
-```
-
-Then, open our CSV file and write the header:
+First, open our CSV file and write the header:
 
 ```
 :::python
-# Creates our file, or rewrites it if one is present.
+# Creates our file or rewrites it if one is present.
 with open('conversations.csv', mode="w", newline='', encoding='utf-8') as fh:
     # Define our columns.
     columns = ['ID', 'Customer Name', 'Customer email addresses', 'Assignee', 'Status', 'Subject', 'Created At',
@@ -98,9 +106,9 @@ with open('conversations.csv', mode="w", newline='', encoding='utf-8') as fh:
     csv_writer.writeheader() # Write our header row.
 ```
 
-GETTING OUR CONVERSATIONS AND PUTTING INTO CSV
+## Downloading Our Conversations and Putting Them Into the CSV
 
-Now that we have our access token and our CSV opened, it's time to actually retrieve the conversations. Help Scout's API sends over the conversations in a paginated format.
+Now that we have our access token and our CSV opened, it's time to retrieve the conversations. Help Scout's API sends over the conversations in a paginated format.
 
 Remember to keep all of this indented inside the `with open()` statement so we can write to our CSV.  
 
@@ -109,7 +117,7 @@ Inside a while loop, we will get our first conversations:
 ```
 :::python
 while not all_conversations:
-    # Prepare conversations endpoint with status of conversations we want and the mailbox.
+    # Prepare conversations endpoint with the status of conversations we want and the mailbox.
     conversations_endpoint = 'https://api.helpscout.net/v2/conversations?status=all&mailbox=YOUR_MAILBOX_ID&page={}'.format(
         page
     )
@@ -150,8 +158,8 @@ for conversation in conversations['_embedded']['conversations']:
         closed_by = '{} {}'.format(
             conversation['closedByUser']['first'], conversation['closedByUser']['last']
         )
-        resolution_time = dateutil.parser.parse(conversation['closedAt']).timestamp() - \
-            dateutil.parser.parse(conversation['createdAt']).timestamp()
+        resolution_time = parser.parse(conversation['closedAt']).timestamp() - \
+                          parser.parse(conversation['createdAt']).timestamp()
 ```
 
 Then, write our results to the CSV:
@@ -173,13 +181,21 @@ csv_writer.writerow({
 })
 ```
 
-Lastly, check their 'totalPages' key against the page we are on to see if we have retrieved all the conversations:
+Lastly, check their 'totalPages' key against the page we are on to see if we have retrieved all the conversations. If not, increment the current page and then we'll start the process over again.
 
 ```
 :::python
 if page == conversations['page']['totalPages']:
     all_conversations = True
     continue
+else:
+    page += 1
 ```
 
-NEXT STEPS
+Great! We now have our script ready to run. You can see all this code together [in my GitHub gist here](https://gist.github.com/fpcorso/702b80f162b2984fbd87a273af1a6f85).
+
+## Next Steps
+
+Go ahead and run your script to retrieve all the conversations from your Help Scout mailbox. 
+
+If you were looking to just get a backup, then you are good to go. If you wanted the data to perform data analysis, you can now open the file in Excel or use pandas with it. Or, if this was the first step of your data pipeline, you could now start working on the next step in the pipeline.

@@ -5,7 +5,7 @@ Tags: API
 Slug: help-scout-api-csv
 Authors: Frank Corso
 Summary: Learn how to download your conversations from Help Scout using their API and store them in a CSV file using Python.
-Status: draft
+Status: published
 
 There are many times where you need to download data from an API and store it into a CSV. Perhaps, you want to analyze some data. Or, you want to combine the data with other data sets.
 
@@ -112,7 +112,7 @@ Now that we have our access token and our CSV opened, it's time to retrieve the 
 
 Remember to keep all of this indented inside the `with open()` statement so we can write to our CSV.  
 
-Inside a while loop, we will get our first conversations:
+Inside a while loop, we will get our first page of conversations:
 
 ```
 :::python
@@ -125,7 +125,7 @@ while not all_conversations:
     conversations = r.json()
 ```
 
-Next, we will cycle over each of the conversations within this response to save them to the CSV. Since there are many keys in the JSON that might be missing depending on the conversation, we need to clean and process the data just enough to save it.
+Next, we will cycle over each of the conversations within this page to save them to the CSV. Since there are many keys in the JSON that might be missing depending on the conversation, we need to clean and process the data just enough to save it.
 
 ```
 :::python

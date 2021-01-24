@@ -39,12 +39,12 @@ While in Help Scout, open the mailbox you want to retrieve the conversation for.
 
 Since we won't be authenticating users, we will use Help Scout's [client credentials flow](https://developer.helpscout.com/mailbox-api/overview/authentication/#client-credentials-flow) for authentication. To do so, we first need to get an access token.
 
-First, we need to import any packages we need. I almost always use [the "requests" package](https://pypi.org/project/requests/) when working with APIs. Additionally, since we have the created time and closed time, I like to go ahead and calculate resolution time here. To do so, I recommend installing and importing [the "python-dateutil" package](https://pypi.org/project/python-dateutil/).
+First, we need to import any packages we need. I almost always use [the "requests" package](https://pypi.org/project/requests/) when working with APIs. Additionally, since we have the created time and closed time, I like to go ahead and calculate resolution time here. To do so, I will use [Python's "datetime" library](https://docs.python.org/3/library/datetime.html).
 
 ```
 :::python
 import csv
-import dateutil.parser as parser
+import datetime
 import requests
 ```
 
@@ -158,8 +158,9 @@ for conversation in conversations['_embedded']['conversations']:
         closed_by = '{} {}'.format(
             conversation['closedByUser']['first'], conversation['closedByUser']['last']
         )
-        resolution_time = parser.parse(conversation['closedAt']).timestamp() - \
-                          parser.parse(conversation['createdAt']).timestamp()
+        createdDateTime = datetime.datetime.strptime(conversation['createdAt'], "%Y-%m-%dT%H:%M:%S%z")
+        closedDateTime = datetime.datetime.strptime(conversation['closedAt'], "%Y-%m-%dT%H:%M:%S%z")
+        resolution_time = (closedDateTime - createdDateTime).total_seconds()
 ```
 
 Then, write our results to the CSV:

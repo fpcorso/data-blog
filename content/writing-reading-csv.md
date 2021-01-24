@@ -167,7 +167,7 @@ Frank Corso
 
 Now that you can read and write CSV files, what will you do with them? You can:
 
-1. download data from an API and save it to a CSV. [See my "How To Save Data From Help Scout’s API to CSV" article](https://frankcorso.dev/help-scout-api-csv.html)!
+1. download data from an API and save it to a CSV. For an example, check out [my "How To Save Data From Help Scout’s API to CSV" article](https://frankcorso.dev/help-scout-api-csv.html)!
 2. clean data from a raw CSV and create a new "processed" CSV
 3. analyze data from a CSV
 4. and much more!

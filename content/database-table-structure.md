@@ -1,10 +1,10 @@
-Title: Learn How Databases and Tables Structured
+Title: Learn How Databases and Tables Are Structured
 Date: 2021-02-01 08:20
 Category: SQL
 Tags: table
 Slug: learn-how-databases-tables-structured
 Authors: Frank Corso
-Summary: Just getting started with SQL? Learn how databases and tables are structured!
+Summary: Just getting started with SQL? Let's learn a high-level overview of how databases and tables are structured!
 Status: published
 
 If you are just starting to learn SQL (or even if you know it!), it is essential to understand how databases and tables are structured.

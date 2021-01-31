@@ -5,7 +5,7 @@ Tags: table
 Slug: learn-how-databases-tables-structured
 Authors: Frank Corso
 Summary: Just getting started with SQL? Learn how databases and tables are structured!
-Status: draft
+Status: published
 
 If you are just starting to learn SQL (or even if you know it!), it is essential to understand how databases and tables are structured.
 
@@ -15,7 +15,7 @@ There are a lot of different database technologies and platforms including [MySQ
 
 To do so, we will explore structuring a very basic database for a pet groomer, which will include all the pet owners, each of their pets, and which toys the pets like.
 
-I'll be creating something called an "entity-relationship diagram" to demonstrate how databases are structured. While these can be complex yet useful, I am creating a very simplified version for learning purposes. However, I encourage you to [learn more about them](https://www.smartdraw.com/entity-relationship-diagram/) as you continue learning SQL as they can be valuable in creating models and representations for databases you are working with.
+I'll be creating something called an "entity-relationship diagram" to demonstrate how databases are structured. While these are usually fairly complex yet useful, I am creating a very simplified version for learning purposes. However, I encourage you to [learn more about them](https://www.smartdraw.com/entity-relationship-diagram/) as you continue learning SQL as they can be valuable in creating models and representations for databases you are working with.
 
 ## What Are Tables?
 

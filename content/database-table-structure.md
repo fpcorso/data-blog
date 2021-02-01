@@ -27,6 +27,8 @@ These tables look a lot like spreadsheets with rows and columns. However, while 
 
 We want to store many things about each pet owner in our table, including their name, email, and phone number. These are called our pet owner's "attributes."
 
+Here is a very basic diagram of our pet owners, displayed as an "entity-relationship diagram":
+
 ![Diagram showing pet owners in the middle with name, email, and phone connecting to it.]({static}/images/erm-pet-owners.png)
 
 These different attributes will become the "columns" of our table, where each attribute is its own column, as shown in the table.

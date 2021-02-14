@@ -5,6 +5,7 @@ Tags: table
 Slug: learn-how-databases-tables-structured
 Authors: Frank Corso
 Summary: Just getting started with SQL? Let's learn a high-level overview of how databases and tables are structured!
+Description: Just getting started with SQL? Let's learn a high-level overview of how databases and tables are structured!
 Status: published
 
 If you are just starting to learn SQL (or even if you know it!), it is essential to understand how databases and tables are structured.

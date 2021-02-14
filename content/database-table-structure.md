@@ -64,7 +64,7 @@ Let's add a few pets into a pets table.
 
 Now, you might have noticed another column that wasn't an attribute: the "owner_id" column. This is called a "foreign key." A foreign key is an identifier that matches a row's primary key from another table. This column tells us which pet owner owns this animal.
 
-For example, if we look for "Frank" in our pet owners table, we see his id is 1. If we look in the pets table at the pet_owner_id column and find the 1, we can see that he has two pets: Bambino and Skittles.
+For example, if we look for "Frank" in our pet owners table, we see his id is 1. If we look in the pets table at the owner_id column and find the 1, we can see that he has two pets: Bambino and Skittles.
 
 ## Setting Up Our Toys Table Using Many-to-Many Relationship
 

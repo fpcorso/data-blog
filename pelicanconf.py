@@ -5,13 +5,15 @@ from __future__ import unicode_literals
 AUTHOR = 'Frank Corso'
 SITENAME = "Frank's Blog"
 SITESUBTITLE = 'Data lover | Python dev'
-SITEURL = ''
+SITEURL = 'localhost:8000'
+RELATIVE_URLS = True
 THEME = 'theme'
 GRAVATAR = 'https://secure.gravatar.com/avatar/3c79ff484379feb07f575dadee9b3562?s=100'
 PATH = 'content'
 TIMEZONE = 'America/New_York'
 DEFAULT_DATE_FORMAT = '%B %d, %Y'
 DEFAULT_LANG = 'en'
+DEFAULT_PAGINATION = False
 
 # Social Networks
 TWITTER = 'https://twitter.com/fpcorso'
@@ -24,6 +26,7 @@ DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = True
 MENUITEMS = (('Topics', 'categories.html'),)
 
+# Pelican Sitemape plugin
 SITEMAP = {
     "format": "xml",
     "priorities": {
@@ -38,7 +41,7 @@ SITEMAP = {
     }
 }
 
-DEFAULT_PAGINATION = False
-
-# Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# Pelican SEO plugin
+SEO_REPORT = True
+SEO_ENHANCER = True
+SEO_ENHANCER_OPEN_GRAPH = True

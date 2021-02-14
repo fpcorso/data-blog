@@ -15,3 +15,6 @@ RELATIVE_URLS = False
 FEED_ALL_RSS = 'feeds/all.rss.xml'
 CATEGORY_FEED_RSS = 'feeds/{slug}.rss.xml'
 DELETE_OUTPUT_DIRECTORY = True
+
+# Pelican SEO plugin
+SEO_REPORT = False

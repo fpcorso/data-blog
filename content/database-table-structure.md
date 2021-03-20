@@ -3,6 +3,7 @@ Date: 2021-02-01 08:20
 Category: SQL
 Tags: table
 Slug: learn-how-databases-tables-structured
+Series: SQL 101
 Authors: Frank Corso
 Summary: Just getting started with SQL? Let's learn a high-level overview of how databases and tables are structured!
 Description: Just getting started with SQL? Let's learn a high-level overview of how databases and tables are structured!

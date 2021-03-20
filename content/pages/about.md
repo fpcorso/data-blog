@@ -5,7 +5,7 @@ Slug: about
 Authors: Frank Corso
 Summary: Want to know more about Frank Corso? Check out his about page!
 
-Hey there! My name is Frank Corso and it is a pleasure to meet you. My career in tech started a long time again back in high school with this:
+Hey there! My name is Frank Corso, and it is a pleasure to meet you. My tech career started a long time ago, back in high school with this:
 
 ![My Xbox game called "A Game of Hockey"]({static}/images/a-game-of-hockey-vasculus.jpg)
 
@@ -13,7 +13,7 @@ I created an Xbox 360 game called "A Game of Hockey" which was basically a clone
 
 This game was full of bugs and I am surprised anyone bought it. But, they did and it made me realize that I could have a future creating software.
 
-Now, 13 years later, I have worked on a variety of different projects and businesses from many different industries. Over the years, I have developed a passion for data analysis and visualization.
+Now, 13 years later, I have worked on a variety of different projects and businesses from many different industries. Over the years, I have developed a passion for data analysis, visualization, and machine learning.
 
 But, most of my other sites are focused on marketing, business, or WordPress related topics so I haven't had a place to share some of the cool data or Python projects I am working on. This is why this site was created.
 

@@ -7,7 +7,7 @@ Series: SQL 101
 Authors: Frank Corso
 Summary: Learn how to get data from a database using the SELECT, WHERE, and LIMIT statements.
 Description: Learn how to get data from a database using the SELECT, WHERE, and LIMIT statements.
-Status: draft
+Status: published
 
 In [my previous article]({filename}/database-table-structure.md), I wrote about how databases and tables are structured. In this article, I will explore how to query those tables to get data from them.
 

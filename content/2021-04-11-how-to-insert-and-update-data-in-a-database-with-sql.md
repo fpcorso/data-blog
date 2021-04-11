@@ -6,7 +6,7 @@ Category: SQL
 Slug: how-to-insert-update-data-sql
 Authors: Frank Corso
 Summary: Summary
-Description: Description
+Description: My Description
 Status: draft
 ---
 INTRO

@@ -1,0 +1,28 @@
+---
+Title: How to insert and update data in a database with SQL
+Date: 2021-04-11T20:09:31.276Z
+Tags: query
+Category: SQL
+Slug: how-to-insert-update-data-sql
+Authors: Frank Corso
+Summary: Summary
+Description: Description
+Status: draft
+---
+INTRO
+
+INSERT
+
+\-- Single insert
+
+\-- Multiple insert
+
+UPDATE
+
+\-- Update all
+
+\-- Update with single where
+
+\-- Update with multiple where
+
+NEXT STEPS

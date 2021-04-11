@@ -70,7 +70,7 @@ Let's say that when we entered the information for "Mr. Whiskers" that we accide
 ```
 :::sql
 UPDATE Pets
-SET birtday = "12/14/2020"
+SET birthday = "12/14/2020"
 WHERE id = 5;
 ```
 
@@ -81,7 +81,7 @@ We can update as many columns as we want during this SQL. Let's say that we acci
 ```
 :::sql
 UPDATE Pets
-SET birtday = "02/13/2021", name = "Brownie"
+SET birthday = "02/13/2021", name = "Brownie"
 WHERE id = 4;
 ```
 

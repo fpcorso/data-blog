@@ -32,7 +32,7 @@ In this table, we have a list of pet owners. If we wanted to add a new owner, su
 ```
 :::sql
 INSERT INTO Owners (name, email, phone)
-VALUES ('Jessica', 'fake@fake.com`, '555-1234);
+VALUES ("Jessica", "fake@fake.com", "555-1234");
 ```
 
 In addition to our table of pet owners, we had also looked at our pets table, shown below.
@@ -44,15 +44,35 @@ Now, let's say Jessica has two pets: Brownie and Mr. Whiskers. We can use the sa
 ```
 :::sql
 INSERT INTO Pets (owner_id, name, birthday, type)
-VALUES (4, 'Brownie', '02/23/2021', 'dog'),
-(4, 'Mr. Whiskers', '12/04/2020', cat');
+VALUES (4, "Brownie", "02/23/2021", "dog"),
+(4, "Mr. Whiskers", "12/04/2020", "cat");
 ```
 
 To insert multiple rows, you can include as many value lists after the `VALUES` keyword as you need.
 
 ## The UPDATE Statement
 
-UPDATE
+Once you have data in your tables, there will be many times where you need to update that data. To do this, we use the `UPDATE` statement. The syntax looks like this:
+
+```
+:::sql
+UPDATE table_name
+SET column_name = "some value"
+WHERE column_name = "some other value";
+```
+
+Notice the `WHERE` statement in this SQL. If your update SQL does not have a `WHERE` condition, it will update the value for all the records in the table. It is important to remember to almost always use the `WHERE` condition.
+
+Let's say that when we entered the information for "Mr. Whiskers" that we accidentally put in the wrong birthday. To update his birthday, we can use this SQL:
+
+```
+:::sql
+UPDATE Pets
+SET birtday = "12/14/2020"
+WHERE id = 5;
+```
+
+With our WHERE statement, we are only updating the value for the birthday column where the id is 5, which is the row for Mr. Whiskers.
 
 \-- Update all
 

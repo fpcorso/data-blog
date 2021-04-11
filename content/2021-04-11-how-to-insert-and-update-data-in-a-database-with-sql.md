@@ -74,10 +74,13 @@ WHERE id = 5;
 
 With our WHERE statement, we are only updating the value for the birthday column where the id is 5, which is the row for Mr. Whiskers.
 
-\-- Update all
+We can update as many columns as we want during this SQL. Let's say that we accidentally entered the wrong birthday and misspelled Brownie's name when we entered her into the table. We can update her row using this SQL:
 
-\-- Update with single where
+```
+:::sql
+UPDATE Pets
+SET birtday = "02/13/2021", name = "Brownie"
+WHERE id = 4;
+```
 
-\-- Update with multiple where
-
-NEXT STEPS
+Like with the SELECT statement, we can use as many conditions in the WHERE statement as needed. So, if we wanted to update

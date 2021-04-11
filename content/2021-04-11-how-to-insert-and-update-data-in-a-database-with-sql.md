@@ -43,9 +43,9 @@ So, our table will now look like this:
 
 In addition to our table of pet owners, we had also looked at our pets table, shown below.
 
-![](/images/pets-table.png)
+![Our pets table with 3 pets](/images/pets-table.png)
 
-Now, let's say Jessica has two pets: Brownie and Mr. Whiskers. We can use the same SQL syntax as before but we can pass two sets of values as shown below.
+Now, let's say Jessica has two pets: Brownie and Mr. Whiskers. To insert multiple rows, you can include as many value lists after the `VALUES` keyword as you need. We can use the same SQL syntax as before but we can pass two sets of values as shown below.
 
 ```
 :::sql
@@ -54,7 +54,9 @@ VALUES (4, "Brownie", "02/23/2021", "dog"),
 (4, "Mr. Whiskers", "12/04/2020", "cat");
 ```
 
-To insert multiple rows, you can include as many value lists after the `VALUES` keyword as you need.
+This will get us an updated table that looks like this:
+
+![Our pets table now has 5 pets in it]({static}/images/pets-table-brownie-added.png)
 
 ## The UPDATE Statement
 

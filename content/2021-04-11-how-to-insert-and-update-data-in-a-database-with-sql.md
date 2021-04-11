@@ -17,7 +17,8 @@ INSERT
 
 \-- Multiple insert
 
-```python
+```
+:::python
 import requests
 
 def main():

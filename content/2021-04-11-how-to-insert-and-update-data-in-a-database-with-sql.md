@@ -39,7 +39,7 @@ You may notice that we are not setting the value for the `id` column. In most ta
 
 So, our table will now look like this:
 
-![Updated Owners table with it now having 4 rows.](/images/pet-owners-table-jessica-added.png)
+![Updated Owners table with it now having 4 rows.]({static}/images/pet-owners-table-jessica-added.png)
 
 In addition to our table of pet owners, we had also looked at our pets table, shown below.
 

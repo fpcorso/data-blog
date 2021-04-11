@@ -35,6 +35,8 @@ INSERT INTO Owners (name, email, phone)
 VALUES ("Jessica", "fake@fake.com", "555-1234");
 ```
 
+You may notice that we are not setting the value for the `id` column. In most tables, the primary key is set to auto-increment so by not specifying the value, it will automatically be set to the next number. Similarly, the table you are working on may have other columns that have default values in which you could omit those in your SQL unless you are setting the values to something other than the default.
+
 In addition to our table of pet owners, we had also looked at our pets table, shown below.
 
 ![](/images/pets-table.png)
@@ -101,4 +103,4 @@ Now that you can select, insert, and update data within a database, you are on y
 1. Look into how to delete data using the DELETE statement
 2. Start learning how to join multiple tables together
 
-Be sure to subscribe below to get notified when the next entry in this SQL 101 series (and other articles on SQL + data) is published! 
+Be sure to subscribe below to get notified when the next entry in this SQL 101 series (and other articles on SQL + data) is published!

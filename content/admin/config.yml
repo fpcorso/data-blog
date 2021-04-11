@@ -6,8 +6,8 @@ media_folder: "content/images"
 public_folder: "/images"
 
 collections:
-  - name: "blog"
-    label: "Blog"
+  - name: "article"
+    label: "Article"
     folder: "content"
     create: true
     identifier_field: "Title"
@@ -15,10 +15,11 @@ collections:
     fields:
       - {label: "Title", name: "Title", widget: "string"}
       - {label: "Date", name: "Date", widget: "datetime"}
+      - {label: "Tags", name: "Tags", widget: "string"}
       - {label: "Category", name: "Category", widget: "string"}
       - {label: "Slug", name: "Slug", widget: "string"}
       - {label: "Series", name: "Series", widget: "string", required: false}
-      - {label: "Author", name: "Author", widget: "string"}
+      - {label: "Author", name: "Authors", widget: "string"}
       - {label: "Summary", name: "Summary", widget: "string"}
       - {label: "Meta Description", name: "Description", widget: "string"}
       - {label: "Status", name: "Status", widget: "string", default: "draft"}

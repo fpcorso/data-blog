@@ -32,10 +32,14 @@ In this table, we have a list of pet owners. If we wanted to add a new owner, su
 ```
 :::sql
 INSERT INTO Owners (name, email, phone)
-VALUES ("Jessica", "fake@fake.com", "555-1234");
+VALUES ("Jess", "fake@fake.com", "555-1234");
 ```
 
 You may notice that we are not setting the value for the `id` column. In most tables, the primary key is set to auto-increment so by not specifying the value, it will automatically be set to the next number. Similarly, the table you are working on may have other columns that have default values in which you could omit those in your SQL unless you are setting the values to something other than the default.
+
+So, our table will now look like this:
+
+![Updated Owners table with it now having 4 rows.](/images/pet-owners-table-jessica-added.png)
 
 In addition to our table of pet owners, we had also looked at our pets table, shown below.
 

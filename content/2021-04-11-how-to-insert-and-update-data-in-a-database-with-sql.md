@@ -1,5 +1,5 @@
 ---
-Title: How to insert and update data in a database with SQL
+Title: How to Insert and Update Data From Databases Using SQL
 Date: 2021-04-11T20:09:31.276Z
 Tags: query
 Category: SQL
@@ -69,7 +69,7 @@ SET column_name = "some value"
 WHERE column_name = "some other value";
 ```
 
-Notice the `WHERE` statement in this SQL. If your update SQL does not have a `WHERE` condition, it will update the value for all the records in the table. It is important to **remember to almost always use the `WHERE` condition**.
+Notice the `WHERE` statement in this SQL. If your update SQL does not have a `WHERE` condition, it will update the value for all the records in the table. It is important to remember to almost always use the `WHERE` condition.
 
 Let's say that when we entered the information for "Mr. Whiskers" that we accidentally put in the wrong birthday. To update his birthday, we can use this SQL:
 

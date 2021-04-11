@@ -17,15 +17,6 @@ INSERT
 
 \-- Multiple insert
 
-```
-:::python
-import requests
-
-def main():
-  """Test"""
-  return
-```
-
 UPDATE
 
 \-- Update all

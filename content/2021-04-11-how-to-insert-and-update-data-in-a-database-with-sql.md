@@ -83,4 +83,22 @@ SET birtday = "02/13/2021", name = "Brownie"
 WHERE id = 4;
 ```
 
-Like with the SELECT statement, we can use as many conditions in the WHERE statement as needed. So, if we wanted to update
+Like with the SELECT statement, we can use as many conditions in the WHERE statement as needed. So, if we had accidentally set both Mr. Whiskers and Brownie as belonging to Chris instead of Jessica, we could update both of their owner_id values using this SQL:
+
+```
+:::sql
+UPDATE Pets
+SET owner_id = 4
+WHERE id = 4 OR id = 5;
+```
+
+\* A quick side note: We can simplify this condition using the `IN` statement with SQL like this: `WHERE id IN (4, 5)`. We'll look more at advanced statements and conditions in a future article in this series but this is a great example of when you could use the `IN` statement so wanted to mention it.
+
+## Next Steps
+
+Now that you can select, insert, and update data within a database, you are on your way to becoming an SQL expert! To continue on your training, you will want to:
+
+1. Look into how to delete data using the DELETE statement
+2. Start learning how to join multiple tables together
+
+Be sure to subscribe below to get notified when the next entry in this SQL 101 series (and other articles on SQL + data) is published! 

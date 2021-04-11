@@ -2,7 +2,7 @@
 label: Blog post
 hide_body: false
 fields:
-- name: title
+- name: Title
   type: text
   config:
     required: true

@@ -1,6 +1,6 @@
 ---
 Title: How to Insert and Update Data From Databases Using SQL
-Date: 2021-04-12T12:53:40.283Z
+Date: 2021-04-12 08:10
 Tags: query, insert, update, where
 Category: SQL
 Slug: how-to-insert-update-data-sql

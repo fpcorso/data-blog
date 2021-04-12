@@ -6,10 +6,8 @@ Category: SQL
 Slug: how-to-insert-update-data-sql
 Series: SQL 101
 Authors: Frank Corso
-Summary: Need to insert some data into your database or update some existing
-  data? Learn how using SQL!
-Description: Need to insert some data into your database or update some existing
-  data? Learn how using SQL!
+Summary: Need to insert some data into your database or update some existing data? Learn how using SQL!
+Description: Need to insert some data into your database or update some existing data? Learn how using SQL!
 Status: draft
 ---
 In my previous posts in this series, we explored how tables are set up and how to select data from them. But, what if you need to add or edit the data in the tables? That is what we are exploring in this article.

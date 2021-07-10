@@ -76,7 +76,7 @@ For the majority of queries, it is unlikely that you will want to select all row
 
 The `WHERE` statement takes a condition (or multiple conditions) and returns rows only when those conditions are true, such as if a column equals a certain value. If the column type is numerical, such as INT, you can use comparison operators, such as `>` or `<`.
 
-Let's say we want to only get the name and birthday for only pets that our cats. We would only want rows where `type` is equal to `cat`. The SQL would look like this:
+Let's say we want to only get the name and birthday for only pets that are cats. We would only want rows where `type` is equal to `cat`. The SQL would look like this:
 
 ```
 :::sql

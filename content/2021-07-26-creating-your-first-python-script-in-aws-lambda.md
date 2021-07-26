@@ -10,4 +10,17 @@ Summary: TBD
 Description: TBD
 Status: draft
 ---
-Test
+INTRO
+
+WHAT IS LAMBDA
+
+WRITING PYTHON
+
+CREATING LAMBDA FUNCTION
+
+1. Setting up function
+2. Setting handler
+3. Uploading code
+4. Testing
+
+NEXT STEPS

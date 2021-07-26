@@ -4,7 +4,7 @@ Date: 2021-07-28 08:10
 Tags: lambda
 Category: Python
 Slug: python-aws-lambda
-Series: AWS Lambda 101
+Series: ""
 Authors: Frank Corso
 Summary: TBD
 Description: TBD
@@ -15,6 +15,9 @@ INTRO
 WHAT IS LAMBDA
 
 WRITING PYTHON
+
+1. Define function
+2. Explain parameters
 
 CREATING LAMBDA FUNCTION
 

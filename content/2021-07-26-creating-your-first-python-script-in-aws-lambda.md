@@ -46,7 +46,7 @@ def handler(event, context):
 
 ## Creating Your Lambda Function
 
-To get started, you will need to sign into your AWS account.
+To get started, you will need to sign in to your AWS account.
 
 Once in your AWS console, you can either click on "Services" to go to "Compute"->"Lambda" or use their search bar to search for Lambda.
 
@@ -56,7 +56,7 @@ Once inside Lambda, you will your Lambda dashboard as shown here:
 
 INSERT SCREENSHOT
 
-Click on the "Functions" page from within the menu to get to your functions as shown here:
+Click on the "Functions" page from within the menu to get to your functions.
 
 INSERT SCREENSHOT
 
@@ -64,7 +64,22 @@ Next, click on the "Create function" button in the top right.
 
 INSERT SCREENSHOT
 
-On the next screen, use the "Author from scratch" option. Name your function anything you want. For the runtime, select a version of Python.
+Use the "Author from scratch" option. Name your function anything you want. For the runtime, select a version of Python.
+
+If this function was interacting with other parts of the AWS ecosystem, we'd want to set up permissions or an AWS role. But, for this example, we can keep the defaults.
+
+Next, click the final "Create function" button.
+
+Once created, you will be taken to the function's overview and code. Here you can review any triggers or layers attached to the function. For this one, we will not be using these.
+
+Scroll down to the code section and open the default lambda_function.py file. Copy and paste our basic Python code from above into the file.
+
+INSERT SCREENSHOT
+
+Next, scroll down to the "Runtime settings" section. We want to edit the "Handler" field. This is how Python will try to import your function. So, it should be the file name followed by the function name. In this case, it should be updated to `lambda_function.handler` because we kept the default file but used our function called handler. Of course, we could have just used the same name but then you wouldn't have been able to learn about this part .
+
+
+
 1. Setting up function
 2. Setting handler
 3. Uploading code

@@ -1,13 +1,15 @@
 ---
-Title: Creating your first python script in AWS Lambda
+Title: How To Create Your First Python AWS Lambda Function
 Date: 2021-07-28 08:10
-Tags: lambda
+Tags: lambda, aws
 Category: Python
-Slug: python-aws-lambda
+Slug: python-aws-lambda-function
 Series: ""
 Authors: Frank Corso
-Summary: TBD
-Description: TBD
+Summary: Just getting started with AWS Lambda? Learn how to set up your first
+  Python Lambda function.
+Description: Just getting started with AWS Lambda? Learn how to set up your
+  first Python Lambda function.
 Status: draft
 ---
 When creating a small Python script, the question that eventually comes up is *where* the code will be hosted and run. For some small scripts, you might be able just to run the code locally. But, what if you want the code to be run on a regular schedule, even when your laptop is off? Or, what if you want the script to be part of an endpoint that other scripts can access?

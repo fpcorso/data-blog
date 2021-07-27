@@ -54,15 +54,15 @@ Once in your AWS console, you can either click on "Services" to go to "Compute"-
 
 Once inside Lambda, you will find your Lambda dashboard as shown here:
 
-INSERT SCREENSHOT
+![AWS Lambda dashboard with navigation along the left side with links for dashboard, applications, and functions.]({static}/images/aws-lambda-dashboard.png)
 
 Click on the "Functions" page from within the menu to get to your functions.
 
-INSERT SCREENSHOT
+![AWS Lambda functions list with 0 listed. There is a button on the far right that says "Create function"]({static}/images/aws-lambda-functions.png)
 
 Next, click on the "Create function" button in the top right.
 
-INSERT SCREENSHOT
+![Create a new function screen with fields for function name and runtime. The "Author from scratch" option is selected.]({static}/images/aws-lambda-create-function.png)
 
 Use the "Author from scratch" option. Name your function anything you want. For the runtime, select a version of Python.
 
@@ -74,21 +74,21 @@ Once created, you will be taken to the function's overview and code. Here you ca
 
 Scroll down to the code section and open the default lambda_function.py file. Copy and paste our basic Python code from above into the file. Then, click the "Deploy" button.
 
-INSERT SCREENSHOT
+![Code source section of the function with the lambda function file opened and some python code inside including a function called handler.]({static}/images/aws-lambda-code.png)
 
-Next, scroll down to the "Runtime settings" section. 
+Next, scroll down to the "Runtime settings" section.
 
-INSERT SCREENSHOT
+![Runtime settings section with runtime set to Python 3.8 and handler set to lambda_function.handler]({static}/images/aws-lambda-runtime-settings.png)
 
 We want to edit the "Handler" field. This is how Python will try to import your function. So, it should be the file name followed by the function name. In this case, it should be updated to `lambda_function.handler` because we kept the default file but used our function called handler. Of course, we could have just used the same name but then you wouldn't have been able to learn about this part.
 
 Now, scroll back up to the top and switch to the "Test" tab. Replace the example JSON with any number, such as 16. Next, click the "Test" button.
 
-INSERT SCREENSHOT
+![Test event with the number 16 entered as the value.]({static}/images/aws-lambda-test.png)
 
 A box will appear with the execution results, which will include the square root value. This area will also display some information about the request, such as duration time.
 
-INSERT SCREENSHOT
+![Execution results with a "succeeded" message with the value of 4 shown as the result returned.]({static}/images/aws-lambda-test-results.png)
 
 Congratulations! Your very first Lambda function has been created.
 

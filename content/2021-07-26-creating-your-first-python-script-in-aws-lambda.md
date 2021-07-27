@@ -20,7 +20,7 @@ This is where serverless functions can help! Serverless functions are scripts th
 
 ## Writing Your First Python Lambda Function
 
-For the most part, Python code within AWS Lambda is almost the same as writing normal Python scripts. However, within Lambda, you will need to specify a handler function which is then called by the environment. In most of my Lambda functions, I call this something similar to `handler` or `lambda_handler`. This looks like this:
+For the most part, Python code within AWS Lambda is almost the same as writing normal Python scripts. However, within Lambda, you will need to specify a handler function which is then called by the environment. In most of my Lambda functions, I call this something similar to handler or lambda_handler. This looks like this:
 
 ```python
 def handler(event, context):
@@ -30,7 +30,7 @@ def handler(event, context):
 
 For the handler function, we have two parameters: event and context. 
 
-The ["event" parameter](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-concepts.html#gettingstarted-concepts-event) is an object that contains data that was passed to the Lambda function. For example, if the Lambda was attached to an endpoint, then we could access the data sent to the endpoint with something like `event['body']`.
+The ["event" parameter](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-concepts.html#gettingstarted-concepts-event) is an object that contains data that was passed to the Lambda function. For example, if the Lambda was attached to an endpoint, then we could access the data sent to the endpoint with something like event['body'].
 
 The ["context" parameter](https://docs.aws.amazon.com/lambda/latest/dg/python-context.html) is an object that contains data about the Lambda function itself and its runtime environment.
 

@@ -50,9 +50,7 @@ To get started, you will need to sign in to your AWS account.
 
 Once in your AWS console, you can either click on "Services" to go to "Compute"->"Lambda" or use their search bar to search for Lambda.
 
-![f](/images/aws-console-lambda-search.png)
-
-content/images/aws-console-lambda-search.png
+![AWS console with focus on the top search bar with "lambda" entered.]({static}/images/aws-console-lambda-search.png)
 
 INSERT SCREENSHOT
 

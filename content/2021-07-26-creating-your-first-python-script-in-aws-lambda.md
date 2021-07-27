@@ -52,8 +52,6 @@ Once in your AWS console, you can either click on "Services" to go to "Compute"-
 
 ![AWS console with focus on the top search bar with "lambda" entered.]({static}/images/aws-console-lambda-search.png)
 
-INSERT SCREENSHOT
-
 Once inside Lambda, you will find your Lambda dashboard as shown here:
 
 INSERT SCREENSHOT

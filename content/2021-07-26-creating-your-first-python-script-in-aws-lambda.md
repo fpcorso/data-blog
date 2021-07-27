@@ -7,7 +7,7 @@ Slug: python-aws-lambda-function
 Authors: Frank Corso
 Summary: Just getting started with AWS Lambda? Learn how to set up your first Python Lambda function.
 Description: Just getting started with AWS Lambda? Learn how to set up your first Python Lambda function.
-Status: draft
+Status: published
 ---
 When creating a small Python script, the question that eventually comes up is *where* the code will be hosted and run. For some small scripts, you might be able just to run the code locally. But, what if you want the code to be run on a regular schedule, even when your laptop is off? Or, what if you want the script to be part of an endpoint that other scripts can access?
 

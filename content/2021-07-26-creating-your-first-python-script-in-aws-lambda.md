@@ -79,7 +79,7 @@ Next, scroll down to the "Runtime settings" section.
 
 ![Runtime settings section with runtime set to Python 3.8 and handler set to lambda_function.handler]({static}/images/aws-lambda-runtime-settings.png)
 
-We want to edit the "Handler" field. This is how Python will try to import your function. So, it should be the file name followed by the function name. In this case, it should be updated to `lambda_function.handler` because we kept the default file but used our function called handler. Of course, we could have just used the same name but then you wouldn't have been able to learn about this part .
+We want to edit the "Handler" field. This is how Python will try to import your function. So, it should be the file name followed by the function name. In this case, it should be updated to `lambda_function.handler` because we kept the default file but used our function called handler.
 
 Now, scroll back up to the top and switch to the "Test" tab. Replace the example JSON with any number, such as 16. Next, click the "Test" button.
 

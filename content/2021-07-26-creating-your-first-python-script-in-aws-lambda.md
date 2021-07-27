@@ -50,6 +50,10 @@ To get started, you will need to sign in to your AWS account.
 
 Once in your AWS console, you can either click on "Services" to go to "Compute"->"Lambda" or use their search bar to search for Lambda.
 
+![f](/images/aws-console-lambda-search.png)
+
+content/images/aws-console-lambda-search.png
+
 INSERT SCREENSHOT
 
 Once inside Lambda, you will find your Lambda dashboard as shown here:
@@ -96,4 +100,4 @@ Congratulations! Your very first Lambda function has been created.
 
 While it's useful to explore how the function works, you probably want to do a lot more with your Lambda function. In future articles, I'll look at setting up functions on a recurring schedule, safely passing credentials to it, and add other Python libraries to it.
 
-Be sure to subscribe below to get notified when the next article is published! 
+Be sure to subscribe below to get notified when the next article is published!

@@ -1,15 +1,16 @@
 ---
-Title: Recurring AWS Lambda
+Title: Setting Up a Recurring AWS Lambda Function Using AWS EventBridge
 Date: 2021-08-02 08:00
 Tags: lambda
 Category: Python
-Slug: recurring-lambda
+Slug: recurring-aws-lambda-eventbridge-schedule
+Series: AWS Lambda 101
 Authors: Frank Corso
 Summary: TBD
 Description: TBD
 Status: draft
 ---
-There are many ways for triggering a Lambda function. You could manually run it. You can have it run automatically when a new object is added to an s3 bucket. You can have it run when someone access a specific endpoint.
+There are many ways for triggering a Lambda function. You could manually run it. You can have it run automatically when a new object is added to an s3 bucket. You can have it run when someone accesses a specific endpoint.
 
 One common need is to have the Lambda function run on a recurring schedule. We can achieve this using AWS's EventBridge.
 

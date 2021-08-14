@@ -3,6 +3,7 @@ Title: How To Create Your First Python AWS Lambda Function
 Date: 2021-07-28 08:10
 Tags: lambda, aws
 Category: Python
+Series: AWS Lambda 101
 Slug: python-aws-lambda-function
 Authors: Frank Corso
 Summary: Just getting started with AWS Lambda? Learn how to set up your first Python Lambda function.

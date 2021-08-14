@@ -94,6 +94,6 @@ Congratulations! Your very first Lambda function has been created.
 
 ## Next Steps
 
-While it's useful to explore how the function works, you probably want to do a lot more with your Lambda function. In future articles, I'll look at setting up functions on a recurring schedule, safely passing credentials to it, and add other Python libraries to it.
+While it's useful to explore how the function works, you probably want to do a lot more with your Lambda function. In the next article in this series, I'll look at [setting up a Lambda function on a recurring schedule](https://frankcorso.dev/recurring-aws-lambda-eventbridge-schedule.html). In future articles, I'll look at safely passing credentials to it and add other Python libraries to it.
 
 Be sure to subscribe below to get notified when the next article is published!

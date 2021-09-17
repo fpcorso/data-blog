@@ -165,7 +165,7 @@ If you wanted to limit the HTTP request types allowed on this endpoint, the path
 
 Click the "Create" button to finish creating this endpoint. Now, you will see the domain of this new API.
 
-![A recap screen showing the API ID, stage, and invoke URL. There are links along the left for routes, ]({static}/images/aws-api-gateway-example-endpoint.png)
+![A recap screen showing the API ID, stage, and invoke URL. There are links along the left for routes, throttling, authorization, and more.]({static}/images/aws-api-gateway-example-endpoint.png)
 
 We can use this domain with our route to craft our final endpoint. For example, for the endpoint I created, the full URL is https://j485uzw9v0.execute-api.us-east-1.amazonaws.com/exampleEndpointFunction. If you do not remember what the route was, you can click the "Routes" link in the left navigation to see all routes on the API.
 
@@ -177,11 +177,11 @@ Now, let's see it in action. Open your favorite API tester, such as [Postman](ht
 
 Then, inside the body, create a new JSON object with keys of "a" and "b" and click send. You should see something like this:
 
-INSERT
+![A Postman window showing a POST request to our URL with JSON in the body with a set to 12 and b set to 3. The result shows a JSON response with result set to 36.]({static}/images/aws-api-gateway-test-success.png)
 
 Then, try passing something instead of numbers or omit one of the fields to see one of the error messages like this:
 
-INSERT
+![A Postman window showing a POST request to our URL with JSON in the body with a set to "Not a number" and b set to 3. The JSON response has an error key set to "One or both of the values are not a number."]({static}/images/aws-api-gateway-test-failed.png)
 
 Great! Everything looks like it's working correctly. We have now successfully created a Lambda function that is accessible from a URL.
 

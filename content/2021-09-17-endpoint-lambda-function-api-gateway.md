@@ -80,6 +80,58 @@ def is_numerical(value):
     return isinstance(value, int) or isinstance(value, float)
 ```
 
+Since the user is sending JSON to the endpoint, they would probably expect JSON as the response. Luckily, Lambda will automatically take care of this process if we return Python objects. So, we can update our returns:
+
+```python
+import json
+
+def lamdba_handler(event, context):
+    body = json.loads(event['body'])
+    if not is_numerical(body['a']) or not is_numerical(body['b']):
+        return {
+            'error': 'One or both of the values are not a number'
+        }
+    return {
+        'result': body['a'] * body['b']
+    }
+
+
+def is_numerical(value):
+    """"Checks if value is an int or float."""
+    return isinstance(value, int) or isinstance(value, float)
+```
+
+Lastly, the user would encounter a Lambda error if they are not submitting both `a` and `b`. So, let's add one last conditional to check that:
+
+
+```python
+import json
+
+def lamdba_handler(event, context):
+    body = json.loads(event['body'])
+    if 'a' not in body or 'b' not in body:
+        return {
+            'error': 'You must provide keys for both "a" and "b"'
+        }
+    if not is_numerical(body['a']) or not is_numerical(body['b']):
+        return {
+            'error': 'One or both of the values are not a number'
+        }
+    return {
+        'result': body['a'] * body['b']
+    }
+
+
+def is_numerical(value):
+    """"Checks if value is an int or float."""
+    return isinstance(value, int) or isinstance(value, float)
+```
+
+Great! Our code is looking good so let's get this into a Lambda function.
+
+## Setting Up Our Lambda Function
+
+
 SET UP LAMBDA FUNCTION
 
 SETTING UP API GATEWAY

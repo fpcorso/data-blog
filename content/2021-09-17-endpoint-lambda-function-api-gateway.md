@@ -143,7 +143,13 @@ Great, our Lambda function is now ready!
 
 ## Setting Up Our API Gateway Endpoint
 
-In your AWS console, you can either click on "Services" to go to "Networking & Content Delivery"->"API Gateway" or use their search bar to search for it. 
+In API Gateway, there are many different types of APIs that you can create. Since we are creating a single endpoint, we will use HTTP API. However, there are many other types you could consider such as REST and WebSocket.
+
+To get started, in your AWS console, you can either click on "Services" to go to "Networking & Content Delivery"->"API Gateway" or use their search bar to search for it.
+
+![The search bar in AWS showing "api gateway" in the search bar with a result of "API Gateway".]({static}/images/aws-api-gateway-search.png)
+
+On the API Gateway page, you will see some navigation along the left. Click on "APIs". 
 
 
 DOING FULL TEST

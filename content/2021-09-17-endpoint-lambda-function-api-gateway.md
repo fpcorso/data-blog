@@ -149,7 +149,12 @@ To get started, in your AWS console, you can either click on "Services" to go to
 
 ![The search bar in AWS showing "api gateway" in the search bar with a result of "API Gateway".]({static}/images/aws-api-gateway-search.png)
 
-On the API Gateway page, you will see some navigation along the left. Click on "APIs". 
+If you have not created any APIs yet in API Gateway, you will be directed to the page to select which type of API you want to build. If you already have created APIs click the APIs link in the left navigation menu and then click "build". In either case, select the "HTTP API" option.
+
+
+
+
+
 
 
 DOING FULL TEST

@@ -131,6 +131,12 @@ Great! Our code is looking good so let's get this into a Lambda function.
 
 ## Setting Up Our Lambda Function
 
+First, let's go ahead and create a new Lambda function. If you've never set up one before, [check out my "How To Create Your First Python AWS Lambda Function" article](https://frankcorso.dev/python-aws-lambda-function.html).
+
+Inside the Lambda function admin area, paste the code above into the "Code" tab as shown below:
+
+
+
 
 SET UP LAMBDA FUNCTION
 

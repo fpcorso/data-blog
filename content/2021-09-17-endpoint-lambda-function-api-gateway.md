@@ -20,7 +20,7 @@ In this article, I will set up a basic Lambda function that accepts two numbers,
 To get started, let's write a very basic lambda handler:
 
 ```python
-def lamdba_handler(event, context):
+def lambda_handler(event, context):
     return 'Something'
 ```
 
@@ -48,7 +48,7 @@ So, in order to get the JSON sent with the request, we will use `event['body']` 
 ```python
 import json
 
-def lamdba_handler(event, context):
+def lambda_handler(event, context):
     body = json.loads(event['body'])
     return 'Something'
 ```
@@ -58,7 +58,7 @@ For this example project, the Lambda function will be expecting the user to send
 ```python
 import json
 
-def lamdba_handler(event, context):
+def lambda_handler(event, context):
     body = json.loads(event['body'])
     return body['a'] * body['b']
 ```
@@ -68,7 +68,7 @@ However, if someone sends in values that are not numbers, this will result in an
 ```python
 import json
 
-def lamdba_handler(event, context):
+def lambda_handler(event, context):
     body = json.loads(event['body'])
     if not is_numerical(body['a']) or not is_numerical(body['b']):
         return 'One or both of the values are not a number'
@@ -85,7 +85,7 @@ Since the user is sending JSON to the endpoint, they would probably expect JSON 
 ```python
 import json
 
-def lamdba_handler(event, context):
+def lambda_handler(event, context):
     body = json.loads(event['body'])
     if not is_numerical(body['a']) or not is_numerical(body['b']):
         return {
@@ -107,7 +107,7 @@ Lastly, the user would encounter a Lambda error if they are not submitting both 
 ```python
 import json
 
-def lamdba_handler(event, context):
+def lambda_handler(event, context):
     body = json.loads(event['body'])
     if 'a' not in body or 'b' not in body:
         return {
@@ -173,7 +173,17 @@ Great, our endpoint is set up!
 
 ## Testing Our Endpoint
 
-Blah
+Now, let's see it in action. Open your favorite API tester, such as [Postman](https://www.postman.com/). Create a new request with any HTTP method and paste in the full URL to your API route.
+
+Then, inside the body, create a new JSON object with keys of "a" and "b" and click send. You should see something like this:
+
+INSERT
+
+Then, try passing something instead of numbers or omit one of the fields to see one of the error messages like this:
+
+INSERT
+
+Great! Everything looks like it's working correctly. We have now successfully created a Lambda function that is accessible from a URL.
 
 ## Next Steps
 

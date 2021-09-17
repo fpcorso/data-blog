@@ -135,12 +135,15 @@ First, let's go ahead and create a new Lambda function. If you've never set up o
 
 Inside the Lambda function admin area, paste the code above into the "Code" tab as shown below:
 
+![Example AWS Lambda function with our sample code above entered into the code tab.]({static}/images/aws-lambda-example-endpoint-function-code.png)
+
+Click the white "Deploy" button right above the code to finish setting it up.
+
+Great, our Lambda function is now ready!
+
+## Setting Up Our API Gateway Endpoint
 
 
-
-SET UP LAMBDA FUNCTION
-
-SETTING UP API GATEWAY
 
 DOING FULL TEST
 

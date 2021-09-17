@@ -157,16 +157,24 @@ If you have not created any APIs yet in API Gateway, you will be directed to the
 
 Once on the "Create an API" page, add an integration and select Lambda. Once selected, you will be prompted to select which Lambda function. Underneath, name your API. I like to use something descriptive that is similar to the Lambda function's name.
 
-INSER SCRR
+![The first step to creating an API. This API has a "Lambda" integration with a Lambda function set as example endpoint function. The API name field is also filled in.]({static}/images/aws-api-gateway-create-api-step-1.png)
 
-If you wanted to limit the HTTP request types allowed on this endpoint, the path for the endpoint, or the "stages" you can click "Next" to set those up. For this endpoint, I'll keep the defaults and click "Review and Create".
+If you wanted to limit the HTTP request types allowed on this endpoint, the path for the endpoint, or the "stages" you can click "Next" to set those up. For this endpoint, I'll keep the defaults and click "Review and Create". On this page, we can verify the name, integrations, routes, and stages.
 
+![The last step for creating an API. This API has example endpoint as the name with a Lambda integration.]({static}/images/aws-api-gateway-create-api-step-4.png)
 
+Click the "Create" button to finish creating this endpoint. Now, you will see the domain of this new API.
 
+INSERT
 
+We can use this domain with our route to craft our final endpoint. For example, for the endpoint I created, the full URL is https://j485uzw9v0.execute-api.us-east-1.amazonaws.com/exampleEndpointFunction. If you do not remember what the route was, you can click the "Routes" link in the left navigation to see all routes on the API.
 
+Great, our endpoint is set up!
 
-DOING FULL TEST
+## Testing Our Endpoint
 
-NEXT STEPS
+Blah
 
+## Next Steps
+
+Blah

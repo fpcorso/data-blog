@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Frank Corso'
 SITENAME = "Frank's Blog"
-SITESUBTITLE = 'Data lover | Python dev'
+SITESUBTITLE = 'Data lover | PHP & Python dev'
 SITEURL = 'localhost:8000'
 RELATIVE_URLS = True
 THEME = 'theme'

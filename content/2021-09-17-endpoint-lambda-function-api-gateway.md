@@ -2,7 +2,7 @@
 Title: endpoint lambda function api gateway
 Date: 2021-09-20 08:00:00
 Tags: aws
-Category: python
+Category: Python
 Slug: endpoint-aws-lambda-function-api-gateway
 Authors: Frank Corso
 Summary: TBD
@@ -143,6 +143,7 @@ Great, our Lambda function is now ready!
 
 ## Setting Up Our API Gateway Endpoint
 
+In your AWS console, you can either click on "Services" to go to "Networking & Content Delivery"->"API Gateway" or use their search bar to search for it. 
 
 
 DOING FULL TEST

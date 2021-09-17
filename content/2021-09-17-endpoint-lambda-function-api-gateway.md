@@ -38,8 +38,8 @@ However, with the API Gateway endpoint, the event variable will include a variet
     "rawQueryString": "",
     "headers": {},
     "requestContext": {},
-    "body": '{\r\n    "exampleJSONKey": "Random text"\r\n}',
-    "isBase64Encoded": False
+    "body": "{\"exampleJSONKey\": \"Random text\"}",
+    "isBase64Encoded": false
 }
 ```
 

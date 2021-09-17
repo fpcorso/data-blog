@@ -165,7 +165,7 @@ If you wanted to limit the HTTP request types allowed on this endpoint, the path
 
 Click the "Create" button to finish creating this endpoint. Now, you will see the domain of this new API.
 
-INSERT
+![A recap screen showing the API ID, stage, and invoke URL. There are links along the left for routes, ]({static}/images/aws-api-gateway-example-endpoint.png)
 
 We can use this domain with our route to craft our final endpoint. For example, for the endpoint I created, the full URL is https://j485uzw9v0.execute-api.us-east-1.amazonaws.com/exampleEndpointFunction. If you do not remember what the route was, you can click the "Routes" link in the left navigation to see all routes on the API.
 

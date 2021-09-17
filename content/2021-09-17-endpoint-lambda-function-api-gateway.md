@@ -145,12 +145,21 @@ Great, our Lambda function is now ready!
 
 In API Gateway, there are many different types of APIs that you can create. Since we are creating a single endpoint, we will use HTTP API. However, there are many other types you could consider such as REST and WebSocket.
 
+Additionally, you can have each endpoint accept different HTTP request types, such as GET and POST, and you can also use "stages" to have different versions of each for development. To keep our endpoint simple, we will only use the default "stage" and accept all HTTP request types.
+
 To get started, in your AWS console, you can either click on "Services" to go to "Networking & Content Delivery"->"API Gateway" or use their search bar to search for it.
 
 ![The search bar in AWS showing "api gateway" in the search bar with a result of "API Gateway".]({static}/images/aws-api-gateway-search.png)
 
 If you have not created any APIs yet in API Gateway, you will be directed to the page to select which type of API you want to build. If you already have created APIs click the APIs link in the left navigation menu and then click "build". In either case, select the "HTTP API" option.
 
+![The API Gateway new API page. It shows an area to "Choose an API type" with several listed including HTTP API, each with a "Build" button.]({static}/images/aws-api-gateway-api-options.png)
+
+Once on the "Create an API" page, add an integration and select Lambda. Once selected, you will be prompted to select which Lambda function. Underneath, name your API. I like to use something descriptive that is similar to the Lambda function's name.
+
+INSER SCRR
+
+If you wanted to limit the HTTP request types allowed on this endpoint, the path for the endpoint, or the "stages" you can click "Next" to set those up. For this endpoint, I'll keep the defaults and click "Review and Create".
 
 
 

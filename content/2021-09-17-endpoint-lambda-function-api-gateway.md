@@ -187,4 +187,6 @@ Great! Everything looks like it's working correctly. We have now successfully cr
 
 ## Next Steps
 
-Blah
+Now that you have set up a Lambda function and connected it to an API, you are on your way to creating new serverless endpoints that can accept and return data. In future articles, I'll look at safely passing credentials to it and adding other Python libraries to it.
+
+Be sure to subscribe below to get notified when the next article is published! 

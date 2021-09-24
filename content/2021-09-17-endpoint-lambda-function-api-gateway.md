@@ -1,7 +1,7 @@
 ---
 Title: How To Create an Endpoint for Your AWS Lambda Function Using AWS API Gateway
 Date: 2021-09-24 08:00:00
-Tags: aws
+Tags: aws, lambda, api
 Category: Python
 Slug: aws-lambda-function-endpoint-api-gateway
 Series: AWS Lambda 101

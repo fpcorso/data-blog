@@ -1,12 +1,13 @@
 ---
-Title: endpoint lambda function api gateway
-Date: 2021-09-20 08:00:00
+Title: How To Create an Endpoint for Your AWS Lambda Function Using AWS API Gateway
+Date: 2021-09-24 08:00:00
 Tags: aws
 Category: Python
-Slug: endpoint-aws-lambda-function-api-gateway
+Slug: aws-lambda-function-endpoint-api-gateway
+Series: AWS Lambda 101
 Authors: Frank Corso
-Summary: TBD
-Description: TBD
+Summary: Need to send and retrieve data from your AWS Lambda function via HTTP request? Learn how to create an endpoint that connects to it using AWS API Gateway.
+Description: Need to send and retrieve data from your AWS Lambda function via HTTP request? Learn how to create an endpoint that connects to it using AWS API Gateway.
 Status: draft
 ---
 In my previous articles in this series, I looked at setting up an AWS Lambda function and setting it up on a recurring schedule. Another common use of a serverless function is connecting it to an endpoint to be able to send data to it or receive data from it.

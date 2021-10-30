@@ -19,8 +19,8 @@ collections:
       - {label: "Category", name: "Category", widget: "string"}
       - {label: "Slug", name: "Slug", widget: "string"}
       - {label: "Series", name: "Series", widget: "string", required: false}
-      - {label: "Author", name: "Authors", widget: "string"}
-      - {label: "Summary", name: "Summary", widget: "string"}
-      - {label: "Meta Description", name: "Description", widget: "string"}
+      - {label: "Author", name: "Authors", widget: "string", default: "Frank Corso"}
+      - {label: "Summary", name: "Summary", widget: "string", default: "TBD"}
+      - {label: "Meta Description", name: "Description", widget: "string", default: "TBD"}
       - {label: "Status", name: "Status", widget: "string", default: "draft"}
       - {label: "Body", name: "body", widget: "markdown"}

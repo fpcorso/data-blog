@@ -1,14 +1,14 @@
 ---
-Title: Passing Credentials To AWS Lamda Using Parameter Store
+Title: Passing Credentials To AWS Lambda Using Parameter Store
 Date: 2021-11-01 08:00
 Tags: aws, lambda
 Category: Python
 Slug: passing-credentials-aws-lambda-parameter-store
 Series: AWS Lambda 101
 Authors: Frank Corso
-Summary: TBD
-Description: TBD
-Status: draft
+Summary: Need to pass credentials or secrets to your Python Lambda functions? Learn how to use AWS Systems Manager for securely storing and retrieving secrets.
+Description: Need to pass credentials or secrets to your Python Lambda functions? Learn how to use AWS Systems Manager for securely storing and retrieving secrets.
+Status: published
 ---
 Up until now, all my articles in this AWS Lambda 101 series has only used simple Python code that does not interact with any data or service outside the function. However, in many cases, you will want to pull data from somewhere or send data to a service.
 

@@ -1,5 +1,5 @@
 ---
-Title: Passing Credentials To AWS Lambda Using Parameter Store
+Title: Passing Credentials to AWS Lambda Using Parameter Store
 Date: 2021-11-01 08:00
 Tags: aws, lambda
 Category: Python

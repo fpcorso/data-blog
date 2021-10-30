@@ -81,7 +81,31 @@ response = aws_client.get_parameter(
 Since we are using an encrypted value, we need to set WithDecryption to true. The name field is case-sensitive and must exactly match the name you gave the parameter. This returns an object with several values as shown here:
 
 ```
-
+:::python
+{
+    'Parameter': {
+        'Name': 'example_secret',
+        'Type': 'SecureString',
+        'Value': 'examplepassword',
+        'Version': 1,
+        'LastModifiedDate': datetime.datetime(2021, 10, 30, 17, 45, 50, 660000, tzinfo=tzlocal()),
+        'ARN': 'arn:aws:ssm:us-east-1:647709874538:parameter/example_secret',
+        'DataType': 'text'
+    },
+    'ResponseMetadata': {
+        'RequestId': '48a84d0a-bad9-415a-b13f-6de2814f4330',
+        'HTTPStatusCode': 200,
+        'HTTPHeaders': {
+            'server': 'Server',
+            'date': 'Sat, 30 Oct 2021 18:19:41 GMT',
+            'content-type': 'application/x-amz-json-1.1',
+            'content-length': '220',
+            'connection': 'keep-alive',
+            'x-amzn-requestid': '48a84d0a-bad9-415a-b13f-6de2814f4330'
+        },
+        'RetryAttempts': 0
+    }
+}
 ```
 
 Now, let's put this within a Lambda handler:
@@ -131,11 +155,13 @@ Check the checkbox for the "AmazonSSMReadOnlyAccess" permission and then click "
 
 Now, go back to the configuration screen for the Lambda function (or refresh it if you kept it open). In the resource summary drop down, you should now see the "AWS Systems Manager" listed. If you select it, you should see the actions list "Allow: ssm:Get*" with other permissions.
 
-![The resource panel on the permissions page. The drop down has AWS Systems Manager selected. In the Actions column, it lists three "allow" permissions including ssm get *.](/images/aws-lambda-resource-summary.png)
+![The resource panel on the permissions page. The drop down has AWS Systems Manager selected. In the Actions column, it lists three "allow" permissions including ssm get *.]({static}/images/aws-lambda-resource-summary.png)
 
 Our Lambda is now ready to test.
 
 ## Testing Our Function
+
+
 
 Blah
 

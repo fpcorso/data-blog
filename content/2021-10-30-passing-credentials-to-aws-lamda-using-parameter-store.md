@@ -21,7 +21,7 @@ While there are several ways you can do this, the easiest and most affordable wa
 
 To being, log into your AWS account. Once in your AWS console, you can either click on "Services" to go to "Management & Governance"->"Systems Manager" or use their search bar to search for System Manager.
 
-
+![AWS console with focus on the top search bar with "systems manager" entered.]({static}/images/aws-systems-manager-search.png)
 
 CREATING LAMBDA FUNCTION
 

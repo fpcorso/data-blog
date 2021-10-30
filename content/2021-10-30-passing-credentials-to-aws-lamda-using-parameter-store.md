@@ -23,6 +23,32 @@ To being, log into your AWS account. Once in your AWS console, you can either cl
 
 ![AWS console with focus on the top search bar with "systems manager" entered.]({static}/images/aws-systems-manager-search.png)
 
+Once inside Systems Manager, you will find your dashboard as shown here:
+
+![AWS Systems Manager dashboard with navigation along the left side with links for cloudwatch dashboard, application manager, and parameter store.](/images/aws-systems-manager-dashboard.png)
+
+Click on the "Parameter Store" page from within the menu to get to your values. If you do not have any values yet, you will see a landing page. Click the "Create parameter" button.
+
+On the create parameter page, enter in a name for the value. This name will be how you retrieve the value and is case-sensitive. For example, you can name this "db_username" or "slack_token".
+
+In the description, enter some text to help you remember what this value is for.
+
+For most secrets, you can stay on the "Standard" tier.
+
+![The top section of the create parameter page with fields for name and description with the standard tier selected.](/images/aws-secrets-manager-create-parameter-1.png)
+
+For the type, for credentials, passwords, and secrets, you will want to use "SecureString". The SecureString type is for any sensitive data that needs to be stored and referenced in a secured way. This uses AWS Key Management Service to encrypt the value. For getting started, you can leave all the defaults here.
+
+Lastly, enter in the value for this secret.
+
+![The second part of the create parameter page showing the type set to "secure string" and KMS key source kept on default of my current account.](/images/aws-secrets-manager-create-parameter-2.png)
+
+If you have a lot of values in Parameter Store, you can use tags to help organize them. For this value, I will skip adding tags.
+
+Now, click the "Create parameter" button at the bottom of the page. You will see your new parameter in the "My Parameters" table.
+
+![The "my parameters" page showing a table of parameters with our new value listed in the table.](/images/aws-secrets-manager-my-parameters.png)
+
 CREATING LAMBDA FUNCTION
 
 ADDING PERMISSION

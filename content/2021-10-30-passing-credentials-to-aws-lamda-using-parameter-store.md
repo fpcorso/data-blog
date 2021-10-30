@@ -130,7 +130,7 @@ Important Note: You should never print or log credentials or secrets in producti
 
 Inside the Lambda function admin area, paste the code above into the "Code" tab as shown below:
 
-![The code tab for a Lambda function with the code source including a "lambda_function.py" file. Inside is our code.](/images/aws-lambda-code-source.png)
+![The code tab for a Lambda function with the code source including a "lambda_function.py" file. Inside is our code.]({static}/images/aws-lambda-code-source.png)
 
 Once pasted in, click the "Deploy" button to save it.
 

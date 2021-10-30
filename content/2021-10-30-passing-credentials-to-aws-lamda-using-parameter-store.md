@@ -1,9 +1,10 @@
 ---
 Title: Passing Credentials To AWS Lamda Using Parameter Store
-Date: 10/30/2021
-Tags: AWS
+Date: 2021-11-01 08:00
+Tags: aws, lambda
 Category: Python
 Slug: passing-credentials-aws-lambda-parameter-store
+Series: AWS Lambda 101
 Authors: Frank Corso
 Summary: TBD
 Description: TBD

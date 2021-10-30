@@ -122,7 +122,6 @@ def lambda_handler(event, context):
         Name='example_secret',
         WithDecryption=True
     )
-    print(response)
     
     return f'Our value is {response['Parameter']['Value']}'
 ```
@@ -131,7 +130,9 @@ Important Note: You should never print or log credentials or secrets in producti
 
 Inside the Lambda function admin area, paste the code above into the "Code" tab as shown below:
 
-INSERT SCREENSHOT
+![The code tab for a Lambda function with the code source including a "lambda_function.py" file. Inside is our code.](/images/aws-lambda-code-source.png)
+
+Once pasted in, click the "Deploy" button to save it.
 
 Now, if we tried to run this code, we will get an error that our function is not authorized to perform the getParameter action. So, let's give it that permission.
 
@@ -161,8 +162,16 @@ Our Lambda is now ready to test.
 
 ## Testing Our Function
 
+Switch to the "Test" tab for the Lambda function. Then, click the "Test" button.
 
+You will see a new "Execution result: succeeded" panel appear. If we click on the details, we will see the response as well as log output.
 
-Blah
+![A panel that says execution result: succeeded. It shows the returned value was "Our value is example password".]({static}/images/aws-lambda-testfunction-test-results.png)
+
+We see our secret that was saved in Parameter Store has made it to the Lambda function and was returned in the response!
 
 ## Next Steps
+
+Now that you have stored values in Parameter Store and retrieved them from a Lambda function, you can start setting up Lambda functions that can access databases and other services. For example, you can set up a Twitter bot and keep your access keys in Parameter Store. Or, you can set up a recurring monitor that checks your database and sends results to Slack.
+
+Be sure to subscribe below to get notified when the next article is published! 

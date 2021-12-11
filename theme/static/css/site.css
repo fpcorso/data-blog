@@ -43,14 +43,14 @@ Sitewide Classes/IDs
     margin-bottom: -200px;
 }
 
-#page main h1, #page main h2 {
+#page main h1, #page main h2, #page main h3 {
     color: #2a8737;
 }
 
 @media screen and (min-width: 800px) {
-	#page, footer  {
-		width: 800px;
-	}
+    #page, footer  {
+        width: 800px;
+    }
 }
 
 /*****

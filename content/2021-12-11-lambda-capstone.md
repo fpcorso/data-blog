@@ -171,8 +171,6 @@ def lambda_handler(event, context):
     client.create_tweet(text=tweet)
 ```
 
-
-
 ## Creating Our Lambda Function
 
 XXXX

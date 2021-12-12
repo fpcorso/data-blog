@@ -183,6 +183,13 @@ For this function, I'll name it `daysUntilNextYearTwitterBot` and use Python 3.9
 
 ![Create new function screen with "Author from scratch" selected. The function name is filled in and the runtime is set to Python 3.9.](/images/aws-lambda-create-new.png)
 
+### Adding SSM Permission
+
+XXXX
+
+### Uploading The Python Code
+
+XXXX
 
 ## Scheduling The Lambda Function
 

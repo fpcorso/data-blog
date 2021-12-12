@@ -181,7 +181,7 @@ To get started, you will need to sign in to your AWS account and go to AWS Lambd
 
 For this function, I'll name it `daysUntilNextYearTwitterBot` and use Python 3.9. We can leave everything else as the defaults.
 
-![Create new function screen with "Author from scratch" selected. The function name is filled in and the runtime is set to Python 3.9.](/images/aws-lambda-create-new.png)
+![Create new function screen with "Author from scratch" selected. The function name is filled in and the runtime is set to Python 3.9.]({static}/images/aws-lambda-create-new.png)
 
 ### Adding SSM Permission
 

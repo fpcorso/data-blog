@@ -61,12 +61,25 @@ Click on the "Parameter Store" page from within the menu to get to your values. 
 
 For the Twitter secrets, I will name them `twitter_api_key`, `twitter_api_secret`, `twitter_access_token`, and `twitter_access_secret`.
 
-For each of these, you can use the "Standard" tier. You will also want to use the "SecureString" type to keep these encrypted.
+For each of these, you can use the "Standard" tier. You will also want to use the "SecureString" type to keep these encrypted. Keep the defaults for everything else.
 
+Lastly, enter the value for the parameter.
+
+![The second part of the create parameter page showing the type set to "secure string" and KMS key source kept on default of my current account.]({static}/images/aws-secrets-manager-create-parameter-2.png)
+
+Once filled in, click to create the parameter. Once you create all 4 parameters, it will look like this:
+
+![AWS System Manager's Parameter Store with 4 parameters listed. Each on standard tier and as a secure string type.]({static}/images/aws-parameter-store-twitter-keys.png)
+
+Great! Our Twitter keys are generated and in a place we can use them.
 
 ## Creating The Python Code
 
-XXXXX
+Now, let's create our Python code for the Lambda function. While we could write all the code within one main function, I'll separate out two other functions to make it easier to test each piece locally as well as make it easier to add to it in the future.
+
+To start, we can add our imports:
+
+
 
 ## Creating Our Lambda Function
 

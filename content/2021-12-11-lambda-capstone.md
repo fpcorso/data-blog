@@ -51,7 +51,7 @@ Great! We have our Twitter app set up and have the keys we need. Next, we need t
 
 ### Adding Our Twitter Keys To Parameter Store
 
-XXXXX
+If you haven't used Parameter Store before, you can review what it is and how to use it by [reading my Passing Credentials to AWS Lambda Using Parameter Store article](https://frankcorso.dev/passing-credentials-aws-lambda-parameter-store.html).
 
 ## Creating The Python Code
 

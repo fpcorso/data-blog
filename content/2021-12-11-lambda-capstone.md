@@ -203,7 +203,7 @@ Now, go back to the configuration screen for the Lambda function (or refresh it 
 
 ![The resource panel on the permissions page. The drop-down has AWS Systems Manager selected. In the Actions column, it lists three "allow" permissions including ssm get *.]({static}/images/aws-lambda-resource-summary.png)
 
-Our Lambda is now ready to test.
+We are now ready to add our code.
 
 ### Uploading The Python Code
 

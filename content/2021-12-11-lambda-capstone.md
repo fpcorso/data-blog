@@ -102,7 +102,7 @@ def get_twitter_keys():
     # Get our keys from Parameter Store.
     parameters = aws_client.get_parameters(
         Names=[
-            'twitter_api_key'
+            'twitter_api_key',
             'twitter_api_secret',
             'twitter_access_token',
             'twitter_access_secret'
@@ -185,7 +185,25 @@ For this function, I'll name it `daysUntilNextYearTwitterBot` and use Python 3.9
 
 ### Adding SSM Permission
 
-XXXX
+For this Lambda function, we are going to attach the permission needed to the Lambda function's role. To do so, go to the "Configuration" tab on the Lambda and select "Permissions" from the sidebar.
+
+![The configuration page for a lambda function with the left navigation set to Permissions. The top panel is an "Execution role" with a clickable role name shown.]({static}/images/aws-lambda-configuration-permissions.png)
+
+Within the "Execution role" panel, click on the role name to open up that role in IAM.
+
+![The role summary screen in IAM. List policies applied with a blue "Attach policies" button shown.]({static}/images/aws-iam-role.png)
+
+Click the "Attach policies" button. On the add permissions screen, search for the "AmazonSSMReadOnlyAccess" permission. This will allow your Lambda function to read from Systems Manager.
+
+![Add permissions screen with "AmazonSSMRead" entered in search bar and "AmazonSSMReadOnlyAccess" being listed in results. This result has its checkbox checked.]({static}/images/aws-iam-add-permissions.png)
+
+Check the checkbox for the "AmazonSSMReadOnlyAccess" permission and then click "Attach policiy".
+
+Now, go back to the configuration screen for the Lambda function (or refresh it if you kept it open). In the resource summary drop down, you should now see the "AWS Systems Manager" listed. If you select it, you should see the actions list "Allow: ssm:Get*" with other permissions.
+
+![The resource panel on the permissions page. The drop-down has AWS Systems Manager selected. In the Actions column, it lists three "allow" permissions including ssm get *.]({static}/images/aws-lambda-resource-summary.png)
+
+Our Lambda is now ready to test.
 
 ### Uploading The Python Code
 

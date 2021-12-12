@@ -211,7 +211,10 @@ XXXX
 
 ## Scheduling The Lambda Function
 
-XXXX
+If you haven't used Eventbridge before, you can review what it is and how to use it by [reading my "Setting Up a Recurring AWS Lambda Function Using AWS EventBridge" article](https://frankcorso.dev/recurring-aws-lambda-eventbridge-schedule.html).
+
+To get started, you will need to sign in to your AWS account and go to EventBridge. Once there, click to create a new rule.
+
 
 ## Next Steps
 

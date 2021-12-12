@@ -225,7 +225,7 @@ We will leave the event bus section as the default for this.
 
 In the "Select targets" section, select "Lambda function" for the target and then select your Lambda function in the "Function" dropdown. For most functions, you will keep the default settings for the function here.
 
-![EventBridge target settings. Shows a dropdown for target with "Lambda function" entered and a dropdown for function with our bot function selected.](/images/aws-eventbridge-select-targets.png)
+![EventBridge target settings. Shows a dropdown for target with "Lambda function" entered and a dropdown for function with our bot function selected.]({static}/images/aws-eventbridge-select-targets.png)
 
 If you have a lot of rules, you can set up some tags to organize them. I'll skip that here.
 

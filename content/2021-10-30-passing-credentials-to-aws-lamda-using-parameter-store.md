@@ -6,8 +6,12 @@ Category: Python
 Slug: passing-credentials-aws-lambda-parameter-store
 Series: AWS Lambda 101
 Authors: Frank Corso
-Summary: Need to pass credentials or secrets to your Python Lambda functions? Learn how to use AWS Systems Manager for securely storing and retrieving secrets.
-Description: Need to pass credentials or secrets to your Python Lambda functions? Learn how to use AWS Systems Manager for securely storing and retrieving secrets.
+Summary: Need to pass credentials or secrets to your Python Lambda functions?
+  Learn how to use AWS Systems Manager for securely storing and retrieving
+  secrets.
+Description: Need to pass credentials or secrets to your Python Lambda
+  functions? Learn how to use AWS Systems Manager for securely storing and
+  retrieving secrets.
 Status: published
 ---
 Up until now, all my articles in this AWS Lambda 101 series has only used simple Python code that does not interact with any data or service outside the function. However, in many cases, you will want to pull data from somewhere or send data to a service.
@@ -20,7 +24,7 @@ While there are several ways you can do this, the easiest and most affordable wa
 
 ## Adding a Value to Parameter Store
 
-To being, log into your AWS account. Once in your AWS console, you can either click on "Services" to go to "Management & Governance"->"Systems Manager" or use their search bar to search for System Manager.
+To begin, log into your AWS account. Once in your AWS console, you can either click on "Services" to go to "Management & Governance"->"Systems Manager" or use their search bar to search for System Manager.
 
 ![AWS console with focus on the top search bar with "systems manager" entered.]({static}/images/aws-systems-manager-search.png)
 
@@ -175,4 +179,4 @@ We see our secret that was saved in Parameter Store has made it to the Lambda fu
 
 Now that you have stored values in Parameter Store and retrieved them from a Lambda function, you can start setting up Lambda functions that can access databases and other services. For example, you can set up a Twitter bot and keep your access keys in Parameter Store. Or, you can set up a recurring monitor that checks your database and sends results to Slack.
 
-Be sure to subscribe below to get notified when the next article is published! 
+Be sure to subscribe below to get notified when the next article is published!

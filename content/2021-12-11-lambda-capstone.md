@@ -51,7 +51,7 @@ Great! We have our Twitter app set up and have the keys we need. Next, we need t
 
 ### Adding Our Twitter Keys To Parameter Store
 
-If you haven't used Parameter Store before, you can review what it is and how to use it by [reading my Passing Credentials to AWS Lambda Using Parameter Store article](https://frankcorso.dev/passing-credentials-aws-lambda-parameter-store.html).
+If you haven't used Parameter Store before, you can review what it is and how to use it by [reading my "Passing Credentials to AWS Lambda Using Parameter Store" article](https://frankcorso.dev/passing-credentials-aws-lambda-parameter-store.html).
 
 To begin, log into your AWS console and go to the AWS System Manager.
 
@@ -75,7 +75,9 @@ Great! Our Twitter keys are generated and in a place we can use them.
 
 ## Creating The Python Code
 
-Now, let's create our Python code for the Lambda function. While we could write all the code within one main function, I'll separate out two other functions to make it easier to test each piece locally as well as make it easier to add to it in the future.
+Now, let's create our Python code for the Lambda function. So we do not need to change any of the Lambda runtime settings, we will use the default filename of `lambda_function.py`.
+
+While we could write all the code within one main function, I'll separate out two other functions to make it easier to test each piece locally as well as make it easier to add to it in the future.
 
 To start, we can add our imports:
 
@@ -173,7 +175,14 @@ def lambda_handler(event, context):
 
 ## Creating Our Lambda Function
 
-XXXX
+If you haven't used AWS Lambda before, you can review what it is and how to use it by [reading my "How To Create Your First Python AWS Lambda Function" article](https://frankcorso.dev/python-aws-lambda-function.html).
+
+To get started, you will need to sign in to your AWS account and go to AWS Lambda. Once there, click to create a new function.
+
+For this function, I'll name it `daysUntilNextYearTwitterBot` and use Python 3.9. We can leave everything else as the defaults.
+
+![Create new function screen with "Author from scratch" selected. The function name is filled in and the runtime is set to Python 3.9.](/images/aws-lambda-create-new.png)
+
 
 ## Scheduling The Lambda Function
 

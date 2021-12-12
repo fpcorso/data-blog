@@ -53,6 +53,17 @@ Great! We have our Twitter app set up and have the keys we need. Next, we need t
 
 If you haven't used Parameter Store before, you can review what it is and how to use it by [reading my Passing Credentials to AWS Lambda Using Parameter Store article](https://frankcorso.dev/passing-credentials-aws-lambda-parameter-store.html).
 
+To begin, log into your AWS console and go to the AWS System Manager.
+
+![AWS Systems Manager dashboard with navigation along the left side with links for cloudwatch dashboard, application manager, and parameter store.]({static}/images/aws-systems-manager-dashboard.png)
+
+Click on the "Parameter Store" page from within the menu to get to your values. If you do not have any values yet, you will see a landing page. In here, you will want to create 4 different parameters. You can name these whatever you would like but make a note of which name you use for which secret as we will use the names to retrieve them.
+
+For the Twitter secrets, I will name them `twitter_api_key`, `twitter_api_secret`, `twitter_access_token`, and `twitter_access_secret`.
+
+For each of these, you can use the "Standard" tier. You will also want to use the "SecureString" type to keep these encrypted.
+
+
 ## Creating The Python Code
 
 XXXXX

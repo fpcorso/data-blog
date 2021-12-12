@@ -215,6 +215,23 @@ If you haven't used Eventbridge before, you can review what it is and how to use
 
 To get started, you will need to sign in to your AWS account and go to EventBridge. Once there, click to create a new rule.
 
+On the rule creation page, you will need to fill in a few fields. First, enter in a name. I recommend something that includes what it does and how often. For example, something such as "runDaysUntilNextYearTweetBotDaily". Next, fill in a description.
+
+In the "Define pattern" section, click on "Schedule". For this function, I am going to use a cron expression to run it every day at 10:00 AM.
+
+![EventBridge name and pattern settings. Name and description fields are filled in and the define pattern section is set to Schedule.]({static}/images/aws-eventbridge-rule-new.png)
+
+We will leave the event bus section as the default for this.
+
+In the "Select targets" section, select "Lambda function" for the target and then select your Lambda function in the "Function" dropdown. For most functions, you will keep the default settings for the function here.
+
+![EventBridge target settings. Shows a dropdown for target with "Lambda function" entered and a dropdown for function with our bot function selected.](/images/aws-eventbridge-select-targets.png)
+
+If you have a lot of rules, you can set up some tags to organize them. I'll skip that here.
+
+Lastly, click the "Create" button.
+
+Great job! Your Lambda is now set on a recurring schedule.
 
 ## Next Steps
 

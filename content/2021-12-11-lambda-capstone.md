@@ -198,9 +198,13 @@ We are now ready to add our code.
 
 Since we are using a 3rd party package, Tweepy, we need to take an additional step beyond just copying our Python code into the Lambda editor.
 
-There are several ways we could deploy this code but, to keep things simple, we will create a zip file of all code and then upload it inside the Lambda editor.
+There are several ways we could deploy this code. Since our code is small and we want to keep this simple, we will create a zip file of all code and then upload it inside the Lambda editor.
 
-To get started, we have to install the Python packages into a local directory. If you are creating this code within a virtual environment, you can run `pip freeze > requirements.txt` to generate a file we can install the packages from. This will look sort of like this:
+To get started, we have to install the Python packages into a local directory. If you are creating this code within a virtual environment, you can run `pip freeze > requirements.txt` to generate a file we can install the packages from.
+
+Note: The Lambda environment already includes boto3 so you do not need to add that into the requirements file.
+
+This will look sort of like this:
 
 ```
 certifi==2021.10.8
@@ -219,6 +223,41 @@ From here, I will install these packages into a directory called "packages" by u
 :::shell
 pip install -t packages -r requirements.txt
 ```
+
+Next, we want to zip up all of our project files. However, we need both our Python file and the packages to be at the base level.
+
+To do this in Linux/Unix:
+
+1. `cd packages`
+2. `zip -r ../deployment.zip .`
+3. `cd ..`
+4. `zip -g deployment.zip lambda_function.py`
+
+If you are using Windows:
+
+1. Copy all the folders within your `packages` folder and paste them next to your lambda_function.py
+2. Delete the `packages` folder.
+3. Zip all the files and folders into a `deployment.zip` file (not including hidden or config files, such as `.git`, `.venv`, or `.gitignore`).
+
+Now, go into our Lambda function and select the "Upload from" drop-down on the far right of the code editor and choose ".zip file".
+
+![The code source section in the Lambda function with the "Upload from" selected and the "zip file" selected.]({static}/images/aws-lambda-upload-from-zip-file.png)
+
+Select your `deployment.zip` file from the selector.
+
+![The upload zip modal. The file that was selected was our deployment zip.]({static}/images/aws-lambda-upload-deployment-zip.png)
+
+Click the "save" button. A few seconds later, you should see your code appear in the code editor.
+
+Now, switch to the "Test" tab and click the "Test" near the top right. The code will run and you should see an "Execution result: succeeded" alert appear.
+
+![The "test" tab with a green banner at the top saying execution was successful.](/images/aws-lambda-capstone-test-results.png)
+
+And, if we check our Twitter profile, we can see the new tweet was posted correctly!
+
+![A tweet by the Twtter bot saying there are 9 days until 2022.](/images/aws-lambda-capstone-new-tweet.png)
+
+Now, all that is left to do is to schedule this to run each day.
 
 ## Scheduling The Lambda Function
 

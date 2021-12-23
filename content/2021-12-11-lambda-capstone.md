@@ -9,7 +9,13 @@ Summary: TBD
 Description: TBD
 Status: draft
 ---
- anINTRO
+Over the last several articles in this series, I have shown how to create a Lambda function, how to store and retrieve secrets, how to schedule recurring Lambda functions, and more.
+
+In this final article in the series, I will create a simple Twitter bot that tweets each day how many days are left in the year. You can see the final tweets [on the @daystonewyear profile](https://twitter.com/daystonewyear).
+
+To create this, we will create our Twitter app to get our API keys, store those in Parameter Store, create our Lambda function, and then schedule it to run each morning.
+
+Let's get started!
 
 ## Setting Up Our Twitter Keys
 
@@ -285,4 +291,6 @@ Great job! Your Lambda is now set on a recurring schedule.
 
 ## Next Steps
 
-XXXX
+Our Twitter bot is now fully set up and automated. Now, each day, EventBridge will trigger the Lambda function which will run the Python code which will send out our tweet.
+
+If you want to expand on this,

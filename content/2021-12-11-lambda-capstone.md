@@ -196,7 +196,29 @@ We are now ready to add our code.
 
 ### Uploading The Python Code
 
-XXXX
+Since we are using a 3rd party package, Tweepy, we need to take an additional step beyond just copying our Python code into the Lambda editor.
+
+There are several ways we could deploy this code but, to keep things simple, we will create a zip file of all code and then upload it inside the Lambda editor.
+
+To get started, we have to install the Python packages into a local directory. If you are creating this code within a virtual environment, you can run `pip freeze > requirements.txt` to generate a file we can install the packages from. This will look sort of like this:
+
+```
+certifi==2021.10.8
+charset-normalizer==2.0.9
+idna==3.3
+oauthlib==3.1.1
+requests==2.26.0
+requests-oauthlib==1.3.0
+tweepy==4.4.0
+urllib3==1.26.7
+```
+
+From here, I will install these packages into a directory called "packages" by using this command:
+
+```
+:::shell
+pip install -t packages -r requirements.txt
+```
 
 ## Scheduling The Lambda Function
 

@@ -1,7 +1,7 @@
 ---
 Title: Lambda Capstone
 Date: 2021-12-13 08:00
-Tags: aws, lambda
+Tags: aws, lambda, twitter
 Category: Python
 Slug: lambda-capstone
 Authors: Frank Corso

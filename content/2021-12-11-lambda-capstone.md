@@ -1,6 +1,6 @@
 ---
-Title: Lambda Capstone
-Date: 2021-12-13 08:00
+Title: Create a Twitter Bot Using Python and AWS Lambda
+Date: 2021-12-27 08:00
 Tags: aws, lambda, twitter
 Category: Python
 Slug: lambda-capstone

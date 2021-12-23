@@ -3,7 +3,7 @@ Title: Create a Twitter Bot Using Python and AWS Lambda
 Date: 2021-12-27 08:00
 Tags: aws, lambda, twitter
 Category: Python
-Slug: lambda-capstone
+Slug: aws-lambda-python-twitter-bot
 Authors: Frank Corso
 Summary: TBD
 Description: TBD

@@ -257,11 +257,11 @@ Click the "save" button. A few seconds later, you should see your code appear in
 
 Now, switch to the "Test" tab and click the "Test" near the top right. The code will run and you should see an "Execution result: succeeded" alert appear.
 
-![The "test" tab with a green banner at the top saying execution was successful.](/images/aws-lambda-capstone-test-results.png)
+![The "test" tab with a green banner at the top saying execution was successful.]({static}/images/aws-lambda-capstone-test-results.png)
 
 And, if we check our Twitter profile, we can see the new tweet was posted correctly!
 
-![A tweet by the Twtter bot saying there are 9 days until 2022.](/images/aws-lambda-capstone-new-tweet.png)
+![A tweet by the Twtter bot saying there are 9 days until 2022.]({static}/images/aws-lambda-capstone-new-tweet.png)
 
 Now, all that is left to do is to schedule this to run each day.
 

@@ -3,11 +3,12 @@ Title: Create a Twitter Bot Using Python and AWS Lambda
 Date: 2022-01-03 08:00
 Tags: aws, lambda, twitter, eventbridge
 Category: Python
+Series: AWS Lambda 101
 Slug: aws-lambda-python-twitter-bot
 Authors: Frank Corso
-Summary: TBD
-Description: TBD
-Status: draft
+Summary: In the final article of my AWS Lambda 101 series, I combine all the things we've learned so far into a small, sample project: Creating and deploying a Twitter bot to AWS Lambda.
+Description: Need to deploy a recurring Python script to AWS Lambda? Check out this guide to deploying a Twitter bot to AWS Lambda!
+Status: published
 ---
 Over the last several articles in this series, I have shown how to create a Lambda function, store and retrieve secrets, schedule recurring Lambda functions, and more.
 

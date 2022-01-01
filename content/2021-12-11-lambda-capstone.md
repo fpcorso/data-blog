@@ -96,7 +96,7 @@ import tweepy
 
 The [boto3 package](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) is the AWS SDK that will allow us to pull in parameters. The [Tweepy package](https://www.tweepy.org/) is a library that interacts with the Twitter API.
 
-Next, we will define a `get_twitter_keys` function that will get the secrets from Parameter Store and return them. If we are only pulling one parameter, we can use the `get_parameter` method and store its response. However, to pull four values, we can use the `get_parameters` method to pull all the ones we need.
+Next, we will define a `get_twitter_keys` function that will get the secrets from Parameter Store and return them. If we are only pulling one parameter, we can use the `get_parameter` method and store its response. However, we can use the get_parameters method to pull all four of the ones we need.
 
 ```
 :::python
@@ -148,7 +148,7 @@ def get_tweet() -> str:
     return tweet
 ```
 
-Lastly, we will create our `lambda_handler` method which is what we will have our Lambda function call. This method will call our two methods above and then create our new tweet.
+Lastly, we will create our lambda_handler method, which is what we will have our Lambda function call. This method will call our two methods above and create our new tweet.
 
 ```
 :::python
@@ -180,7 +180,11 @@ For this function, I'll name it `daysUntilNextYearTwitterBot` and use Python 3.9
 
 ### Adding SSM Permission
 
-For this Lambda function, we are going to attach the permission needed to the Lambda function's role. To do so, go to the "Configuration" tab on the Lambda and select "Permissions" from the sidebar.
+For this Lambda function, we are going to attach the permission needed to the Lambda function's role. 
+
+There are many ways we can do this. If you were creating many Lambda functions or are using a much larger set of AWS systems, you might create specific roles to use across Lambda functions. However, for this simple bot, we will just attach the right policy directly to this Lambda function.
+
+To do so, go to the "Configuration" tab on the Lambda and select "Permissions" from the sidebar.
 
 ![The configuration page for a lambda function with the left navigation set to Permissions. The top panel is an "Execution role" with a clickable role name shown.]({static}/images/aws-lambda-configuration-permissions.png)
 
@@ -192,9 +196,10 @@ Click the "Attach policies" button. On the add permissions screen, search for th
 
 ![Add permissions screen with "AmazonSSMRead" entered in search bar and "AmazonSSMReadOnlyAccess" being listed in results. This result has its checkbox checked.]({static}/images/aws-iam-add-permissions.png)
 
-Check the checkbox for the "AmazonSSMReadOnlyAccess" permission and then click "Attach policiy".
+Check the checkbox for the "AmazonSSMReadOnlyAccess" permission and then click "Attach policy."
 
-Now, go back to the configuration screen for the Lambda function (or refresh it if you kept it open). In the resource summary drop down, you should now see the "AWS Systems Manager" listed. If you select it, you should see the actions list "Allow: ssm:Get*" with other permissions.
+Now, go back to the configuration screen for the Lambda function (or refresh it if you kept it open). You should now see the "AWS Systems Manager" listed in the resource summary dropdown. If you select it, you should see the actions list "Allow: ssm:Get*" with other permissions.
+We are now ready to add our code.
 
 ![The resource panel on the permissions page. The drop-down has AWS Systems Manager selected. In the Actions column, it lists three "allow" permissions including ssm get *.]({static}/images/aws-lambda-resource-summary.png)
 
@@ -204,11 +209,11 @@ We are now ready to add our code.
 
 Since we are using a 3rd party package, Tweepy, we need to take an additional step beyond just copying our Python code into the Lambda editor.
 
-There are several ways we could deploy this code. Since our code is small and we want to keep this simple, we will create a zip file of all code and then upload it inside the Lambda editor.
+There are several ways we could deploy this code. Since our code is small and we want to keep this simple, we will create a zip file and then upload it inside the Lambda editor.
 
 To get started, we have to install the Python packages into a local directory. If you are creating this code within a virtual environment, you can run `pip freeze > requirements.txt` to generate a file we can install the packages from.
 
-Note: The Lambda environment already includes boto3 so you do not need to add that into the requirements file.
+Note: The Lambda environment already includes boto3, so you do not need to add that into the requirements file.
 
 This will look sort of like this:
 
@@ -245,7 +250,7 @@ If you are using Windows:
 2. Delete the `packages` folder.
 3. Zip all the files and folders into a `deployment.zip` file (not including hidden or config files, such as `.git`, `.venv`, or `.gitignore`).
 
-Now, go into our Lambda function and select the "Upload from" drop-down on the far right of the code editor and choose ".zip file".
+Now, go into our Lambda function and select the "Upload from" drop-down on the far right of the code editor and choose ".zip file."
 
 ![The code source section in the Lambda function with the "Upload from" selected and the "zip file" selected.]({static}/images/aws-lambda-upload-from-zip-file.png)
 
@@ -255,7 +260,7 @@ Select your `deployment.zip` file from the selector.
 
 Click the "save" button. A few seconds later, you should see your code appear in the code editor.
 
-Now, switch to the "Test" tab and click the "Test" near the top right. The code will run and you should see an "Execution result: succeeded" alert appear.
+Now, switch to the "Test" tab and click the "Test" near the top right. The code will run, and you should see an "Execution result: succeeded" alert appear.
 
 ![The "test" tab with a green banner at the top saying execution was successful.]({static}/images/aws-lambda-capstone-test-results.png)
 
@@ -273,7 +278,7 @@ To get started, you will need to sign in to your AWS account and go to EventBrid
 
 On the rule creation page, you will need to fill in a few fields. First, enter in a name. I recommend something that includes what it does and how often. For example, something such as "runDaysUntilNextYearTweetBotDaily". Next, fill in a description.
 
-In the "Define pattern" section, click on "Schedule". For this function, I am going to use a cron expression to run it every day at 10:00 AM.
+In the "Define pattern" section, click on "Schedule." For this function, I am going to use a cron expression to run it every day at 10:00 AM.
 
 ![EventBridge name and pattern settings. Name and description fields are filled in and the define pattern section is set to Schedule.]({static}/images/aws-eventbridge-rule-new.png)
 

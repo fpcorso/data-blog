@@ -9,7 +9,7 @@ Summary: TBD
 Description: TBD
 Status: draft
 ---
-Over the last several articles in this series, I have shown how to create a Lambda function, how to store and retrieve secrets, how to schedule recurring Lambda functions, and more.
+Over the last several articles in this series, I have shown how to create a Lambda function, store and retrieve secrets, schedule recurring Lambda functions, and more.
 
 In this final article in the series, I will create a simple Twitter bot that tweets each day how many days are left in the year. You can see the final tweets [on the @daystonewyear profile](https://twitter.com/daystonewyear).
 

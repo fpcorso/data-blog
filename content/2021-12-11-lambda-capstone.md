@@ -63,7 +63,7 @@ To begin, log into your AWS console and go to the AWS System Manager.
 
 ![AWS Systems Manager dashboard with navigation along the left side with links for cloudwatch dashboard, application manager, and parameter store.]({static}/images/aws-systems-manager-dashboard.png)
 
-Click on the "Parameter Store" page from within the menu to get to your values. If you do not have any values yet, you will see a landing page. In here, you will want to create 4 different parameters. You can name these whatever you would like but make a note of which name you use for which secret as we will use the names to retrieve them.
+Click on the "Parameter Store" page from within the menu to get to your values. If you do not have any values yet, you will see a landing page. In here, you will want to create four different parameters. You can name these whatever you would like but make a note of which name you use for which secret as we will use the names to retrieve them.
 
 For the Twitter secrets, I will name them `twitter_api_key`, `twitter_api_secret`, `twitter_access_token`, and `twitter_access_secret`.
 
@@ -73,15 +73,15 @@ Lastly, enter the value for the parameter.
 
 ![The second part of the create parameter page showing the type set to "secure string" and KMS key source kept on default of my current account.]({static}/images/aws-secrets-manager-create-parameter-2.png)
 
-Once filled in, click to create the parameter. Once you create all 4 parameters, it will look like this:
+Once filled in, click to create the parameter. Once you create all four parameters, it will look like this:
 
 ![AWS System Manager's Parameter Store with 4 parameters listed. Each on standard tier and as a secure string type.]({static}/images/aws-parameter-store-twitter-keys.png)
 
-Great! Our Twitter keys are generated and in a place we can use them.
+Great! We have generated our Twitter keys and stored them in a place we can use them.
 
 ## Creating The Python Code
 
-Now, let's create our Python code for the Lambda function. So we do not need to change any of the Lambda runtime settings, we will use the default filename of `lambda_function.py`.
+Now, let's create our Python code for the Lambda function. We will use the default filename of `lambda_function.py`, so we do not need to change any of the Lambda runtime settings.
 
 While we could write all the code within one main function, I'll separate out two other functions to make it easier to test each piece locally as well as make it easier to add to it in the future.
 
@@ -96,7 +96,7 @@ import tweepy
 
 The [boto3 package](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) is the AWS SDK that will allow us to pull in parameters. The [Tweepy package](https://www.tweepy.org/) is a library that interacts with the Twitter API.
 
-Next, we will define a `get_twitter_keys` function that will get the secrets from Parameter Store and return them. If we are only pulling one parameter, we can use the `get_parameter` method and store its response. However, to pull 4 values, we can use the `get_parameters` method to pull all the ones we need.
+Next, we will define a `get_twitter_keys` function that will get the secrets from Parameter Store and return them. If we are only pulling one parameter, we can use the `get_parameter` method and store its response. However, to pull four values, we can use the `get_parameters` method to pull all the ones we need.
 
 ```
 :::python
@@ -124,7 +124,7 @@ def get_twitter_keys() -> dict:
     return keys
 ```
 
-Next, we will define our `get_tweet` method which will create the text. To do this, we will calculate the days until the next year and then customize the text based on the number of days.
+Next, we will define our `get_tweet` method, which will create the text. To do this, we will calculate the days until the next year and then customize the text based on the number of days.
 
 ```
 :::python

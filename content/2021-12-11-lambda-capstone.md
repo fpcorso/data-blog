@@ -33,7 +33,7 @@ On the next screen, name your project.
 
 ![Tab for naming your project]({static}/images/twitter-developer-name-project.png)
 
-On the next screen, select a use case for the project. For this, you can select "Making a bot."
+On the next screen, select a use case for the project. For this, you can choose "Making a bot."
 
 ![Tab that asks "Which best describes you?" with a use case drop-down currently showing "Making a bot"]({static}/images/twitter-developer-use-case.png)
 
@@ -49,7 +49,7 @@ The next screen will show the app's API key and secret. Copy these keys for late
 
 ![App settings screen with the App permissions section in view. The setting is set to "Read and Write".]({static}/images/twitter-developer-app-permissions.png)
 
-Lastly, go to the app's "Keys and tokens" tab. On this tab, you will need to generate the access token and secret. If you did not copy the app keys from the earlier screen, you can regenerate them here under the "Consumer Keys" section.
+Lastly, go to the app's "Keys and tokens" tab. On this tab, you will need to generate the access token and secret. If you did not copy the app keys from the earlier screen, you could regenerate them here under the "Consumer Keys" section.
 
 ![The app's keys and tokens screen with sections for consumer keys and authentication tokens.]({static}/images/twitter-developer-app-keys-tokens.png)
 

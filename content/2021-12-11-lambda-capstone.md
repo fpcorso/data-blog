@@ -153,7 +153,7 @@ Lastly, we will create our lambda_handler method, which is what we will have our
 ```
 :::python
 def lambda_handler(event, context):
-    """Main Lambda function"""
+    """Main Lambda function."""
 
     keys = get_twitter_keys()
 

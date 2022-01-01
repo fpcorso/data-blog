@@ -284,7 +284,7 @@ In the "Define pattern" section, click on "Schedule." For this function, I am go
 
 We will leave the event bus section as the default for this.
 
-In the "Select targets" section, select "Lambda function" for the target and then select your Lambda function in the "Function" dropdown. For most functions, you will keep the default settings for the function here.
+In the "Select targets" section, select "Lambda function" for the target and then choose your Lambda function in the "Function" dropdown. For most functions, you will keep the default settings for the function here.
 
 ![EventBridge target settings. Shows a dropdown for target with "Lambda function" entered and a dropdown for function with our bot function selected.]({static}/images/aws-eventbridge-select-targets.png)
 
@@ -296,11 +296,11 @@ Great job! Your Lambda is now set on a recurring schedule.
 
 ## Next Steps
 
-Our Twitter bot is now fully set up and automated. Now, each day, EventBridge will trigger the Lambda function which will run the Python code which will send out our tweet.
+Our Twitter bot is now fully set up and automated. Now, each day, EventBridge will trigger the Lambda function, which will run the Python code which will send out our tweet.
 
 If you want to expand on this, some things you can try include:
 
-1. Update the `get_tweet` function to have a few different variations of the daily tweet that the method will randomly choose from.
+1. Update the `get_tweet` function to have a few variations of the daily tweet that the method will randomly choose from.
 2. Create a list of holidays and, if that day is a holiday, include what holiday that day is in the tweet. You can take this a step further by finding a larger dataset of holidays to add a CSV or a holidays API to pull from.
 
 Be sure to subscribe below to get notified when the next article is published!

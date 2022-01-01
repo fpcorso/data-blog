@@ -1,7 +1,7 @@
 ---
 Title: Create a Twitter Bot Using Python and AWS Lambda
-Date: 2021-12-27 08:00
-Tags: aws, lambda, twitter
+Date: 2022-01-03 08:00
+Tags: aws, lambda, twitter, eventbridge
 Category: Python
 Slug: aws-lambda-python-twitter-bot
 Authors: Frank Corso
@@ -55,7 +55,7 @@ Lastly, go to the app's "Keys and tokens" tab. On this tab, you will need to gen
 
 Great! We have our Twitter app set up and have the keys we need. Next, we need to add these keys to our Parameter Store.
 
-### Adding Our Twitter Keys To Parameter Store
+### Adding Our Twitter Keys to Parameter Store
 
 If you haven't used Parameter Store before, you can review what it is and how to use it by [reading my "Passing Credentials to AWS Lambda Using Parameter Store" article](https://frankcorso.dev/passing-credentials-aws-lambda-parameter-store.html).
 
@@ -79,7 +79,7 @@ Once filled in, click to create the parameter. Once you create all four paramete
 
 Great! We have generated our Twitter keys and stored them in a place we can use them.
 
-## Creating The Python Code
+## Creating the Python Code
 
 Now, let's create our Python code for the Lambda function. We will use the default filename of `lambda_function.py`, so we do not need to change any of the Lambda runtime settings.
 
@@ -205,7 +205,7 @@ We are now ready to add our code.
 
 We are now ready to add our code.
 
-### Uploading The Python Code
+### Uploading the Python Code
 
 Since we are using a 3rd party package, Tweepy, we need to take an additional step beyond just copying our Python code into the Lambda editor.
 
@@ -270,7 +270,7 @@ And, if we check our Twitter profile, we can see the new tweet was posted correc
 
 Now, all that is left to do is to schedule this to run each day.
 
-## Scheduling The Lambda Function
+## Scheduling the Lambda Function
 
 If you haven't used Eventbridge before, you can review what it is and how to use it by [reading my "Setting Up a Recurring AWS Lambda Function Using AWS EventBridge" article](https://frankcorso.dev/recurring-aws-lambda-eventbridge-schedule.html).
 

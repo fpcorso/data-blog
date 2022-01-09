@@ -68,6 +68,16 @@ env = Environment(
 )
 ```
 
+If your email templates directory is not in its own module, you can use Jinja's FileSystemLoader instead. Such as:
+
+```
+:::python
+env = Environment(
+    loader=FileSystemLoader('email_templates'),
+    autoescape=select_autoescape(['html', 'xml'])
+)
+```
+
 Once we have our `env` variable, we can use that to create our template using:
 
 ```

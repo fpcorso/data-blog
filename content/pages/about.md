@@ -13,9 +13,9 @@ I created an Xbox 360 game called "A Game of Hockey" which was basically a clone
 
 This game was full of bugs and I am surprised anyone bought it. But, they did and it made me realize that I could have a future creating software.
 
-Now, 13 years later, I have worked on a variety of different projects and businesses from many different industries. Over the years, I have developed a passion for data analysis, visualization, and machine learning.
+Now, 13 years later, I have worked on a variety of different projects and businesses from many different industries. My current side project, [Falcon Insights](https://falconinsights.app/), is a business reporting tool that uses AI to generate daily scorecards and weekly reports for businesses.
 
-But, most of my other sites are focused on marketing, business, or WordPress related topics so I haven't had a place to share some of the cool data or Python projects I am working on. This is why this site was created.
+Over the years, I have developed a passion for data analysis, visualization, and machine learning. But, most of my other sites are focused on marketing, business, or WordPress related topics so I haven't had a place to share some of the cool data or Python projects I am working on. This is why this site was created.
 
 I'll be occasionally writing articles about data analysis, data warehousing, data visualization, and Python so check back!
 

@@ -116,18 +116,6 @@ Single Article
 }
 
 /****
-Modal
-****/
-
-.modal {
-  display: none;
-}
-
-.modal.is-open {
-  display: block;
-}
-
-/****
 Dark Mode
 ****/
 

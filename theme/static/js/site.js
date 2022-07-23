@@ -33,6 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
           closeModal();
         }
     });
+
+    setTimeout(openModal, 10000);
 });
 
 /****

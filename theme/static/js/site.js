@@ -7,11 +7,15 @@ Slide in modal
 ****/
 
 function openModal() {
-    document.querySelector('.slidein').classList.add('is-active');
+    const token = Cookies.get('slideinclosed');
+    if (token === undefined) {
+        document.querySelector('.slidein').classList.add('is-active');
+    }
 }
 
 function closeModal() {
     document.querySelector('.slidein').classList.remove('is-active');
+    Cookies.set('slideinclosed', 'yes', { expires: 1 });
 }
 
 document.addEventListener('DOMContentLoaded', () => {

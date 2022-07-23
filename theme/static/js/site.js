@@ -2,6 +2,23 @@
 JS for Blog ✔
 **********/
 
+/****
+Slide in modal
+****/
+
+document.querySelector('.slidein .delete').addEventListener('click', () => {
+    document.querySelector('.slidein').classList.remove('is-active');
+});
+
+document.querySelector('#slidein-submit').addEventListener('click', () => {
+    const answer = document.querySelector('.slidein textarea').value;
+    console.log(answer);
+});
+
+/****
+Dark Mode
+****/
+
 // Saves dark mode preference to local storage to be checked in
 // future page loads.
 function saveDarkModePreference( enabled ) {

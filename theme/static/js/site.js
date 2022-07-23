@@ -6,15 +6,33 @@ JS for Blog ✔
 Slide in modal
 ****/
 
-document.querySelector('.slidein .delete').addEventListener('click', () => {
-    document.querySelector('.slidein').classList.remove('is-active');
-});
+function openModal() {
+    document.querySelector('.slidein').classList.add('is-active');
+}
 
-document.querySelector('#slidein-submit').addEventListener('click', () => {
-    const answer = document.querySelector('.slidein textarea').value;
-    console.log(answer);
-    fetch('https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-df66057e-1236-454c-9a08-3d6c1d33d7d7/default/Test?answer=' + encodeURIComponent(answer))
-    document.querySelector('.slidein .card-content').replaceChildren('Thanks! I appreciate you taking the time to respond.')
+function closeModal() {
+    document.querySelector('.slidein').classList.remove('is-active');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.slidein .delete').addEventListener('click', () => {
+        closeModal();
+    });
+
+    document.querySelector('#slidein-submit').addEventListener('click', () => {
+        const answer = document.querySelector('.slidein textarea').value;
+        console.log(answer);
+        fetch('https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-df66057e-1236-454c-9a08-3d6c1d33d7d7/default/Test?answer=' + encodeURIComponent(answer))
+        document.querySelector('.slidein .card-content').replaceChildren('Thanks! I appreciate you taking the time to respond.')
+    });
+
+    document.addEventListener('keydown', (event) => {
+        const e = event || window.event;
+
+        if (e.keyCode === 27) { // Escape key
+          closeModal();
+        }
+    });
 });
 
 /****

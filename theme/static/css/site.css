@@ -121,15 +121,140 @@ Slide in modal
 
 .slidein {
     display: none;
-    max-width: 300px;
     position: fixed;
     right: 0;
     bottom: 0;
     overflow: hidden;
+    max-height: calc(100vh - 160px);
+    position: relative;
+    width: 100%;
+}
+
+@media screen and (min-width: 700px) {
+    .slidein {
+        max-width: 300px;
+        max-height: calc(100vh - 40px);
+    }
 }
 
 .slidein.is-active {
     display: block;
+}
+
+.slidein .slidein-content {
+    background-color: #FFF;
+    color: #4a4a4a;
+    max-width: 100%;
+    border-radius: 3px;
+    padding: 10px;
+    transition: all 0.2s;
+    box-shadow: 0 0.5em 1em -0.125em #2a8737;
+}
+
+.slidein .slidein-content:hover, .slidein .slidein-content:focus-within {
+    box-shadow: 0 0.7em 1.5em 0 #2a8737;
+}
+
+.slidein .slidein-close {
+    float: right !important;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: rgba(10,10,10,.2);
+    border: none;
+    border-radius: 290486px;
+    cursor: pointer;
+    pointer-events: auto;
+    display: inline-block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-size: 0;
+    height: 20px;
+    max-height: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    min-width: 20px;
+    outline: 0;
+    position: relative;
+    vertical-align: top;
+    width: 20px;
+}
+
+.slidein .slidein-close:before {
+    height: 2px;
+    width: 50%;
+}
+
+.slidein .slidein-close:after {
+    height: 50%;
+    width: 2px;
+}
+
+.slidein .slidein-close:before,
+.slidein .slidein-close:after {
+    background-color: #fff;
+    content: "";
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform-origin: center center;
+}
+
+.slidein .slidein-content .slide-content-field:not(:last-child) {
+    margin-bottom: .75rem;
+}
+
+.slidein .slidein-content .slide-content-label {
+    color: #363636;
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.slidein .slidein-content .slide-content-label:not(:last-child) {
+    margin-bottom: .5em;
+}
+
+.slidein .slidein-content .slide-content-control {
+    box-sizing: border-box;
+    clear: both;
+    font-size: 1rem;
+    position: relative;
+    text-align: inherit;
+}
+
+.slidein .slidein-content .slide-content-textarea {
+    display: block;
+    max-width: 100%;
+    min-width: 100%;
+    padding: calc(.75em - 1px);
+    resize: vertical;
+    box-shadow: inset 0 .0625em .125em rgba(10,10,10,.05);
+    width: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    color: #363636;
+    border: 1px solid #dbdbdb;
+    font-size: 1rem;
+    height: 2.5em;
+    justify-content: flex-start;
+    line-height: 1.5;
+}
+
+.slidein .slidein-content .slide-content-button {
+    background-color: #fff;
+    border-color: #dbdbdb;
+    border-width: 1px;
+    color: #363636;
+    cursor: pointer;
+    justify-content: center;
+    padding-bottom: calc(.5em - 1px);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: calc(.5em - 1px);
+    text-align: center;
+    white-space: nowrap;
 }
 
 /****

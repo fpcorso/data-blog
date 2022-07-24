@@ -177,6 +177,7 @@ Slide in modal
     position: relative;
     vertical-align: top;
     width: 20px;
+    padding: 0;
 }
 
 .slidein .slidein-close:before {

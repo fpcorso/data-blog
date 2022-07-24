@@ -6,6 +6,30 @@ JS for Blog ✔
 Slide in modal
 ****/
 
+function addModalMarkup() {
+    const modalHTML = `<div class="modal-content slidein" tabindex="-1">
+        <div class="card post">
+            <button class="delete is-small is-pulled-right"></button>
+            <div class="card-content">
+                <div class="field">
+                  <label class="label">Quick question: What area of data engineering or data science would you like to learn more about?</label>
+                  <div class="control">
+                    <textarea id="slidein-answer" class="textarea" placeholder=""></textarea>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="control">
+                    <button id="slidein-submit" class="button is-link">Submit</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>`;
+    const modalElement = document.createRange().createContextualFragment(modalHTML);
+    document.querySelector('body').appendChild(modalElement);
+}
+
+
 function openModal() {
     const token = Cookies.get('slideinclosed');
     if (token === undefined) {
@@ -19,6 +43,8 @@ function closeModal() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    addModalMarkup():
+
     document.querySelector('.slidein .delete').addEventListener('click', () => {
         closeModal();
     });
@@ -38,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    setTimeout(openModal, 10000);
+    setTimeout(openModal, 8000);
 });
 
 /****

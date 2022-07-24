@@ -133,6 +133,7 @@ Slide in modal
     border-radius: 3px;
     padding: 10px;
     transition: all 0.2s;
+    z-index: 99999;
 }
 
 @media screen and (min-width: 700px) {

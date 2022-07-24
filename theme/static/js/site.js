@@ -7,21 +7,19 @@ Slide in modal
 ****/
 
 function addModalMarkup() {
-    const modalHTML = `<div class="modal-content slidein" tabindex="-1">
-        <div class="card post">
-            <button class="delete is-small is-pulled-right"></button>
-            <div class="card-content">
-                <div class="field">
-                  <label class="label">Quick question: What area of data engineering or data science would you like to learn more about?</label>
-                  <div class="control">
-                    <textarea id="slidein-answer" class="textarea" placeholder=""></textarea>
-                  </div>
-                </div>
-                <div class="field">
-                  <div class="control">
-                    <button id="slidein-submit" class="button is-link">Submit</button>
-                  </div>
-                </div>
+    const modalHTML = `<div class="slidein" tabindex="-1">
+        <div class="slidein-content">
+            <button class="slidein-close"></button>
+            <div class="slide-content-field">
+              <label class="slide-content-label">Quick question: What area of data engineering or data science would you like to learn more about?</label>
+              <div class="slide-content-control">
+                <textarea id="slidein-answer" class="slidein-content-textarea" placeholder=""></textarea>
+              </div>
+            </div>
+            <div class="slide-content-field">
+              <div class="slide-content-control">
+                <button id="slidein-submit" class="slide-content-button">Submit</button>
+              </div>
             </div>
         </div>
     </div>`;
@@ -43,7 +41,7 @@ function closeModal() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    addModalMarkup():
+    addModalMarkup();
 
     document.querySelector('.slidein .delete').addEventListener('click', () => {
         closeModal();

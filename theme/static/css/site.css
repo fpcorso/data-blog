@@ -242,9 +242,9 @@ Slide in modal
 }
 
 .slidein .slidein-content .slide-content-button {
-    background-color: #fff;
+    background-color: #2a8737;
     border: 1px solid #dbdbdb;
-    color: #363636;
+    color: #ffffff;
     cursor: pointer;
     justify-content: center;
     padding-bottom: calc(.5em - 1px);

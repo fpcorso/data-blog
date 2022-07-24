@@ -43,15 +43,15 @@ function closeModal() {
 document.addEventListener('DOMContentLoaded', () => {
     addModalMarkup();
 
-    document.querySelector('.slidein .delete').addEventListener('click', () => {
+    document.querySelector('.slidein .slidein-close').addEventListener('click', () => {
         closeModal();
     });
 
     document.querySelector('#slidein-submit').addEventListener('click', () => {
-        const answer = document.querySelector('.slidein textarea').value;
+        const answer = document.querySelector('#slidein-answer').value;
         console.log(answer);
         fetch('https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-df66057e-1236-454c-9a08-3d6c1d33d7d7/default/Test?survey_id=1&?answer=' + encodeURIComponent(answer))
-        document.querySelector('.slidein .card-content').replaceChildren('Thanks! I appreciate you taking the time to respond.')
+        document.querySelector('.slidein .slidein-content').replaceChildren('Thanks! I appreciate you taking the time to respond.')
     });
 
     document.addEventListener('keydown', (event) => {

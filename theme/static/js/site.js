@@ -8,8 +8,8 @@ Slide in modal
 
 function addModalMarkup() {
     const modalHTML = `<div class="slidein" tabindex="-1">
+        <button class="slidein-close"></button>
         <div class="slidein-content">
-            <button class="slidein-close"></button>
             <div class="slide-content-field">
               <label class="slide-content-label">Quick question: What area of data engineering or data science would you like to learn more about?</label>
               <div class="slide-content-control">

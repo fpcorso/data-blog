@@ -128,6 +128,11 @@ Slide in modal
     max-height: calc(100vh - 160px);
     width: 100%;
     box-shadow: 0 0.1em 0.4em -0.125em #4a4a4a;
+    background-color: #FFF;
+    color: #4a4a4a;
+    border-radius: 3px;
+    padding: 10px;
+    transition: all 0.2s;
 }
 
 @media screen and (min-width: 700px) {
@@ -146,12 +151,7 @@ Slide in modal
 }
 
 .slidein .slidein-content {
-    background-color: #FFF;
-    color: #4a4a4a;
-    max-width: 100%;
-    border-radius: 3px;
-    padding: 10px;
-    transition: all 0.2s;
+
 }
 
 .slidein .slidein-close {

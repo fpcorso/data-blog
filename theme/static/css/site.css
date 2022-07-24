@@ -127,6 +127,7 @@ Slide in modal
     overflow: hidden;
     max-height: calc(100vh - 160px);
     width: 100%;
+    box-shadow: 0 0.1em 0.4em -0.125em #4a4a4a;
 }
 
 @media screen and (min-width: 700px) {
@@ -134,6 +135,10 @@ Slide in modal
         max-width: 300px;
         max-height: calc(100vh - 40px);
     }
+}
+
+.slidein:hover, .slidein:focus-within {
+    box-shadow: 0 0.7em 1.5em 0 #4a4a4a;
 }
 
 .slidein.is-active {
@@ -147,11 +152,6 @@ Slide in modal
     border-radius: 3px;
     padding: 10px;
     transition: all 0.2s;
-    box-shadow: 0 0.5em 1em -0.125em #2a8737;
-}
-
-.slidein .slidein-content:hover, .slidein .slidein-content:focus-within {
-    box-shadow: 0 0.7em 1.5em 0 #2a8737;
 }
 
 .slidein .slidein-close {

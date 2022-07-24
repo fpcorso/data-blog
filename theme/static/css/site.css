@@ -122,8 +122,8 @@ Slide in modal
 .slidein {
     display: none;
     position: fixed;
-    right: 0;
-    bottom: 0;
+    right: 5px;
+    bottom: 5px;
     overflow: hidden;
     max-height: calc(100vh - 160px);
     width: 100%;

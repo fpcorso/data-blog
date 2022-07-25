@@ -10,17 +10,20 @@ function addModalMarkup() {
     const modalHTML = `<div class="slidein" tabindex="-1">
         <button class="slidein-close"></button>
         <div class="slidein-content">
-            <div class="slide-content-field">
-              <label class="slide-content-label">Quick question: What area of data engineering or data science would you like to learn more about?</label>
-              <div class="slide-content-control">
-                <textarea id="slidein-answer" class="slidein-content-textarea" placeholder=""></textarea>
-              </div>
+            <div class="slidein-content-form">
+                <div class="slide-content-field">
+                  <label class="slide-content-label">Quick question: What area of data engineering or data science would you like to learn more about?</label>
+                  <div class="slide-content-control">
+                    <textarea id="slidein-answer" class="slidein-content-textarea" placeholder=""></textarea>
+                  </div>
+                </div>
+                <div class="slide-content-field">
+                  <div class="slide-content-control">
+                    <button id="slidein-submit" class="slide-content-button">Submit</button>
+                  </div>
+                </div>
             </div>
-            <div class="slide-content-field">
-              <div class="slide-content-control">
-                <button id="slidein-submit" class="slide-content-button">Submit</button>
-              </div>
-            </div>
+            <p class="slidein-powered-by">Powered by <a href="https://litesurveys.com">LiteSurveys</a></p>
         </div>
     </div>`;
     const modalElement = document.createRange().createContextualFragment(modalHTML);

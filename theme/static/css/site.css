@@ -266,6 +266,18 @@ Slide in modal
     width: 100%;
 }
 
+.slidein .slidein-content .slidein-powered-by {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.slidein .slidein-content .slidein-powered-by a {
+    color: #157A6E;
+}
+
 /****
 Dark Mode
 ****/

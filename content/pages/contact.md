@@ -7,28 +7,14 @@ Summary: Need to contact Frank Corso? Submit the contact form!
 
 Fill out the form below to send me a message.
 
-<form name="contact" netlify>
-    <div class="field">
-      <label for="name" class="label">Name</label>
-      <div class="control">
-        <input name="name" id="name" class="input" type="text" placeholder="Your name..." required>
-      </div>
-    </div>
-    <div class="field">
-      <label for="email" class="label">Email</label>
-      <div class="control">
-        <input name="email" id="email" class="input" type="email" placeholder="Your email..." required>
-      </div>
-    </div>
-    <div class="field">
-      <label for="message" class="label">How can I help you?</label>
-      <div class="control">
-        <textarea name="message" id="message" class="textarea" placeholder="Your message..." required></textarea>
-      </div>
-    </div>
-    <div class="field">
-      <div class="control">
-        <button type="submit" class="button has-background-success-dark has-text-white">Submit</button>
-      </div>
-    </div>
-</form>
+<div id="my-reform"></div>
+
+<script>window.Reform=window.Reform||function(){(Reform.q=Reform.q||[]).push(arguments)};</script>
+<script id="reform-script" async src="https://embed.reform.app/v1/embed.js"></script>
+<script>
+    Reform('init', {
+        url: 'https://forms.reform.app/apLRmP/data-blog-contact/33tysq',
+        target: '#my-reform',
+        background: 'transparent',
+    })
+</script>

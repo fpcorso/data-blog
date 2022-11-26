@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#slidein-submit').addEventListener('click', () => {
         const answer = document.querySelector('#slidein-answer').value;
         console.log(answer);
-        fetch('https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-df66057e-1236-454c-9a08-3d6c1d33d7d7/default/Test?survey_id=1&answer=' + encodeURIComponent(answer))
+        fetch('https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-8f2bcb26-608e-4407-ac20-e711e19fbfb4/main/survey_response?survey_id=1&answer=' + encodeURIComponent(answer))
         document.querySelector('.slidein .slidein-content').replaceChildren('Thanks! I appreciate you taking the time to respond.')
     });
 

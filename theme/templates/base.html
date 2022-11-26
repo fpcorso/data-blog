@@ -8,7 +8,6 @@
     {% endblock head %}
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/site.css" />
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <!-- Fathom - beautiful, simple website analytics -->
     <script src="https://cdn.usefathom.com/script.js" data-site="XGIMEULK" defer></script>
     <!-- / Fathom -->
@@ -91,17 +90,6 @@
         <label for="dark-switch" aria-label="Switch on Dark Mode"></label>
     </div>
     <script async data-uid="e9d88a0dc2" src="https://frank-corso.ck.page/e9d88a0dc2/index.js"></script>
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     <script src="{{ SITEURL }}/theme/js/site.js"></script>
 </body>

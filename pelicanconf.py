@@ -15,9 +15,6 @@ DEFAULT_DATE_FORMAT = '%B %d, %Y'
 DEFAULT_LANG = 'en'
 DEFAULT_PAGINATION = False
 
-STATIC_PATHS = ['admin']
-TEMPLATE_PAGES = {'admin/index.html': 'admin/index.html'}
-
 # Social Networks
 TWITTER = 'https://twitter.com/fpcorso'
 GITHUB = 'https://github.com/fpcorso'

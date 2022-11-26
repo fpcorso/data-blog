@@ -7,7 +7,7 @@ Slug: deploy-static-site-digital-ocean-app-platform
 Authors: Frank Corso
 Summary: Digital Ocean offers 3 free static sites on their app platform. If you're looking to deploy a static site using their app platform, read this article to learn how.
 Description: Digital Ocean offers 3 free static sites on their app platform. If you're looking to deploy a static site using their app platform, read this article to learn how.
-Status: draft
+Status: published
 ---
 I recently moved this site from Netlify to Digital Ocean's App Platform to keep all my sites together. Even better, Digital Ocean offers 3 free static sites on its app platform. If you're looking to deploy a static site using their app platform, read this article to learn how.
 

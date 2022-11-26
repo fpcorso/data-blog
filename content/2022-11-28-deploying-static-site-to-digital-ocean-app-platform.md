@@ -1,24 +1,23 @@
 ---
-Title: Deploying static site to digital ocean app platform
-Date: 11-25-2022 08:00:00
-Tags: digital ocean
+Title: Deploying a Static Site to Digital Ocean’s App Platform
+Date: 11-28-2022 08:00:00
+Tags: digital ocean, pelican, blog, tutorial, static site
 Category: python
 Slug: deploy-static-site-digital-ocean-app-platform
-Series: ""
 Authors: Frank Corso
-Summary: TBD
-Description: TBD
+Summary: Digital Ocean offers 3 free static sites on their app platform. If you're looking to deploy a static site using their app platform, read this article to learn how.
+Description: Digital Ocean offers 3 free static sites on their app platform. If you're looking to deploy a static site using their app platform, read this article to learn how.
 Status: draft
 ---
-I recently moved this site from Netlify to Digital Ocean's App Platform to keep all my sites together. Digital Ocean offers 3 free static sites on their app platform so it's free to host this site there.
+I recently moved this site from Netlify to Digital Ocean's App Platform to keep all my sites together. Even better, Digital Ocean offers 3 free static sites on its app platform. If you're looking to deploy a static site using their app platform, read this article to learn how.
 
 ## Digital Ocean's App Platform
 
-Digital Ocean released their "App Platform" which is a managed infrastructure system similar to Heroku. You can set up your "app", database, workers, and more without needing to set up and maintain the underlying infrastructure.
+Digital Ocean released its "App Platform" which is a managed infrastructure system similar to Heroku. You can set up your "app", database, workers, and more without needing to set up and maintain the underlying infrastructure.
 
 As someone who tries to avoid maintaining infrastructure, I have started using their app platform for several of my recent projects, such as my proof-of-concept for [LiteSurveys](https://litesurveys.com). 
 
-Each "app" you set up has its own pricing plan and has different "components" which are the different pieces of your site. For example, on a recent project, I had a Fast API app as the main component and then a redis queue worker as another component. 
+Each "app" you set up has its own pricing plan and has different "components" which are the different pieces of your site. For example, on a recent project, I had a Fast API app as the main component and a Redis queue worker as another component. 
 
 On their "starter" plan, you can have up to 3 static sites for free.
 
@@ -28,7 +27,7 @@ For this site, I use the Pelican static site generator. The process will be most
 
 The app platform [uses buildpacks](https://docs.digitalocean.com/products/app-platform/reference/buildpacks/) to create the environment. It detects which to use depending on your code.
 
-### Add A Requirements File (or similar for your code)
+### Add a Requirements File (or Similar for Your Code)
 
 First, we want to make sure we have our `requirements.txt` file added to our project. This is a standard file in Python projects to ensure that the environment the script is run in contains all the dependencies needed.
 
@@ -60,19 +59,19 @@ Once you have your account, log in and go to the Apps page.
 
 On the apps page, click to create your first app. On the first page in the setup wizard, select where your code is. You may need to connect your GitHub (by choosing GitHub) or clicking to edit GitHub permissions if you've connected it before with different repos.
 
-Once you selected a repo, you will need to select which branch to deploy from and whether to auto deploy or not. For me, I keep auto deploy on for sites like this.
+Once you have selected a repo, you will need to select which branch to deploy from and whether to auto deploy or not. For me, I keep auto deploy on for sites like this.
 
 ![First page of creating a new app. Has several options for service provider and drop downs for repo and branch.]({static}/images/digital-ocean-create-app-step-1.png)
 
-After clicking next, you will see a screen showing "resources" for the app which will include only the main component right now. However, this will normally default to a web service instead of a static site so we need to change that.
+After clicking next, you will see a screen showing "resources" for the app, which will include only the main component right now. However, this will normally default to a web service instead of a static site, so we need to change that.
 
 ![Second page of creating a new app. Shows our app with a randomly generated name and a single component.]({static}/images/digital-ocean-create-app-step-2.png)
 
 So, click on either the component name or the edit icon on the component (named `data-blog` in the screenshot). There are three main steps we need to take here.
 
-First, click edit on "Resource Type" and switch it to "Static Site".
+First, click edit on "Resource Type" and switch it to "Static Site."
 
-Second, click edit on "Build Phase" and enter the build command for your generator into the "Build command" textbox. In my case, it was `pelican content`. While your here, double-check the buildpack to make sure it's correct language (such as Python or JavaScript).
+Second, click edit on "Build Phase" and enter the build command for your generator into the "Build command" textbox. In my case, it was `pelican content`. While you're here, double-check the buildpack to make sure it's the correct language (such as Python or JavaScript).
 
 Third, click edit on "Output Directory" and enter the directory your site generator builds to. In my case, it was `output`.
 
@@ -88,13 +87,13 @@ If everything looks correct, click the "Create Resources" button to create your 
 
 ![Final screen for creating the app. Shows a billing section with the monthly cost being zero dollars.]({static}/images/digital-ocean-create-app-step-3.png)
 
-Depending on the size of your site, it may take a few minutes to set up your app and site. It will then being building your site for the first time.
+Depending on the size of your site, it may take a few minutes to set up your app and site. It will then begin building your site for the first time.
 
 ![Main app screen showing the app name and a message saying the app has been deployed.]({static}/images/digital-ocean-app-deployed.png)
 
 Your site is now deployed! You can access the site by clicking the "Live App" button in the message or the URL just under the app's name.
 
-If you set up to auto deploy, any time you push a change, you will see a new build appear in the site overview. Once built, you will automatically see your changes go live.
+If you set it up to auto deploy, any time you push a change, you will see a new build appear in the site overview. Once built, you will automatically see your changes go live.
 
 ## Next Steps
 There are a lot of things you can do from here, but a few steps I recommend next would include:

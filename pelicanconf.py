@@ -24,7 +24,7 @@ DEVTO = 'https://dev.to/fpcorso'
 # Navigation settings
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
-MENUITEMS = (('Topics', 'categories.html'), ('About', 'pages/about.html'), ('Contact', 'pages/contact.html'),)
+MENUITEMS = (('About', 'pages/about.html'), ('Contact', 'pages/contact.html'),)
 
 # Pelican Sitemape plugin
 SITEMAP = {

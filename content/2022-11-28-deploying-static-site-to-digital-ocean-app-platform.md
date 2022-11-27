@@ -2,7 +2,7 @@
 Title: Deploying a Static Site to Digital Ocean’s App Platform
 Date: 11-28-2022 08:00:00
 Tags: digital ocean, pelican, blog, tutorial, static site
-Category: python
+Category: Python
 Slug: deploy-static-site-digital-ocean-app-platform
 Authors: Frank Corso
 Summary: Digital Ocean offers 3 free static sites on their app platform. If you're looking to deploy a static site using their app platform, read this article to learn how.

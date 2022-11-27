@@ -58,6 +58,19 @@ Sitewide Classes/IDs
     }
 }
 
+.grid {
+    display: block;
+}
+
+@media screen and (min-width: 800px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+    }
+}
+
 /*****
 Header
 *****/
@@ -92,6 +105,12 @@ Archives
 
 .post:hover, .post:focus-within {
     box-shadow: 0 0.7em 1.5em 0 #2a8737;
+}
+
+.post .tag {
+    color: #fff;
+    background-color: #2a8737;
+    float: right;
 }
 
 .post .meta {

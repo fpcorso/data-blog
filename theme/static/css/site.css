@@ -62,11 +62,11 @@ Sitewide Classes/IDs
     display: block;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
     .grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 40px;
         grid-auto-rows: minmax(100px, auto);
     }
 }

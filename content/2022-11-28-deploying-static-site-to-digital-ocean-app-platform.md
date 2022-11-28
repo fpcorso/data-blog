@@ -25,7 +25,7 @@ On their "starter" plan, you can have up to 3 static sites for free.
 
 For this site, I use the Pelican static site generator. The process will be mostly the same if you use a different static site generator except you may tweak the build step.
 
-The app platform [uses buildpacks](https://docs.digitalocean.com/products/app-platform/reference/buildpacks/) to create the environment. It detects which to use depending on your code.
+The app platform [uses buildpacks](https://docs.digitalocean.com/products/app-platform/reference/buildpacks/) to create the environment. It detects which to use depending on your code. These buildpacks will build the container and install all of your code's dependencies.
 
 ### Add a Requirements File (or Similar for Your Code)
 

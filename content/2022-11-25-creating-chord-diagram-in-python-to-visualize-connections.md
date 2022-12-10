@@ -1,6 +1,6 @@
 ---
 Title: Visualizing Connections Using Chord Diagrams in Python
-Date: 11-25-2022 08:00:00
+Date: 12-12-2022 08:00:00
 Tags: python
 Category: Data Visualization
 Slug: chord-diagram-python-visualize-connections
@@ -15,11 +15,11 @@ There are a few different ways we can visualize this but one diagram I have star
 
 ## What is a Chord Diagram?
 
-INSERT EXAMPLE IMAGE
+A while back, I created the chord diagram for Podchaser while doing some analysis on their category data.
 
-A chord diagram shows all the possible options for a categorical value and the number of connections between each option. PROVIDE EXAMPLE
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Interesting! 🤯<br><br>No, this isn&#39;t a New York City subway map or a failed dreamcatcher.<br><br>We analyzed how categories in the top 1,000 <a href="https://twitter.com/hashtag/podcasts?src=hash&amp;ref_src=twsrc%5Etfw">#podcasts</a> overlap.<br><br>Who knew True Crime and Comedy were such kindred spirits? <a href="https://t.co/UQiQShRDDi">pic.twitter.com/UQiQShRDDi</a></p>&mdash; Podchaser (@Podchaser) <a href="https://twitter.com/Podchaser/status/1570845326575276034?ref_src=twsrc%5Etfw">September 16, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
-The chord diagram is a great way to analyze and view the connections.
+A chord diagram shows all the possible options for a categorical value and the number of connections between each option. The chord diagram is a great way to analyze and view the connections. For example, if you have a dataset of posts with different tags or movies that are in multiple categories, using a chord diagram would be a useful way to see if there are any data points with either a lot of connections or very connections compared to the average.
 
 ## Creating a Chord Diagram in Python
 
@@ -206,7 +206,7 @@ We now have our finished Chord diagram! We can quickly spot that there are a lot
 ## Next Steps
 Once you work with the Chord diagrams, there are a few things more you can do, such as:
 
-1. Use Boken as the main library instead to have an interactive Chord diagram
+1. Use Bokeh as the main library instead to have an interactive Chord diagram
 2. Using the `select` method on the Chord object, you can filter what data in the chords dataframe gets visualized
 
 If you create any fun Chord diagrams, let me know!

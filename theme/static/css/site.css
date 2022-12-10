@@ -112,6 +112,7 @@ Archives
 .post .meta {
     line-height: 32px;
     padding-bottom: 10px;
+    color: #7a7a7a;
 }
 
 .post .summary {
@@ -313,6 +314,10 @@ body.dark .subtitle {
 
 body.dark a:hover {
     color: #559f5f;
+}
+
+body.dark .post .meta {
+    color: #dbdbdb !important;
 }
 
 .dark-mode {

@@ -200,5 +200,12 @@ hv.Chord((chords, nodes)).opts(
 
 ![]({static}/images/chord-example-pokemon.svg)
 
+We now have our finished Chord diagram! We can quickly spot that there are a lot of Pokemon with normal & flying. There are also quite a bit of connections between bug and poison, between grass and poison, and between flying and bug.
 
-NEXT STEPS
+## Next Steps
+Once you work with the Chord diagrams, there are a few things more you can do, such as:
+
+1. Use Boken as the main library instead to have an interactive Chord diagram
+2. Using the `select` method on the Chord object, you can filter what data in the chords dataframe gets visualized
+
+If you create any fun Chord diagrams, let me know!

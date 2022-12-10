@@ -15,7 +15,7 @@ There are a few different ways we can visualize this but one diagram I have star
 
 ## What is a Chord Diagram?
 
-A while back, I created the chord diagram for Podchaser while doing some analysis on their category data.
+A while back, I created the following chord diagram for [Podchaser](https://www.podchaser.com/) while doing some analysis on their podcast category data. It was interesting to see some categories having a lot of connections while others have very few connections. Additionally, some categories didn't have any connections between them.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Interesting! 🤯<br><br>No, this isn&#39;t a New York City subway map or a failed dreamcatcher.<br><br>We analyzed how categories in the top 1,000 <a href="https://twitter.com/hashtag/podcasts?src=hash&amp;ref_src=twsrc%5Etfw">#podcasts</a> overlap.<br><br>Who knew True Crime and Comedy were such kindred spirits? <a href="https://t.co/UQiQShRDDi">pic.twitter.com/UQiQShRDDi</a></p>&mdash; Podchaser (@Podchaser) <a href="https://twitter.com/Podchaser/status/1570845326575276034?ref_src=twsrc%5Etfw">September 16, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 

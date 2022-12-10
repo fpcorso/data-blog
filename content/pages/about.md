@@ -11,9 +11,9 @@ Hey there! My name is Frank Corso, and it is a pleasure to meet you. My tech car
 
 I created an Xbox 360 game called "A Game of Hockey" which was basically a clone of Pong but with 4 paddles. I released it in the Xbox Live Indie Games program that was relatively new at the time.
 
-This game was full of bugs and I am surprised anyone bought it. But, they did and it made me realize that I could have a future creating software.
+This game was full of bugs and I am surprised anyone bought it. But, they did and it made me realize that I could have a future creating software. I recently recreated this game and uploaded it to itch.io if you want to [play it yourself](https://chronosstudio.itch.io/a-game-of-hockey) to see how awful it was 😅.
 
-Now, 13 years later, I have worked on a variety of different projects and businesses from many different industries. My current side project, [Falcon Insights](https://falconinsights.app/), is a business reporting tool that uses AI to generate daily scorecards and weekly reports for businesses.
+Now, 13 years later, I have worked on a variety of different projects and businesses from many different industries. My current side project, [LiteSurveys](https://litesurveys.com/), is a survey tool people can use to add quick slide-in surveys to their website (you might have seen one or two on this site).
 
 Over the years, I have developed a passion for data analysis, visualization, and machine learning. But, most of my other sites are focused on marketing, business, or WordPress related topics so I haven't had a place to share some of the cool data or Python projects I am working on. This is why this site was created.
 

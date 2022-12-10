@@ -1,5 +1,5 @@
 ---
-Title: Creating chord diagram in python to visualize connections
+Title: Visualizing Connections Using Chord Diagrams in Python
 Date: 11-25-2022 08:00:00
 Tags: python
 Category: Data Visualization
@@ -134,7 +134,8 @@ Now, we have a dict of type combinations and counts. If this was a larger and mo
 
 ```python
 """
-Cycle over our type combinations, split each, and add it to our connections dict to end up with a format like:
+Cycle over our type combinations, split each, and add it to our connections 
+dict to end up with a format like:
 
 connections = {
     'normal': {
@@ -186,7 +187,7 @@ for pk_type, target_data in connections.items():
         if len(is_already_in) == 0:
             chords= chords.append(pd.Series([type_id, target_id, counts], index=chords.columns), ignore_index=True)
 
-# Make our values are ints.
+# Make sure our values are ints.
 chords['value'] = chords['value'].astype('int')
 ```
 

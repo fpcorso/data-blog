@@ -94,4 +94,61 @@ hv.Chord((connections, nodes)).opts(
 
 ![]({static}/images/chord-example-3.svg)
 
+asf
+
+Now, that we have created a basic diagram, let's look at how this would work for a real data set.
+
+https://www.kaggle.com/datasets/rounakbanik/pokemon
+
+```python
+df = pd.read_csv('/kaggle/input/pokemon/pokemon.csv')
+df.head()
+small_df = df[~df['type2'].isnull()]
+small_df['types'] = small_df.apply(lambda x: f'{x["type1"]},{x["type2"]}', axis=1)
+small_df.head(10)
+types = small_df['types'].value_counts().to_dict()
+connections = {}
+for type_combo, value in types.items():
+    pk_types = type_combo.split(',')
+    for pk_type in pk_types:
+        if pk_type not in connections:
+            connections[pk_type] = {'targets': {x: value for x in pk_types if x != pk_type}}
+        else:
+            for target in pk_types:
+                if pk_type == target:
+                    continue
+                if target in connections[pk_type]['targets'].keys():
+                    connections[pk_type]['targets'][target] += value
+                else:
+                    connections[pk_type]['targets'][target] = value
+connections
+
+chords = pd.DataFrame(columns=['source', 'target', 'value'])
+nodes_df = pd.DataFrame(columns=['name'])
+for category, target_data in connections.items():
+    if category not in nodes_df['name'].values:
+        nodes_df = nodes_df.append(pd.Series([category], index=nodes_df.columns), ignore_index=True)
+    category_id = int(nodes_df[nodes_df['name'] == category].index[0])
+    for target, counts in target_data['targets'].items():
+        if target not in nodes_df['name'].values:
+            nodes_df = nodes_df.append(pd.Series([target], index=nodes_df.columns), ignore_index=True)
+        target_id = int(nodes_df[nodes_df['name'] == target].index[0])
+
+        # Make sure the opposite isn't already in our chords.
+        is_already_in = chords[(chords['source'] == target_id) & (chords['target'] == category_id)]
+        if len(is_already_in) == 0:
+            chords= chords.append(pd.Series([category_id, target_id, counts], index=chords.columns), ignore_index=True)
+
+chords['value'] = chords['value'].astype('int')
+chords.head(25)
+
+nodes = hv.Dataset(nodes_df.reset_index(), 'index')
+nodes.data.head(25)
+
+chord = hv.Chord((chords, nodes)).opts(
+    opts.Chord(cmap='Category20', edge_color=dim('source').astype(str), labels='name', node_color=dim('index').astype(str)))
+chord
+```
+
+
 NEXT STEPS

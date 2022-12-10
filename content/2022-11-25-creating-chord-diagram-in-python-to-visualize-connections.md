@@ -85,7 +85,9 @@ hv.Chord((connections, nodes)).opts(opts.Chord(labels='name'))
 
 ![]({static}/images/chord-example-2.svg)
 
-We're able to start seeing the connections but it's a bit difficult to evaluate with all the lines being the same color.
+The `opts` method allows us to pass a variety of options and settings to create our diagram, such as the labels column.
+
+We're able to start seeing the connections but it's a bit difficult to evaluate with all the lines being the same color. We can use the `opts` method to pass some settings for adjusting edge and node colors.
 
 ```python
 hv.Chord((connections, nodes)).opts(
@@ -94,21 +96,58 @@ hv.Chord((connections, nodes)).opts(
 
 ![]({static}/images/chord-example-3.svg)
 
-asf
+The diagram is looking much better now. We can start to see which nodes have the most connections between them.
 
 Now, that we have created a basic diagram, let's look at how this would work for a real data set.
 
-https://www.kaggle.com/datasets/rounakbanik/pokemon
+Your categorical data could be in a variety of formats. For this example, we are looking at a data set that has 2 "types" per entity and we'll visualize connections between these different types.
+
+I found [a dataset on Kaggle](https://www.kaggle.com/datasets/rounakbanik/pokemon) of all the Pokemon and their types. Pokemon is a video game that has hundreds of different animal-like creatures with different "types". Pokemon can have 1 or 2 types and there are 18 different potential types.
+
+To make this simple, I'll only look at Pokemon that have 2 types and use pandas value_counts() method to quickly extract out the main connection counts.
 
 ```python
-df = pd.read_csv('/kaggle/input/pokemon/pokemon.csv')
-df.head()
-small_df = df[~df['type2'].isnull()]
-small_df['types'] = small_df.apply(lambda x: f'{x["type1"]},{x["type2"]}', axis=1)
-small_df.head(10)
-types = small_df['types'].value_counts().to_dict()
+import pandas as pd
+import holoviews as hv
+from holoviews import opts, dim
+
+hv.extension('matplotlib')
+hv.output(fig='svg', size=500)
+```
+
+```python
+pokemon_df = pd.read_csv('pokemon.csv')
+two_types_df = pokemon_df[~pokemon_df['type2'].isnull()]
+two_types_df['types'] = two_types_df.apply(lambda x: f'{x["type1"]},{x["type2"]}', axis=1)
+type_connections = two_types_df['types'].value_counts().to_dict()
+
+"""
+type_connections is in the format of:
+{
+    'normal,flying': 26,
+    'ghost,dark': 12
+}
+"""
+```
+
+Now, we have a dict of type combinations and counts. If this was a larger and more complex data set, we'll have to approach this differently but, for this, I'll just loop over the type combinations and convert it into a dict of source types with their accompanying target types.
+
+```python
+"""
+Cycle over our type combinations, split each, and add it to our connections dict to end up with a format like:
+
+connections = {
+    'normal': {
+        'targets': {
+            'flying': 26,
+            'water': 12
+        }
+    }
+}
+"""
+
 connections = {}
-for type_combo, value in types.items():
+for type_combo, value in type_connections.items():
     pk_types = type_combo.split(',')
     for pk_type in pk_types:
         if pk_type not in connections:
@@ -121,34 +160,45 @@ for type_combo, value in types.items():
                     connections[pk_type]['targets'][target] += value
                 else:
                     connections[pk_type]['targets'][target] = value
-connections
+```
 
+Now, we need to convert this to our chords and nodes format. Plus, there might be some source->target inverse (such as normal/flying vs flying/normal) that we want to convert all to the same for our individual chord record.
+
+```python
 chords = pd.DataFrame(columns=['source', 'target', 'value'])
 nodes_df = pd.DataFrame(columns=['name'])
-for category, target_data in connections.items():
-    if category not in nodes_df['name'].values:
-        nodes_df = nodes_df.append(pd.Series([category], index=nodes_df.columns), ignore_index=True)
-    category_id = int(nodes_df[nodes_df['name'] == category].index[0])
+for pk_type, target_data in connections.items():
+    
+    # We want insert into our nodes df and use that index as the numerical representation in chords dataframe.
+    if pk_type not in nodes_df['name'].values:
+        nodes_df = nodes_df.append(pd.Series([pk_type], index=nodes_df.columns), ignore_index=True)
+    type_id = int(nodes_df[nodes_df['name'] == pk_type].index[0])
+    
+    
     for target, counts in target_data['targets'].items():
         if target not in nodes_df['name'].values:
             nodes_df = nodes_df.append(pd.Series([target], index=nodes_df.columns), ignore_index=True)
         target_id = int(nodes_df[nodes_df['name'] == target].index[0])
 
-        # Make sure the opposite isn't already in our chords.
-        is_already_in = chords[(chords['source'] == target_id) & (chords['target'] == category_id)]
+        # During our process in the last code block, we add each count twice:
+        # Once for the source and once for the target. So, we want to make sure we add it only once.
+        is_already_in = chords[(chords['source'] == target_id) & (chords['target'] == type_id)]
         if len(is_already_in) == 0:
-            chords= chords.append(pd.Series([category_id, target_id, counts], index=chords.columns), ignore_index=True)
+            chords= chords.append(pd.Series([type_id, target_id, counts], index=chords.columns), ignore_index=True)
 
+# Make our values are ints.
 chords['value'] = chords['value'].astype('int')
-chords.head(25)
-
-nodes = hv.Dataset(nodes_df.reset_index(), 'index')
-nodes.data.head(25)
-
-chord = hv.Chord((chords, nodes)).opts(
-    opts.Chord(cmap='Category20', edge_color=dim('source').astype(str), labels='name', node_color=dim('index').astype(str)))
-chord
 ```
+
+Now, we can pass our nodes dataframe to the Dataset method and then create our diagram.
+
+```python
+nodes = hv.Dataset(nodes_df.reset_index(), 'index')
+hv.Chord((chords, nodes)).opts(
+    opts.Chord(cmap='Category20', edge_color=dim('source').astype(str), labels='name', node_color=dim('index').astype(str)))
+```
+
+![]({static}/images/chord-example-pokemon.svg)
 
 
 NEXT STEPS

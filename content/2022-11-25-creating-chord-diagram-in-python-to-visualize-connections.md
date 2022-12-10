@@ -19,7 +19,7 @@ INSERT EXAMPLE IMAGE
 
 A chord diagram shows all the possible options for a categorical value and the number of connections between each option. PROVIDE EXAMPLE
 
-If the data point you are trying to visualize has fewer than a dozen or possible options, the chord diagram is a great way to analyze and view the connections.
+The chord diagram is a great way to analyze and view the connections.
 
 ## Creating a Chord Diagram in Python
 
@@ -47,8 +47,17 @@ hv.output(fig='svg', size=500)
 From there, let's create a very basic example data set first.
 
 ```python
-# stuff
-connections = []
+# Create Pandas dataframe from an example list of dicts.
+connections = pd.DataFrame.from_records([
+    {'source': 0, 'target': 1, 'value':5},
+    {'source': 0, 'target': 2, 'value':15},
+    {'source': 0, 'target': 3, 'value':8},
+    {'source': 0, 'target': 4, 'value':2},
+    {'source': 1, 'target': 2, 'value':45},
+    {'source': 1, 'target': 3, 'value':12},
+    {'source': 1, 'target': 4, 'value':1},
+    {'source': 2, 'target': 3, 'value':19},
+])
 ```
 
 The `Chord` method accepts a dataframe with `source`, `target`, and `value` columns where `source` and `target` are numerical representations of the "to" and "from" categorical options and the `value` is how many connections it has.
@@ -64,8 +73,25 @@ hv.Chord(connections)
 We can add labels to the diagram by passing a "nodes" data set. The nodes will have two columns, `index` for the numerical representation of a value and `name` for the label.
 
 ```python
-nodes = []
-hv.Chord((connections, nodes))
+nodes = hv.Dataset(pd.DataFrame.from_records([
+    {'index': 0, 'name': "Stuff"},
+    {'index': 1, 'name': "Things"},
+    {'index': 2, 'name': "Whatnots"},
+    {'index': 3, 'name': "Odds & Ends"},
+    {'index': 4, 'name': "Cups"},
+]), 'index')
+hv.Chord((connections, nodes)).opts(opts.Chord(labels='name'))
 ```
+
+![]({static}/images/chord-example-2.svg)
+
+We're able to start seeing the connections but it's a bit difficult to evaluate with all the lines being the same color.
+
+```python
+hv.Chord((connections, nodes)).opts(
+    opts.Chord(cmap='Category20', edge_color=dim('source').astype(str), labels='name', node_color=dim('index').astype(str)))
+```
+
+![]({static}/images/chord-example-3.svg)
 
 NEXT STEPS

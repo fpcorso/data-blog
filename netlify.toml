@@ -1,6 +1,0 @@
-[build]
-    publish = "output/"
-    command = "pelican content -s publishconf.py"
-
-[context.production]
-    environment = { PYTHON_VERSION  = "3.8" }

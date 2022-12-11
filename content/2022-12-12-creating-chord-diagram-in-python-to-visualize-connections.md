@@ -7,7 +7,7 @@ Slug: chord-diagram-python-visualize-connections
 Authors: Frank Corso
 Summary: Looking to visualize connections between different categorical values? Learn how to create a chord diagram!
 Description: Looking to visualize connections between different categorical values? Learn how to create a chord diagram!
-Status: draft
+Status: published
 ---
 It is often helpful to visualize the connections between categorical data points. This could help discover a large amount of overlap between two types or types that are typically tied together.
 

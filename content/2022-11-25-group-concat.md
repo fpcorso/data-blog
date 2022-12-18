@@ -62,7 +62,7 @@ Using GROUP_CONCAT on a single table is helpful to quickly see a list of values.
 
 While using this within a table is useful, the greater usefulness of GROUP_CONCAT comes when you are getting values from multiple tables.
 
-## Example Using GROUP_CONCAT In Subquery
+## Example Using GROUP_CONCAT in a Subquery
 
 Let's say we had our `Survey` table and then a `Question` table that had questions within the surveys. The `Question` table has a variety of columns but the ones we care about would be `survey_id`, which tells us which survey it belongs to, and `title` which is the question itself.
 
@@ -84,7 +84,7 @@ WHERE user_id = 17;
 | My Survey        | Test Question,Another Fake Question                                                   |
 
 
-## Example Using GROUP_CONCAT In Subquery With JOIN
+## Example Using GROUP_CONCAT in a Subquery With JOIN
 
 While this works well for a lot of use cases already, you will often have a many-to-many relationship that you want to pull into this query.
 

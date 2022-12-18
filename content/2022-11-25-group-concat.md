@@ -1,12 +1,12 @@
 ---
-Title: Group concat
+Title: How To Use MySQL’s GROUP_CONCAT To Get Aggregated Lists of Values
 Date: 12-27-2022 08:00:00
 Tags: mysql,subquery
 Category: SQL
 Slug: mysql-group-concat
 Authors: Frank Corso
-Summary: TBD
-Description: TBD
+Summary: One of my favorite MySQL functions that I wished more people knew about is GROUP_CONCAT. This lets you create an aggregated list of values in your queries. Read on to learn how to use it.
+Description: MySQL's GROUP_CONCAT is a function that lets you create an aggregated list of values within your query results. Learn how to use this lesser-known MySQL function.
 Status: draft
 ---
 When analyzing data in your MySQL database or querying for data, there are times when you have data points that could have multiple values. For example, a post might have multiple tags or an order might have multiple products.

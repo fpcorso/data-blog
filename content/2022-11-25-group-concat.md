@@ -2,7 +2,7 @@
 Title: Group concat
 Date: 12-27-2022 08:00:00
 Tags: mysql,subquery
-Category: sql
+Category: SQL
 Slug: mysql-group-concat
 Authors: Frank Corso
 Summary: TBD

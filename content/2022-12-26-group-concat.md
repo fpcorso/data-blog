@@ -1,6 +1,6 @@
 ---
 Title: How To Use MySQL’s GROUP_CONCAT To Get Aggregated Lists of Values
-Date: 12-27-2022 08:00:00
+Date: 12-26-2022 08:00:00
 Tags: mysql,subquery
 Category: SQL
 Slug: mysql-group-concat
@@ -90,7 +90,7 @@ While this works well for a lot of use cases already, you will often have a many
 
 Let's say we have a third and fourth table, `Tag` and `Survey_Tag`. These tables create a many-to-many relationship for different tags people can attach to their surveys for filtering and reporting purposes.
 
-We can update our previous query to pull in both the questions and the tags by using a JOIN in the tags subquery. Depending on how larger your dataset is and how well it's optimized, you might need to be more narrow in your queries to avoid timeouts or this taking a long time. However, assuming our database is an average size, this SQL would work:
+We can update our previous query to pull in both the questions and the tags by using a JOIN in the tags subquery. Depending on how large your database is and how well it's optimized, you might need to be narrower in your queries to avoid timeouts or this taking a long time. However, assuming our database is an average size, this SQL would work:
 
 ```sql
 SELECT title, (

@@ -112,4 +112,4 @@ WHERE user_id = 17;
 | Post-sale Survey | How easy was our checkout process?,What almost stopped you from making this purchase? | checkout,revenue,sales funnel |
 |  My Survey       | Test Question,Another Fake Question                                                   | random,testing                |
 
-Once you start using GROUP_CONCAT, you will start seeing uses it for it in many of your queries.
+Once you start using GROUP_CONCAT, you will start seeing uses for it in many of your queries.

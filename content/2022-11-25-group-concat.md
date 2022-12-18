@@ -13,7 +13,7 @@ When analyzing data in your MySQL database or querying for data, there are times
 
 Querying for these are fairly straightforward, but sometimes you want results where a single row in the response includes both the parent data and the children data.
 
-There are several ways we can do this but the easiest is using GROUP_CONCAT. GROUP_CONCAT can take a group of data points and convert it into a comma-separated list as a single value. I tend to use this function several times a week at least.
+There are several ways we can do this but the easiest is using [MySQL's GROUP_CONCAT function](https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html#function_group-concat). GROUP_CONCAT can take a group of data points and convert it into a comma-separated list as a single value. I tend to use this function several times a week at least.
 
 ## Example Using GROUP_CONCAT
 
@@ -112,3 +112,4 @@ WHERE user_id = 17;
 | Post-sale Survey | How easy was our checkout process?,What almost stopped you from making this purchase? | checkout,revenue,sales funnel |
 |  My Survey       | Test Question,Another Fake Question                                                   | random,testing                |
 
+Once you start using GROUP_CONCAT, you will start seeing uses it for it in many of your queries.

@@ -28,7 +28,7 @@ SELECT GROUP_CONCAT(title)
 FROM Survey;
 ```
 
-```
+```text
 Post-sale survey,Random Test Survey,Testing Potential Survey,what does this do?,My Survey
 ```
 
@@ -40,7 +40,7 @@ FROM Survey
 WHERE user_id = 17;
 ```
 
-```
+```text
 Post-sale survey,My Survey
 ```
 
@@ -54,7 +54,7 @@ FROM Survey
 WHERE user_id = 17;
 ```
 
-```
+```text
 Post-sale survey; My Survey
 ```
 

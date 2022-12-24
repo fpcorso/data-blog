@@ -25,9 +25,42 @@ df = pd.read_csv('test.csv')
 
 
 ```python
-sns.scatterplot()
+sns.scatterplot(data=df, x='', y='')
 ```
 
-CREATING SCATTERPLOT WITH COLORS AND LABELS
+This creates a very basic scatterplot like this:
+
+INSERT IMAGE
+
+If we had a 3rd dimension, we could turn this into a bubble plot by using the `size` parameter, like this:
+
+```python
+sns.scatterplot(data=df, x='', y='', size='')
+```
+
+This creates a basic bubble plot like this:
+
+INSERT IMAGE
+
+Now that we looked at a basic scatterplot, let's look at an example using real data with a nice graph that's closer to being "done."
+
+First, the data is SOMETHNG!
+
+We again set up our imports and prepare our data; reading from CSV in this case.
+
+```python
+import pandas as pd
+import seaborn as sns
+
+df = pd.read_csv('test.csv')
+```
+
+SET UP STYLES
+
+CREATE BASIC CHART
+
+CREATE CHART WITH LABELS AND TITLE
+
+CREATE CHART WITH ANNOTATIONS
 
 NEXT STEPS

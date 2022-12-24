@@ -9,11 +9,24 @@ Summary: TBD
 Description: TBD
 Status: draft
 ---
-INTRO
 
-DATA FOR SCATTERPLOT
+Scatterplots are a great way to visualize the relationship between two ranges for many data points.
 
 CREATING BASIC SCATTERPLOT
+
+First, let's set up our imports and load in our data.
+
+```python
+import pandas as pd
+import seaborn as sns
+
+df = pd.read_csv('test.csv')
+```
+
+
+```python
+sns.scatterplot()
+```
 
 CREATING SCATTERPLOT WITH COLORS AND LABELS
 

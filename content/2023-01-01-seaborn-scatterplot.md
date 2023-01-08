@@ -54,6 +54,7 @@ We again set up our imports and prepare our data; reading from CSV in this case.
 
 ```python
 import pandas as pd
+import matplotlib.pyplot as plt
 import seaborn as sns
 
 df = pd.read_csv('test.csv')
@@ -69,10 +70,30 @@ sns.set_theme('white')
 
 ### Creating Our Chart
 
+Now that we have applied our styles, we can start building our final graph. Seaborn makes these easy by having a `scatterplot` method. We can pass our data set to the method and define which data point goes along which axis.
 
+```python
+ax = sns.scatterplot(data=df, x='', y='')
+```
 
-CREATE CHART WITH LABELS AND TITLE
+INSERT IMAGE
 
-CREATE CHART WITH ANNOTATIONS
+Next, we can add our title and labels for the chart.
+
+```python
+plt.title('')
+plt.xlabel('')
+plt.ylabel('')
+```
+
+INSERT IMAGE
+
+Our chart is starting to look good. But, there are some interesting data points in the graph. It might be useful to add an annotation with some additional details.
+
+```python
+ax.what()
+```
+
+INSERT IMAGE
 
 ## Next Steps

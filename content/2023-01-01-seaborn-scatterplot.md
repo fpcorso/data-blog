@@ -88,6 +88,14 @@ plt.ylabel('')
 
 INSERT IMAGE
 
+It is also normally best practice to add some text telling the viewer what the source of the data is. This is helpful in case they want to dig deeper into the data. Additionally, it helps tell them how old the data is. This is useful in a variety of settings, even if you are only sharing charts within internal tools, such as Slack.
+
+We can add some text with our source information like this:
+
+```python
+
+```
+
 Our chart is starting to look good. But, there are some interesting data points in the graph. It might be useful to add an annotation with some additional details.
 
 ```python

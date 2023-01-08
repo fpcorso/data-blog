@@ -96,10 +96,18 @@ We can add some text with our source information like this:
 
 ```
 
-Our chart is starting to look good. But, there are some interesting data points in the graph. It might be useful to add an annotation with some additional details.
+Our chart is starting to look good. But, there are some interesting data points in the graph. It might be useful to add an annotation with some additional details. We can do this using the `annotate` method.
 
 ```python
-ax.what()
+ax.annotate(text='', xy=(1,1))
+```
+
+INSERT IMAGE
+
+Having some text on top of the point is okay but we can make this a little nice moving the text a little away from the point and using an arrow.
+
+```python
+ax.annotate(text='', xy=())
 ```
 
 INSERT IMAGE

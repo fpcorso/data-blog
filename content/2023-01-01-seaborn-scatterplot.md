@@ -10,9 +10,11 @@ Description: TBD
 Status: draft
 ---
 
-Scatterplots are a great way to visualize the relationship between two ranges for many data points.
+Scatterplots are a great way to visualize the relationship between two ranges for many data points. This is useful if you are looking for trends or outliers in your data set.
 
-CREATING BASIC SCATTERPLOT
+In Python, we can use the Seaborn library to easily generate scatterplots.
+
+## Creating Our First Scatterplot
 
 First, let's set up our imports and load in our data.
 
@@ -42,6 +44,8 @@ This creates a basic bubble plot like this:
 
 INSERT IMAGE
 
+## Creating a Scatterplot with Real Data
+
 Now that we looked at a basic scatterplot, let's look at an example using real data with a nice graph that's closer to being "done."
 
 First, the data is SOMETHNG!
@@ -55,12 +59,20 @@ import seaborn as sns
 df = pd.read_csv('test.csv')
 ```
 
-SET UP STYLES
+### Setting Up Our Styles
 
-CREATE BASIC CHART
+Now, we can set up some styling options to apply to all of our Seaborn charts. We can do this using Seaborn's `set_theme` method. We can pass the method one of Seaborn's built-in styles to get started like this:
+
+```python
+sns.set_theme('white')
+```
+
+### Creating Our Chart
+
+
 
 CREATE CHART WITH LABELS AND TITLE
 
 CREATE CHART WITH ANNOTATIONS
 
-NEXT STEPS
+## Next Steps

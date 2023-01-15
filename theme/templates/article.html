@@ -12,7 +12,7 @@
 <article class="entry">
     <header class="entry-header">
         {% if article.status == 'draft' %}
-            <p style="is-1 mb-2 has-text-red">DRAFT ARTICLE</p>
+            <p class="mb-2 has-text-danger-dark has-text-weight-bold is-size-1">DRAFT ARTICLE</p>
         {% endif %}
         <h1 class="entry-title title is-2 mb-1">{{ article.title }}</h1>
         <div class="entry-meta has-text-grey">

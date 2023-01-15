@@ -11,6 +11,9 @@
 {% block content %}
 <article class="entry">
     <header class="entry-header">
+        {% if article.status == 'draft' %}
+            <p style="is-1 mb-2 has-text-red">DRAFT ARTICLE</p>
+        {% endif %}
         <h1 class="entry-title title is-2 mb-1">{{ article.title }}</h1>
         <div class="entry-meta has-text-grey">
             <time class="published" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>

@@ -12,11 +12,11 @@ Status: draft
 
 Scatterplots are a great way to visualize the relationship between two ranges for many data points. This is useful if you are looking for trends or outliers in your data set.
 
-In Python, we can use the Seaborn library to easily generate scatterplots.
+In Python, we can use [the Seaborn library]((https://seaborn.pydata.org)) to easily generate scatterplots.
 
 ## Creating Our First Scatterplot
 
-First, let's set up our imports and load in our data.
+First, let's set up our imports and load in our data. For this first graph, we'll use some fake data showing some products and both their size and price.
 
 ```python
 import pandas as pd
@@ -48,6 +48,9 @@ fake_data = [{
 fake_df = pd.DataFrame.from_records(fake_data)
 ```
 
+Seaborn has many different methods for creating charts. For scatterplots, we can [use the `scatterplot` method](https://seaborn.pydata.org/generated/seaborn.scatterplot.html). This method accepts a dataset along with what should be along each axis.
+
+For our fake dataset, our code will look like this:
 
 ```python
 sns.scatterplot(data=fake_df, x='size', y='price')
@@ -55,15 +58,15 @@ sns.scatterplot(data=fake_df, x='size', y='price')
 
 This creates a very basic scatterplot like this:
 
-INSERT IMAGE
+![A basic scatterplot graph with no labels or title. Shows an upward trend for size and price.]({static}/images/seaborn-scatterplot-example-1.png)
 
-We can quickly see that there is a trend where as the size gets larger the price increases. However, it also easy to notice the outlier where the price is 4 and the size is 1.
+We can quickly see that there is a trend that shows that as the size gets larger the price increases. However, it is also easy to notice the outlier where the price is 4 and the size is 1.
 
 ## Creating a Scatterplot with Real Data
 
 Now that we looked at a basic scatterplot, let's look at an example using real data with a nicer graph that's closer to being "done."
 
-First, the data is the "Fortune Top 1000 Companies by Revenue 2022" dataset on Kaggle. This data set lists the Fortune 500 companies, and a few stats for the 2021 year, such as their market value and profits for 2021. Let's see if there are any interesting findings when we compare market values with a company's profits.
+First, the data is [the "Fortune Top 1000 Companies by Revenue 2022" dataset](https://www.kaggle.com/datasets/surajjha101/fortune-top-1000-companies-by-revenue-2022) on Kaggle. This data set lists the Fortune 500 companies, and a few stats for the 2021 year, such as their market value and profits for 2021. Let's see if there are any interesting findings when we compare market values with a company's profits.
 
 We again set up our imports and prepare our data. I downloaded the data set and cleaned up some of the data already. Then, we read in from the CSV I created.
 

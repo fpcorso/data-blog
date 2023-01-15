@@ -1,5 +1,5 @@
 ---
-Title: Creating Scatterplot Seaborn
+Title: Creating A Scatterplot Chart In Seaborn
 Date: 01-16-2023 09:00:00
 Tags: python,seaborn,scatterplot
 Category: Data Visualization

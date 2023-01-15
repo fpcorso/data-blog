@@ -12,7 +12,7 @@ Status: draft
 
 Scatterplots are a great way to visualize the relationship between two ranges for many data points. This is useful if you are looking for trends or outliers in your data set.
 
-In Python, we can use [the Seaborn library]((https://seaborn.pydata.org)) to easily generate scatterplots.
+In Python, we can use [the Seaborn library]((https://seaborn.pydata.org)) to easily generate scatterplots. If you are new to Seaborn, you can glance through [my "Creating Your First Chart Using Seaborn" article](https://frankcorso.dev/seaborn.html) to get a quick sense of how Seaborn works. 
 
 ## Creating Our First Scatterplot
 
@@ -66,16 +66,16 @@ We can quickly see that there is a trend that shows that as the size gets larger
 
 Now that we looked at a basic scatterplot, let's look at an example using real data with a nicer graph that's closer to being "done."
 
-First, the data is [the "Fortune Top 1000 Companies by Revenue 2022" dataset](https://www.kaggle.com/datasets/surajjha101/fortune-top-1000-companies-by-revenue-2022) on Kaggle. This data set lists the Fortune 500 companies, and a few stats for the 2021 year, such as their market value and profits for 2021. Let's see if there are any interesting findings when we compare market values with a company's profits.
+First, the data is [the "Fortune Top 1000 Companies by Revenue 2022" dataset](https://www.kaggle.com/datasets/surajjha101/fortune-top-1000-companies-by-revenue-2022) on Kaggle. This data set lists the Fortune 1000 companies, and a few stats for the 2021 year, such as their market value and profits for 2021. Let's see if there are any interesting findings when we compare market values with a company's profits. I downloaded the data set and cleaned up some of the data already.
 
-We again set up our imports and prepare our data. I downloaded the data set and cleaned up some of the data already. Then, we read in from the CSV I created.
+We again set up our imports and prepare our data. Then, we read in from the CSV I created.
 
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_csv('fortune-500-2022-prepared.csv')
+df = pd.read_csv('fortune-1000-2022-prepared.csv')
 ```
 
 ### Setting Up Our Styles
@@ -102,7 +102,8 @@ rc_params = {
     "axes.titlelocation": "left",
     "axes.titlepad": 20,
     "axes.labelsize": 10,
-    "figure.figsize":(20, 10),
+    "axes.labelpad": 15,
+    "figure.figsize":(12, 8),
     "xtick.labelcolor": secondary_color,
     "xtick.labelsize": tick_size,
     "ytick.labelcolor": secondary_color,
@@ -120,11 +121,13 @@ I encourage you to review both [Seaborn's aesthetics guide](https://seaborn.pyda
 
 Now that we have applied our styles, we can start building our final graph. Seaborn makes these easy by having a `scatterplot` method. We can pass our data set to the method and define which data point goes along which axis.
 
+We could have the color and/or style of each point be different based on the data but, for this, I had the color match the rest of the styling we will use. You could also use the size parameters to turn this into a bubble chart and have different sizes based on a 3rd dimension if you wanted to.
+
 ```python
 ax = sns.scatterplot(data=df, x='market_value', y='profit', color='#2A8737', legend=False)
 ```
 
-INSERT IMAGE
+![A basic scatterplot graph with no labels or title. Shows an upward trend correlation between profit and market value with a few outliers.]({static}/images/seaborn-scatterplot-example-2.png)
 
 Next, we can add our title and labels for the chart.
 
@@ -134,7 +137,7 @@ ax.set_xlabel('Market Value')
 ax.set_ylabel('Profits')
 ```
 
-INSERT IMAGE
+![The same scatterplot graph as above but now with some text to explain the graph.]({static}/images/seaborn-scatterplot-example-3.png)
 
 It is also normally best practice to add some text telling the viewer what the source of the data is. This is helpful in case they want to dig deeper into the data. Additionally, it helps tell them how old the data is. This is useful in a variety of settings, even if you are only sharing charts within internal tools, such as Slack.
 
@@ -144,26 +147,33 @@ We could pass x and y values that are based on the data set (the default) but I 
 ax.text(1, -.15, 'Source: Fortune Top 1000 Companies by Revenue 2022 on Kaggle', fontsize=12, horizontalalignment='right', transform=ax.transAxes)
 ```
 
+![The same scatterplot graph as above but now with a little text in the lower right mentioning the data source.]({static}/images/seaborn-scatterplot-example-4.png)
+
 Our chart is starting to look good. But, there are some interesting data points in the graph. It might be useful to add an annotation or two with some additional details. We can do this using the `annotate` method.
 
 ```python
 ax.annotate(text='Apple', xy=(2849537,94680))
 ```
 
-INSERT IMAGE
+![The same scatterplot graph as above but now with a label on top of the upper-right point marked as Apple.]({static}/images/seaborn-scatterplot-example-5.png)
 
 Having some text on top of the point is okay but we can make this a little nicer by moving the text a little away from the point and using an arrow.
 
 ```python
-ax.annotate(text='Apple', xy=(2840000,94680), ha='center', xytext=(-75, -5), textcoords='offset points', arrowprops=dict(width=5, headwidth=10, color=secondary_color))
-ax.annotate(text='Berkshire \n Hathaway', xy=(790942,89795), ha='center', xytext=(100, -10), textcoords='offset points', arrowprops=dict(width=5, headwidth=10, color=secondary_color))
-ax.annotate(text='Tesla', xy=(1123707,5519), ha='center', xytext=(100, -5), textcoords='offset points', arrowprops=dict(width=5, headwidth=10, color=secondary_color))
-ax.annotate(text='JPMorgan \n Chase', xy=(412526,48334), ha='center', xytext=(140, -10), textcoords='offset points', arrowprops=dict(width=5, headwidth=10, color=secondary_color))
+arrow_props = {
+    "width": 3,
+    "headwidth": 8,
+    "color": secondary_color
+}
+ax.annotate(text='Apple', xy=(2830000,94680), ha='center', xytext=(-50, -5), textcoords='offset points', arrowprops=arrow_props)
+ax.annotate(text='Berkshire \n Hathaway', xy=(798942,89795), ha='center', xytext=(70, -10), textcoords='offset points', arrowprops=arrow_props)
+ax.annotate(text='Tesla', xy=(1133707,5519), ha='center', xytext=(50, -5), textcoords='offset points', arrowprops=arrow_props)
+ax.annotate(text='JPMorgan \n Chase', xy=(425526,48334), ha='center', xytext=(70, -10), textcoords='offset points', arrowprops=arrow_props)
 ```
 
-INSERT IMAGE
+![The same scatterplot graph as above but now with arrows pointing out four interesting points, including Tesla which had much lower profits than others around its marketshare and JP Morgan with much lower market value than others with similar profits.]({static}/images/seaborn-scatterplot-example-6.png)
 
-Of course, what you annotate and how you label+title your chart will depend on the story you are telling. If you are more focused on the scenario where most of the Fortune 500 companies, while big companies, are dwarfed by the top companies, we would probably handle this chart differently.
+Of course, what you annotate and how you label+title your chart will depend on the story you are telling. If you are more focused on the scenario where most of the Fortune 1000 companies, while big companies, are dwarfed by the top companies, we would probably handle this chart differently.
 
 ## Next Steps
 

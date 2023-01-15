@@ -7,10 +7,10 @@ Slug: seaborn-scatterplot
 Authors: Frank Corso
 Summary: Scatterplots are a great way to visualize relationships between different dimensions. Learn how to create them in Python using Seaborn.
 Description: Scatterplots are a great way to visualize relationships between different dimensions. Learn how to create them in Python using Seaborn.
-Status: draft
+Status: published
 ---
 
-Scatterplots are a great way to visualize the relationship between two ranges for many data points. This is useful if you are looking for trends or outliers in your data set.
+Scatterplots are a great way to visualize the relationship between two ranges for many data dimensions. This is useful if you are looking for trends or outliers in your data set. This could be in your early analysis to see what you want to look deeper into or it could be when sharing findings with stakeholders or a broader audience.
 
 In Python, we can use [the Seaborn library]((https://seaborn.pydata.org)) to easily generate scatterplots. If you are new to Seaborn, you can glance through [my "Creating Your First Chart Using Seaborn" article](https://frankcorso.dev/seaborn.html) to get a quick sense of how Seaborn works. 
 

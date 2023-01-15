@@ -1,12 +1,12 @@
 ---
 Title: Creating Scatterplot Seaborn
-Date: 01-01-2023 09:00:00
-Tags: python
+Date: 01-16-2023 09:00:00
+Tags: python,seaborn,scatterplot
 Category: Data Visualization
 Slug: seaborn-scatterplot
 Authors: Frank Corso
-Summary: TBD
-Description: TBD
+Summary: Scatterplots are a great way to visualize relationships between different dimensions. Learn how to create them in Python using Seaborn.
+Description: Scatterplots are a great way to visualize relationships between different dimensions. Learn how to create them in Python using Seaborn.
 Status: draft
 ---
 
@@ -16,7 +16,7 @@ In Python, we can use [the Seaborn library]((https://seaborn.pydata.org)) to eas
 
 ## Creating Our First Scatterplot
 
-First, let's set up our imports and load in our data. For this first graph, we'll use some fake data showing some products and both their size and price.
+First, let's set up our imports and load our data. For this first graph, we'll use fake data showing products and their size and price.
 
 ```python
 import pandas as pd
@@ -60,15 +60,15 @@ This creates a very basic scatterplot like this:
 
 ![A basic scatterplot graph with no labels or title. Shows an upward trend for size and price.]({static}/images/seaborn-scatterplot-example-1.png)
 
-We can quickly see that there is a trend that shows that as the size gets larger the price increases. However, it is also easy to notice the outlier where the price is 4 and the size is 1.
+We can quickly see that there is a trend showing that the price increases as the size increases. However, it is also easy to notice the outlier where the price is 4 and the size is 1.
 
 ## Creating a Scatterplot with Real Data
 
-Now that we looked at a basic scatterplot, let's look at an example using real data with a nicer graph that's closer to being "done."
+Now that we looked at a basic scatterplot, let's look at an example using actual data with a nicer graph that's closer to being "done."
 
 First, the data is [the "Fortune Top 1000 Companies by Revenue 2022" dataset](https://www.kaggle.com/datasets/surajjha101/fortune-top-1000-companies-by-revenue-2022) on Kaggle. This data set lists the Fortune 1000 companies, and a few stats for the 2021 year, such as their market value and profits for 2021. Let's see if there are any interesting findings when we compare market values with a company's profits. I downloaded the data set and cleaned up some of the data already.
 
-We again set up our imports and prepare our data. Then, we read in from the CSV I created.
+We again set up our imports read in from the CSV I created when preparing the data.
 
 ```python
 import pandas as pd
@@ -86,7 +86,7 @@ Now, we can set up some styling options to apply to all of our Seaborn charts. W
 sns.set_theme('white')
 ```
 
-While that gets us started, I normally make several additional tweaks to this. I tend to use [Matplotlib's rcParams system](https://matplotlib.org/stable/tutorials/introductory/customizing.html#matplotlib-rcparams). This sets the default values for all charts you'll create after you set them. This looks like this:
+While that gets us started, I usually make several additional tweaks to this. I tend to use [Matplotlib's rcParams system](https://matplotlib.org/stable/tutorials/introductory/customizing.html#matplotlib-rcparams). This sets the default values for all charts you'll create after you set them. This looks like this:
 
 ```python
 primary_color = '#2A8737'
@@ -139,9 +139,9 @@ ax.set_ylabel('Profits')
 
 ![The same scatterplot graph as above but now with some text to explain the graph.]({static}/images/seaborn-scatterplot-example-3.png)
 
-It is also normally best practice to add some text telling the viewer what the source of the data is. This is helpful in case they want to dig deeper into the data. Additionally, it helps tell them how old the data is. This is useful in a variety of settings, even if you are only sharing charts within internal tools, such as Slack.
+It is also normally best practice to add some text telling the viewer the source of the data. This is helpful in case they want to dig deeper into the data. Additionally, it helps inform them how old the data is. This is useful in various settings, even if you only share charts within internal tools, such as Slack.
 
-We could pass x and y values that are based on the data set (the default) but I like setting the transform to match the axis size as it tends to be easier for me to find the right values for where I am putting the text.
+We could pass x and y values that are based on the data set (the default), but I like setting the transform to match the axis size as it tends to be easier for me to find the correct values for where I am putting the text.
 
 ```python
 ax.text(1, -.15, 'Source: Fortune Top 1000 Companies by Revenue 2022 on Kaggle', fontsize=12, horizontalalignment='right', transform=ax.transAxes)
@@ -149,7 +149,7 @@ ax.text(1, -.15, 'Source: Fortune Top 1000 Companies by Revenue 2022 on Kaggle',
 
 ![The same scatterplot graph as above but now with a little text in the lower right mentioning the data source.]({static}/images/seaborn-scatterplot-example-4.png)
 
-Our chart is starting to look good. But, there are some interesting data points in the graph. It might be useful to add an annotation or two with some additional details. We can do this using the `annotate` method.
+Our chart is starting to look good. But, there are some interesting data points in the graph. Adding an annotation or two with some additional details might be helpful. We can do this using the `annotate` method.
 
 ```python
 ax.annotate(text='Apple', xy=(2849537,94680))
@@ -157,7 +157,7 @@ ax.annotate(text='Apple', xy=(2849537,94680))
 
 ![The same scatterplot graph as above but now with a label on top of the upper-right point marked as Apple.]({static}/images/seaborn-scatterplot-example-5.png)
 
-Having some text on top of the point is okay but we can make this a little nicer by moving the text a little away from the point and using an arrow.
+Having some text on top of the point is okay, but we can make this a little nicer by moving the text away from the point and using an arrow.
 
 ```python
 arrow_props = {
@@ -173,12 +173,12 @@ ax.annotate(text='JPMorgan \n Chase', xy=(425526,48334), ha='center', xytext=(70
 
 ![The same scatterplot graph as above but now with arrows pointing out four interesting points, including Tesla which had much lower profits than others around its marketshare and JP Morgan with much lower market value than others with similar profits.]({static}/images/seaborn-scatterplot-example-6.png)
 
-Of course, what you annotate and how you label+title your chart will depend on the story you are telling. If you are more focused on the scenario where most of the Fortune 1000 companies, while big companies, are dwarfed by the top companies, we would probably handle this chart differently.
+Of course, what you annotate and how you label and title your chart will depend on the story you are telling. If you are more focused on the scenario where most of the Fortune 1000 companies, while all big companies, are dwarfed by the top companies, we would probably handle this chart differently.
 
 ## Next Steps
 
-Great! We now have a basic chart that shows the relationship we wanted to visualize. If we are just reviewing this ourselves or sharing with a few team members, we probably have already done more work than we needed to. But, if you are planning on sharing this with a wider group or publicly, there are a few more things you could consider:
+Great! We now have a basic chart that shows the relationship we wanted to visualize. If we are just reviewing this or sharing it with a few team members, we probably have already done more work than we needed. But, if you are planning on sharing this with a broader group or publicly, there are a few more things you could consider:
 
 * The market value labels are not intuitive for all audiences. You can try replacing those with something like just "1 Trillion", "2 Trillion", and "3 Trillion".
-* Some of the spacing could be tweaked to be nicer. For example: The axis labels are a bit close to the tick values and the annotations could use some more "breathing" room.
+* Some of the spacing could be tweaked to be nicer. You can test out different values for our title and label padding as well as adjusting the arrow size for our annotations.
 * The font sizes we currently have probably could be tweaked a bit more to create a better visual difference between the different text.

@@ -11,15 +11,13 @@ function addModalMarkup() {
         <button class="slidein-close"></button>
         <div class="slidein-content">
             <div class="slidein-content-form">
-                <div class="slide-content-field">
-                  <label class="slide-content-label">Quick question: What area of data engineering or data science would you like to learn more about?</label>
+                <div class="slide-content-field mb-1">
+                  <label class="slide-content-label">Quick question: What data role do you most identify as?</label>
                   <div class="slide-content-control">
-                    <textarea id="slidein-answer" class="slidein-content-textarea" placeholder=""></textarea>
-                  </div>
-                </div>
-                <div class="slide-content-field">
-                  <div class="slide-content-control">
-                    <button id="slidein-submit" class="slide-content-button">Submit</button>
+                    <button class="button is-outlined has-text-weight-bold is-fullwidth mb-1">Data Analyst</button>
+                    <button class="button is-outlined has-text-weight-bold is-fullwidth mb-1">Data Scientist</button>
+                    <button class="button is-outlined has-text-weight-bold is-fullwidth mb-1">Data Engineer</button>
+                    <button class="button is-outlined has-text-weight-bold is-fullwidth mb-1">Other</button>
                   </div>
                 </div>
             </div>
@@ -50,11 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
         closeModal();
     });
 
-    document.querySelector('#slidein-submit').addEventListener('click', () => {
-        const answer = document.querySelector('#slidein-answer').value;
-        console.log(answer);
-        fetch('https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-8f2bcb26-608e-4407-ac20-e711e19fbfb4/main/survey_response?survey_id=1&answer=' + encodeURIComponent(answer))
-        document.querySelector('.slidein .slidein-content').replaceChildren('Thanks! I appreciate you taking the time to respond.')
+    document.querySelectorAll('.slidein .slidein-content .button').forEach((element) => {
+        element.addEventListener('click', (event) => {
+            const answer = event.target.textContent;
+            console.log(answer);
+            fetch('https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-8f2bcb26-608e-4407-ac20-e711e19fbfb4/main/survey_response?survey_id=1&answer=' + encodeURIComponent(answer));
+            document.querySelector('.slidein .slidein-content').replaceChildren('Thanks! I appreciate you taking the time to respond.');
+        });
     });
 
     document.addEventListener('keydown', (event) => {

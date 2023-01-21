@@ -35,15 +35,15 @@ button {
 }
 
 button.is-outlined {
-    background-color: transparent;
-    border-color: #257942;
-    color: #257942;
+    background-color: transparent !important;
+    border-color: #257942 !important;
+    color: #257942 !important;
 }
 
 button.is-outlined:hover {
-    background-color: #257942;
+    background-color: #257942 !important;
     border-color: #257942;
-    color: #fff;
+    color: #fff !important;
 }
 
 /*****

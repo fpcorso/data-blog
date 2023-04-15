@@ -1,5 +1,5 @@
 ---
-Title: Creating A Scatterplot Chart In Seaborn
+Title: Creating A Heatmap Chart In Seaborn
 Date: 11-25-2022 09:00:00
 Tags: python,seaborn,heatmap
 Category: Data Visualization

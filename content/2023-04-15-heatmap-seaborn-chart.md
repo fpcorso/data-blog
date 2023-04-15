@@ -45,6 +45,20 @@ We can quickly see that XXX.
 
 ## Creating a Heatmap with Real Data
 
+Now that we looked at a basic heatmap, let's look at an example using actual data with a nicer graph that's closer to being "done."
+
+First, the data is XXX on Kaggle. This data set lists XXX. Let's see if there are any interesting findings when we XXXX. I downloaded the data set and cleaned up some of the data already.
+
+We again set up our imports read in from the CSV I created when preparing the data.
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv('XXXX.csv')
+```
+
 ### Setting Up Our Styles
 
 ### Creating Our Chart

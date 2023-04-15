@@ -18,6 +18,31 @@ In Python, we can use [the Seaborn library]((https://seaborn.pydata.org)) to eas
 
 ## Creating Our First Heatmap
 
+First, let's set up our imports and load our data. For this first graph, we'll use fake data showing XXXX.
+
+```python
+import pandas as pd
+import seaborn as sns
+
+fake_data = []
+
+fake_df = pd.DataFrame.from_records(fake_data)
+```
+
+Seaborn has many different methods for creating charts. For heatmaps, we can [use the `heatmap` method](https://seaborn.pydata.org/generated/seaborn.heatmap.html). This method accepts a dataset along with what should be along each axis.
+
+For our fake dataset, our code will look like this:
+
+```python
+sns.heatmap(data=fake_df)
+```
+
+This creates a very basic heatmap like this:
+
+![A basic heatmap graph with no labels or title. Shows XXXX.]({static}/images/seaborn-scatterplot-example-1.png)
+
+We can quickly see that XXX.
+
 ## Creating a Heatmap with Real Data
 
 ### Setting Up Our Styles

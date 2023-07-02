@@ -16,7 +16,6 @@ DEFAULT_LANG = 'en'
 DEFAULT_PAGINATION = False
 
 # Social Networks
-TWITTER = 'https://twitter.com/fpcorso'
 GITHUB = 'https://github.com/fpcorso'
 INSTAGRAM = 'https://www.instagram.com/fpcorso/'
 DEVTO = 'https://dev.to/fpcorso'

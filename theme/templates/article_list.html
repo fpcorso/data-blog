@@ -1,6 +1,6 @@
 {% for article in articles_page.object_list %}
     <article class="post">
-        <p class="meta has-text-grey">
+        <p class="meta has-text-grey-dark">
             <time class="published" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
             {% if article.category %}
                 in <a href="{{ SITEURL }}/{{ article.category.url }}"><span class="has-text-weight-medium">{{ article.category }}</span></a>

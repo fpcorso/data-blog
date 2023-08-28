@@ -83,6 +83,11 @@ Sitewide Classes/IDs
     }
 }
 
+.notification.is-primary {
+    background-color: #2a8737;
+    color: #fff;
+}
+
 /*****
 Header
 *****/

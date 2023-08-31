@@ -18,15 +18,29 @@ In Python, we can use [the Seaborn library]((https://seaborn.pydata.org)) to eas
 
 ## Creating Our First Heatmap
 
-First, let's set up our imports and load our data. For this first graph, we'll use fake data showing XXXX.
+First, let's set up our imports and load our data. For this first graph, we'll use fake data showing how many users are using a specific feature on specific plans. I have used a similar chart in the past to show which features are used the most (or the least) on different plans.
 
 ```python
 import pandas as pd
 import seaborn as sns
 
-fake_data = []
-
-fake_df = pd.DataFrame.from_records(fake_data)
+fake_data = [{
+    'index': 'Starter Plan',
+    'Feature A': 96,
+    'Feature B': 43,
+    'Feature C': 16
+},{
+    'index': 'Growth Plan',
+    'Feature A': 93,
+    'Feature B': 58,
+    'Feature C': 76
+}, {
+    'index': 'Business Plan',
+    'Feature A': 98,
+    'Feature B': 87,
+    'Feature C': 45
+}]
+fake_df = pd.DataFrame.from_records(fake_data, index='index')
 ```
 
 Seaborn has many different methods for creating charts. For heatmaps, we can [use the `heatmap` method](https://seaborn.pydata.org/generated/seaborn.heatmap.html). This method accepts a dataset along with what should be along each axis.
@@ -39,9 +53,9 @@ sns.heatmap(data=fake_df)
 
 This creates a very basic heatmap like this:
 
-![A basic heatmap graph with no labels or title. Shows XXXX.]({static}/images/seaborn-scatterplot-example-1.png)
+![A basic heatmap graph with no labels or title. Shows XXXX.]({static}/images/seaborn-heatmap/heatmap-1.png)
 
-We can quickly see that XXX.
+We can quickly see that feature A is used across all plans; however, feature B is used much more on the "Business" plan and feature C is rarely used on the "Starter" plan. Of course, this is fake data with only 3 features so it would be easy to see this in a table. However, if you had a large dataset with many features, this would be a quick way to see which features are used the most or the least.
 
 ## Creating a Heatmap with Real Data
 

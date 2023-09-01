@@ -53,27 +53,63 @@ sns.heatmap(data=fake_df)
 
 This creates a very basic heatmap like this:
 
-![A basic heatmap graph with no labels or title. Shows XXXX.]({static}/images/seaborn-heatmap/heatmap-1.png)
+![A basic heatmap graph with no labels or title. Shows some data points have higher or lower values than normal.]({static}/images/seaborn-heatmap/heatmap-1.png)
 
-We can quickly see that feature A is used across all plans; however, feature B is used much more on the "Business" plan and feature C is rarely used on the "Starter" plan. Of course, this is fake data with only 3 features so it would be easy to see this in a table. However, if you had a large dataset with many features, this would be a quick way to see which features are used the most or the least.
+We can quickly see that feature A is used across all plans; however, feature B is used much more on the "Business" plan and feature C is rarely used on the "Starter" plan. Of course, this is fake data with only 3 features, so it would be easy to see this in a table. However, if you had a large dataset with many features, this would be a quick way to see which features are used the most or the least.
 
 ## Creating a Heatmap with Real Data
 
 Now that we looked at a basic heatmap, let's look at an example using actual data with a nicer graph that's closer to being "done."
 
-First, the data is XXX on Kaggle. This data set lists XXX. Let's see if there are any interesting findings when we XXXX. I downloaded the data set and cleaned up some of the data already.
+First, the data is ["IMDB Top 10,000 movies (Updated August 2023)" on Kaggle](https://www.kaggle.com/datasets/ashutoshdevpura/imdb-top-10000-movies-updated-august-2023). This data set provides us with the top movies, their metascores, and other metadata about the movie. Let's see if there are any interesting findings when we examine metascores based on genre and age-rating. I downloaded the data set and cleaned up some of the data already.
 
 We again set up our imports read in from the CSV I created when preparing the data.
 
 ```python
 import pandas as pd
-import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_csv('XXXX.csv')
+df = pd.read_csv('IMDB-top-10000-movies.csv')
 ```
 
 ### Setting Up Our Styles
+
+Now, we can set up some styling options to apply to all of our Seaborn charts. We can do this using Seaborn's `set_theme` method. We can pass the method one of [Seaborn's built-in styles](https://seaborn.pydata.org/tutorial/aesthetics.html#seaborn-figure-styles) to get started like this:
+
+```python
+sns.set_theme('white')
+```
+
+While that gets us started, I usually make several additional tweaks to this. I tend to use [Matplotlib's rcParams system](https://matplotlib.org/stable/tutorials/introductory/customizing.html#matplotlib-rcparams). This sets the default values for all charts you'll create after you set them. This looks like this:
+
+```python
+primary_color = '#2A8737'
+secondary_color = '#104547'
+tick_size = 8
+rc_params = {
+    "axes.spines.right": False,
+    "axes.spines.top": False,
+    "axes.spines.bottom": False,
+    "axes.spines.left": False,
+    "axes.titlecolor": primary_color,
+    "axes.titlesize": 24,
+    "axes.titlelocation": "left",
+    "axes.titlepad": 20,
+    "axes.labelsize": 10,
+    "axes.labelpad": 15,
+    "figure.figsize":(12, 8),
+    "xtick.labelcolor": secondary_color,
+    "xtick.labelsize": tick_size,
+    "ytick.labelcolor": secondary_color,
+    "ytick.labelsize": tick_size,
+    "yaxis.labellocation": "center",
+    "text.color": secondary_color,
+    "font.size": 14
+}
+sns.set_theme(style="white", rc=rc_params)
+```
+
+I encourage you to review both [Seaborn's aesthetics guide](https://seaborn.pydata.org/tutorial/aesthetics.html#seaborn-figure-styles) and [Matplotlib's rcParams guide](https://matplotlib.org/stable/tutorials/introductory/customizing.html#matplotlib-rcparams) and tweak the values until you find some styling that you like.
 
 ### Creating Our Chart
 

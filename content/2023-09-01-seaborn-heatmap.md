@@ -154,6 +154,29 @@ ax.text(1.12, -.086, 'Source: IMDB Top 10,000 movies on Kaggle', fontsize=12, ho
 
 ![Same heatmap as above but now with a message at the bottom saying where the source data is from.]({static}/images/seaborn-heatmap/heatmap-4.png)
 
+## Visualizing Missing Data with Heatmaps
+
+A trick I like to use heatmaps for is to quickly identify any patterns in missing data.
+
+Let's create some fake data where certain columns tend to have missing values:
+
+```python
+fake_null_data = [{letter: None if i % 2 == 0 and letter in ['F', 'G'] else 15 for letter in ['A', 'B', 'C', 'D', 'E', 'F', 'G']} for i in range(10)]
+fake_null_df = pd.DataFrame.from_records(fake_null_data)
+```
+
+Now, we can create a heatmap of whether or not the cell is null. This will allow us to quickly see if there are certain columns that have a lot of missing values. This can happen if a data pipeline is broken or one of your data providers may not be syncing correctly.
+
+The `cbar` is just to remove the color bar on the right side of the chart as that is not needed here. I like to use the `inferno` colormap here as it makes the null cells stand out since they are bright colors while the rest are black.
+
+```python
+sns.heatmap(fake_null_df.isnull(), cbar=False, cmap="inferno")
+```
+
+This gives us a heatmap that looks like this:
+
+![A heatmap chart with 7 columns and 10 rows. The cells are colored black if they have a value and bright yellow if they are null.]({static}/images/seaborn-heatmap/heatmap-5.png)
+
 ## Next Steps
 
 Great! We now have a basic chart that shows the analysis we wanted to visualize. If we are just reviewing this or sharing it with a few team members, we probably have already done more work than we needed. But, if you are planning on sharing this with a broader group or publicly, there are a few more things you could consider:

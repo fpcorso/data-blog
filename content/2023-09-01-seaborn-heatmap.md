@@ -177,6 +177,8 @@ This gives us a heatmap that looks like this:
 
 ![A heatmap chart with 7 columns and 10 rows. The cells are colored black if they have a value and bright yellow if they are null.]({static}/images/seaborn-heatmap/heatmap-5.png)
 
+Using a chart like this, we can quickly spot that columns F and G tend to have a lot of null values and always at the same time which suggests it might be an upstream issue.
+
 ## Next Steps
 
 Great! We now have a basic chart that shows the analysis we wanted to visualize. If we are just reviewing this or sharing it with a few team members, we probably have already done more work than we needed. But, if you are planning on sharing this with a broader group or publicly, there are a few more things you could consider:

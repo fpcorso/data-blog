@@ -7,7 +7,7 @@ Slug: seaborn-heatmap
 Authors: Frank Corso
 Summary: Heatmaps are a great way to visualize the frequency or ranges of a multi-dimensional dataset. Learn how to create them in Python using Seaborn.
 Description: Heatmaps are a great way to visualize the frequency or ranges of a multi-dimensional dataset. Learn how to create them in Python using Seaborn.
-Status: draft
+Status: published
 ---
 
 Heatmaps are a great way to visualize the frequency or ranges of a multi-dimensional dataset. For example, you could quickly show which features users use the most on different paid plans of a SAAS app. You could also show which fields of a GraphQL API are used the most between different customer personas. Or, you can compare different months in different years for a specific event, such as the number of sales or the amount of rainfall.

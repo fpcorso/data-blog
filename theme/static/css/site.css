@@ -153,6 +153,10 @@ Single Article
     box-shadow: 3px 3px 15px -3px;
 }
 
+.entry .similar-posts {
+    border-top: 2px solid #2a8737;
+}
+
 
 /****
 Dark Mode

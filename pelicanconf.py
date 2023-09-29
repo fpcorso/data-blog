@@ -44,3 +44,6 @@ SITEMAP = {
 SEO_REPORT = True
 SEO_ENHANCER = True
 SEO_ENHANCER_OPEN_GRAPH = True
+
+# Pelican Similar Posts plugin
+SIMILAR_POSTS_MAX_COUNT = 2

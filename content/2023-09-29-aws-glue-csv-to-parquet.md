@@ -14,7 +14,7 @@ AWS Glue has a variety of features but one of the most useful is its fully manag
 
 Glue can also work with a variety of data stores including Amazon S3, Amazon Redshift, Amazon RDS, and Amazon DynamoDB. Even better, it can use data connectors to integrate with other data stores such as Snowflake.
 
-In this post, I'll create a simple ETL job that reads CSV files from a s3 bucket and writes them to a parquet file in another s3 bucket. 
+In this post, I'll create a simple ETL job that reads CSV files from a s3 bucket, drops a few of the columns, and writes them to a parquet file in another s3 bucket. 
 
 I have already created two s3 buckets to be used in this as well as uploaded a CSV file into one of them. If you plan on following along, you will want to set up your s3 buckets too.
 
@@ -42,6 +42,22 @@ If you glance at the IAM console, you'll see a new role called "AWSGlueServiceRo
 
 Now that we have the role created, we can create the job. To get started, go back to the AWS Glue console and click the "ETL jobs" link on the left side of the screen.
 
-![AWS Glue's ETL jobs list](/images/aws-glue-csv-to-parquet/aws-glue-etl-jobs-list.png)
+At the top of the screen is a "Create job" section which includes several different options. For most simple ETL jobs, you can use the "Visual with a source and target" option. If you click on the source or target, you will see some of the services and systems that AWS Glue can work with.
+
+![Some example available targets for ETL jobs such as s3, Kinesis, and Kafka.](/images/aws-glue-csv-to-parquet/aws-glue-create-job-targets.png)
+
+Make sure both the source and target are set to "Amazon S3." The, click the "Create job" button. This will take you to the visual editor.
+
+![AWS Glue's visual editor](/images/aws-glue-csv-to-parquet/aws-glue-visual-editor.png)
+
+Each object and step in the job are referred to as "nodes." You can have 1 or more source nodes and 0 or more transform nodes. To add a node, you can click the "+" button. Before we do that, let's first set up our source.
+
+Click on the "Data source" node which will open the node's properties. Scroll down to the "S3 URL" option and click "Browse" to find and select the S3 bucket the CSV files are in. 
+
+Then, under "Data format", you can fill in details about how the file is structured. Alternatively, you can click "Infer schema" which loads in a sample file from the bucket and detects its structure. That is what I will do for this job. After a few seconds, it will populate the format options.
+
+We can then switch to the node's "Output schema" tab to see the detected schema to make sure everything looks correct.
+
+Now that our source is set up, we can add our transform to drop the columns we do not need. Click on the "+" button, switch to the "Transform" tab, and select the "Drop Fields" option. This will add in our transform node.
 
 ## Next Steps

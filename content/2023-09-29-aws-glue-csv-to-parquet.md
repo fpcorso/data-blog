@@ -24,13 +24,13 @@ Before we can create the job, we need to set up the IAM role that Glue will use 
 
 On Glue's most recent design change, it now has a "Prepare your account for AWS Glue" option on the main page which can create the role as well as do many other things. To get started, log into AWS and go to AWS Glue.
 
-![AWS Glue Main Page](/images/aws-glue-csv-to-parquet/aws-glue-landing-page.png)
+![AWS Glue Main Page](/images/aws-glue-csv-to-parquet-job/aws-glue-landing-page.png)
 
 On the main page, click the "Set up roles and users" button.
 
 Since we are not setting up other users to use Glue, we can skip the first two steps without making changes. So, click "Next" until you get to the "Choose a default service role" step.
 
-![AWS Glue's choose a default service role step](/images/aws-glue-csv-to-parquet/aws-glue-choose-default-service-role.png)
+![AWS Glue's choose a default service role step](/images/aws-glue-csv-to-parquet-job/aws-glue-choose-default-service-role.png)
 
 On this step, make sure the "Create the standard AWS Glue service role and set it as the default (recommended)" option is selected. This will create a new IAM role called "AWSGlueServiceRole" and attach permissions for Glue, s3, Cloudwatch, and a few other services to it.
 
@@ -44,11 +44,11 @@ Now that we have the role created, we can create the job. To get started, go bac
 
 At the top of the screen is a "Create job" section which includes several different options. For most simple ETL jobs, you can use the "Visual with a source and target" option. If you click on the source or target, you will see some of the services and systems that AWS Glue can work with.
 
-![Some example available targets for ETL jobs such as s3, Kinesis, and Kafka.](/images/aws-glue-csv-to-parquet/aws-glue-create-job-targets.png)
+![Some example available targets for ETL jobs such as s3, Kinesis, and Kafka.](/images/aws-glue-csv-to-parquet-job/aws-glue-create-job-targets.png)
 
 Make sure both the source and target are set to "Amazon S3." The, click the "Create job" button. This will take you to the visual editor.
 
-![AWS Glue's visual editor](/images/aws-glue-csv-to-parquet/aws-glue-visual-editor.png)
+![AWS Glue's visual editor](/images/aws-glue-csv-to-parquet-job/aws-glue-visual-editor.png)
 
 Each object and step in the job are referred to as "nodes." You can have 1 or more source nodes and 0 or more transform nodes. To add a node, you can click the "+" button. Before we do that, let's first set up our source.
 

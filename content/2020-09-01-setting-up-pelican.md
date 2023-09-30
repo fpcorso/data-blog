@@ -27,11 +27,11 @@ From there, you can go to the directory you are setting up in and use this comma
 
 This command will trigger a series of questions in the terminal to set up your site. For now, you can keep most of the defaults.
 
-![Terminal showing several questions asked by Pelican]({static}/images/pelican-quickstart-questions.png)
+![Terminal showing several questions asked by Pelican]({static}/images/setting-up-pelican-static-site-generator/pelican-quickstart-questions.png)
 
 Once you have finished answering the questions, you will see two new folders and two files.
 
-![Directory showing two folders of content and output]({static}/images/pelican-quickstart-structure.png)
+![Directory showing two folders of content and output]({static}/images/setting-up-pelican-static-site-generator/pelican-quickstart-structure.png)
 
 The `content` directory is where you will create your posts and pages. The `output` directory is where the site will be generated to.
 
@@ -39,7 +39,7 @@ The `pelicanconf.py` and `publishconf.py` files are where you can customize the 
 
 The `publishconf.py` imports the settings from `pelicanconf.py` and can overwrite some settings as well as set new settings. This way, you can use `pelicanconf.py` for development and `publishconf.py` for production. For example, you may disable feed generation in `pelicanconf.py` to speed up development builds and then have them enabled in `publishconf.py`.
 
-![Pelican's settings file]({static}/images/pelican-pelicanconf-example.png)
+![Pelican's settings file]({static}/images/setting-up-pelican-static-site-generator/pelican-pelicanconf-example.png)
 
 Before you can see your new site, you need to create your first article. Go into the `content` directory and create a Markdown file. I'll call mine `my-post.md`.
 
@@ -75,11 +75,11 @@ Hey there! My name is Frank Corso and it's nice to meet you.
 
 Once you have your Markdown files created, let's use `pelican content` to generate our content. By default, Pelican will use the built-in "simple" theme to generate your content and then place the HTML files into the `output` directory.
 
-![The new HTML files are now within the output folder]({static}/images/pelican-site-output.png)
+![The new HTML files are now within the output folder]({static}/images/setting-up-pelican-static-site-generator/pelican-site-output.png)
 
 Once our content is created, we can use `pelican --listen` to set up a simple server so we can see our new content. By default, this will be at ` http://localhost:8000/`.
 
-![Example site created by Pelican showing heading and first post]({static}/images/pelican-example-preview.png)
+![Example site created by Pelican showing heading and first post]({static}/images/setting-up-pelican-static-site-generator/pelican-example-preview.png)
 
 When you go to publish the site, if you are using the `publishconf.py` (or another file) for production settings, you would use `pelican content -s publishconf.py` to use that file's settings.
 

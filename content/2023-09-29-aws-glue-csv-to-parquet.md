@@ -40,7 +40,9 @@ If you glance at the IAM console, you'll see a new role called "AWSGlueServiceRo
 
 ## Creating the AWS Glue Job
 
-Now that we have the role created, we can create the job. To get started, go back to the AWS Glue console and click the "ETL jobs" link on the left side of the screen.
+Now that we have the role created, we can create the job. For this job, I will be using a CSV file containing data on the Fortune 1000 companies that we want to change to Parquet format while removing some columns we do not need.
+
+To get started, go back to the AWS Glue console and click the "ETL jobs" link on the left side of the screen.
 
 At the top of the screen is a "Create job" section which includes several different options. For most simple ETL jobs, you can use the "Visual with a source and target" option. If you click on the source or target, you will see some of the services and systems that AWS Glue can work with.
 
@@ -50,14 +52,42 @@ Make sure both the source and target are set to "Amazon S3." The, click the "Cre
 
 ![AWS Glue's visual editor](/images/aws-glue-csv-to-parquet-job/aws-glue-visual-editor.png)
 
+### Creating the Nodes
+
 Each object and step in the job are referred to as "nodes." You can have 1 or more source nodes and 0 or more transform nodes. To add a node, you can click the "+" button. Before we do that, let's first set up our source.
 
 Click on the "Data source" node which will open the node's properties. Scroll down to the "S3 URL" option and click "Browse" to find and select the S3 bucket the CSV files are in. 
+
+![AWS Glue's visual editor with the data source node selected with S3 URL filled in.](/images/aws-glue-csv-to-parquet-job/aws-glue-visual-editor-data-source.png)
 
 Then, under "Data format", you can fill in details about how the file is structured. Alternatively, you can click "Infer schema" which loads in a sample file from the bucket and detects its structure. That is what I will do for this job. After a few seconds, it will populate the format options.
 
 We can then switch to the node's "Output schema" tab to see the detected schema to make sure everything looks correct.
 
+![AWS Glue's visual editor with the data source node selected with the output schema tab selected showing all of the columns from my sample CSV.](/images/aws-glue-csv-to-parquet-job/aws-glue-visual-editor-data-source-output-schema.png)
+
 Now that our source is set up, we can add our transform to drop the columns we do not need. Click on the "+" button, switch to the "Transform" tab, and select the "Drop Fields" option. This will add in our transform node.
+
+![AWS Glue's visual editor with the add node modal open on the transforms tab.](/images/aws-glue-csv-to-parquet-job/aws-glue-visual-editor-drop-fields.png)
+
+Click on the new transform node to open its properties. Make sure the "Node parents" option is set to the data source node. Then, underneath the "DropFields" section, we can select which columns we want to drop. For this job, I will be dropping the columns related to year-over-year change. To do so, click the checkbox next to each column to be dropped.
+
+![AWS Glue's visual editor with the drop fields node selected and the columns to be dropped selected.](/images/aws-glue-csv-to-parquet-job/aws-glue-visual-editor-drop-fields-selected.png)
+
+Lastly, click on the "Data target" node to open its properties. First, switch the node parent to be the transform node instead of the source node as we want all data to go through the transform. Next, under "Format", select the Parquet format. Then, scroll down to the "S3 Target Location" option and click "Browse" to select the s3 bucket to write the Parquet files to. I will use the defaults to all the other options for this job.
+
+![AWS Glue's visual editor with the data target node selected and the S3 target location filled in.](/images/aws-glue-csv-to-parquet-job/aws-glue-visual-editor-data-target.png)
+
+### Adjusting the Job Details
+
+Now that we have our nodes set up, we can adjust the job details. Click on the "Job details" tab to open the job's properties. First, we can change the name of the job to something more descriptive. Then, we can adjust the job's IAM role. By default, it will use the "AWSGlueServiceRole" role we created earlier. If you want to use a different role, you can select it from the dropdown.
+
+![AWS Glue's visual editor with the job details tab selected.](/images/aws-glue-csv-to-parquet-job/aws-glue-visual-editor-job-details.png)
+
+Scroll down and open the "Advanced properties." Check to make sure the "Script filename" does not have any spaces. Glue will auto-fill this in based on the job's name and will throw an error if the filename has spaces.
+
+We can keep the rest of the options as their default values. However, there are two options I want to highlight as they will come in handy in your future jobs.
+
+First, is the "Job bookmark" option. When enabled, the job will remember which files it has already processed. So, if the job is run again, it only prcoesses new data since the last checkpoint. For this job, I will leave it disabled.
 
 ## Next Steps

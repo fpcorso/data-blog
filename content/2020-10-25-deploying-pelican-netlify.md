@@ -31,31 +31,31 @@ Since we will be building the files when deploying, you can ignore the `output` 
 ## Creating Your Netlify Account
 If you haven't already, you will need to create a new Netlify account. You can go over to [their signup page](https://app.netlify.com/signup) and sign in with GitHub:
 
-![Netlify sign up page]({static}/images/netlify-signup.png)
+![Netlify sign up page]({static}/images/deploying-your-pelican-static-site-to-netlify/netlify-signup.png)
 
 Once signed up, you will need to grant Netlify access to your GitHub repos. You can either grant Netlify access to all repositories or just grant access to your specific repo for the site.
 
-![Permissions needed for Netlify]({static}/images/netlify-github-permissions.png)
+![Permissions needed for Netlify]({static}/images/deploying-your-pelican-static-site-to-netlify/netlify-github-permissions.png)
 
 ## Setting Up Deployment
 
 Next, if Netlify did not start the "Create a new site" wizard automatically (or if you already had a Netlify account), you will need to click the "New site from Git" button.
 
-![The 'sites' tab in Netlify showing a "new site from git" button.]({static}/images/netlify-new-site-from-git.png)
+![The 'sites' tab in Netlify showing a "new site from git" button.]({static}/images/deploying-your-pelican-static-site-to-netlify/netlify-new-site-from-git.png)
 
 On the next screen, you may need to click the GitHub button. From there, you should see a place to select your site's repo.
 
-![New site wizard showing a selection of repositories to choose from.]({static}/images/netlify-select-repo.png)
+![New site wizard showing a selection of repositories to choose from.]({static}/images/deploying-your-pelican-static-site-to-netlify/netlify-select-repo.png)
 
 For this site, I will select my `fpcorso/example-pelican-site` repo. Once selected, select which branch to deploy from. In most cases, you will want to leave this the default branch, usually `master` or `trunk`.
 
-![Deploy settings for the site showing branch to deploy set to master.]({static}/images/netlify-deploy-settings.png)
+![Deploy settings for the site showing branch to deploy set to master.]({static}/images/deploying-your-pelican-static-site-to-netlify/netlify-deploy-settings.png)
 
 Scroll down to the "Basic build settings" section. For "Build command" enter in `pelican content -s publishconf.py`. This will build your output files using the publish configuration.
 
 In the "Publish directory" setting, enter in `output/`.
 
-![Basic build settings with build command and publish directory filled in.]({static}/images/netlify-basic-build-settings.png)
+![Basic build settings with build command and publish directory filled in.]({static}/images/deploying-your-pelican-static-site-to-netlify/netlify-basic-build-settings.png)
 
 Click the "Show advanced" button. 
 
@@ -65,17 +65,17 @@ Netlify uses environment variables to allow you to switch versions of its availa
 
 Click the "New variable" button and enter in `PYTHON_VERSION` and set it to 3.7.
 
-![Advanced build settings with 1 environment variable set.]({static}/images/netlify-advanced-build-settings.png)
+![Advanced build settings with 1 environment variable set.]({static}/images/deploying-your-pelican-static-site-to-netlify/netlify-advanced-build-settings.png)
 
 Now that we have the settings entered, click the "Deploy site" button.
 
 You should see your new site in Netlify, and the deployment should be starting up.
 
-![Site overview showing a new site with a build starting up.]({static}/images/netlify-new-site-starting-up.png)
+![Site overview showing a new site with a build starting up.]({static}/images/deploying-your-pelican-static-site-to-netlify/netlify-new-site-starting-up.png)
 
 Depending on the size of your site, the build may take a few minutes. Once finished, it should say "Published" and a URL should be available.
 
-![Site overview showing site is published and URL is now available.]({static}/images/netlify-site-deployed.png)
+![Site overview showing site is published and URL is now available.]({static}/images/deploying-your-pelican-static-site-to-netlify/netlify-site-deployed.png)
 
 Your site is now deployed!
 

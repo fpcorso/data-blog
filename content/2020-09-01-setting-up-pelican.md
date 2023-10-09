@@ -90,6 +90,6 @@ Alternatively, you can create your own [following the Pelican documentation](htt
 
 Once you have theme files ready, you can add `THEME = 'THEMEDIRECTORY'` to the `pelicanconf.py` file to use your new theme instead of the default theme.
 
-Once you have your site created, you will need somewhere to host it. Check out my other article on [deploying pelican sites to Netlify]({filename}/deploying-pelican-netlify.md).
+Once you have your site created, you will need somewhere to host it. Check out my other article on [deploying pelican sites to Netlify]({filename}/2020-10-25-deploying-pelican-netlify.md).
 
 Now, get creating!

@@ -88,6 +88,14 @@ Scroll down and open the "Advanced properties." Check to make sure the "Script f
 
 We can keep the rest of the options as their default values. However, there are two options I want to highlight as they will come in handy in your future jobs.
 
-First, is the "Job bookmark" option. When enabled, the job will remember which files it has already processed. So, if the job is run again, it only prcoesses new data since the last checkpoint. For this job, I will leave it disabled.
+First, is the "Job bookmark" option. When enabled, the job will remember which files it has already processed. So, if the job is run again, it only processes new data since the last checkpoint. For this job, I will leave it disabled.
+
+Second, if the "Flex execution" option is enabled, the jobs run on spare capacity in AWS. This is great for saving some money on non-urgent jobs. For this job, I will leave it disabled.
+
+Once you are all finished, click the "Save" button in the top-right corner.
+
+### Running the Job
+
+
 
 ## Next Steps

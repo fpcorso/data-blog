@@ -1,6 +1,6 @@
 ---
-Title: Using AWS Glue to Convert CSV to Parquet
-Date: 09-29-2023 09:00:00
+Title: Using AWS Glue to Convert CSV Files to Parquet
+Date: 10-11-2023 09:00:00
 Tags: aws, glue, s3, etl, parquet, csv
 Category: Data Engineering
 Slug: aws-glue-csv-to-parquet-job
@@ -117,5 +117,6 @@ AWS Glue is a powerful tool that can be used for many different things. In this 
 A few things you can look into next with AWS Glue are:
 
 * Explore how the Data Catalog and Crawlers work to automatically detect schemas and tables for all of your data sources in AWS
-* Create a job that joins data from multiple sources
-* Create a job that uses a data connector to work with a non-AWS data source such as Snowflake
+* Use a data source other than s3, such as Kinesis, Redshift, or RDS
+* Join data from multiple sources
+* Use a data connector to work with a non-AWS data source such as Snowflake

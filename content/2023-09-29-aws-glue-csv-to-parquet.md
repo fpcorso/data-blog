@@ -96,6 +96,26 @@ Once you are all finished, click the "Save" button in the top-right corner.
 
 ### Running the Job
 
+Once the job is saved, we can now switch to "Runs" on the job. At first, this table will be empty. Let's start our job. Click the "Run job" button.
 
+![AWS Glue's visual editor with the runs tab selected.](/images/aws-glue-csv-to-parquet-job/aws-glue-visual-editor-runs.png)
+
+Once clicked, the job will automatically start running. A new entry in the table will appear and show the "Run status" as "Running." You can click on the run to see more information about the run and its status. If you scroll down, you can see the current logs for the run.
+
+![AWS Glue's visual editor with the runs tab selected and the run status set to running.](/images/aws-glue-csv-to-parquet-job/aws-glue-visual-editor-runs-running.png)
+
+After a few minutes, the job will finish and this status will change to "Succeeded." We have now successfully converted our CSV file to Parquet! If we go to the s3 bucket we specified as the target, we can see the Parquet file.
+
+![AWS Glue's visual editor with the runs tab selected and the run status set to succeeded.](/images/aws-glue-csv-to-parquet-job/aws-glue-s3-bucket-new-parquet-file.png)
+
+We now have our Glue job all set up and working!
 
 ## Next Steps
+
+AWS Glue is a powerful tool that can be used for many different things. In this post, we created a simple ETL job that converted a CSV file to Parquet. However, you can do much more with Glue. For example, you can use it to join data from multiple sources, transform data, and even monitors the quality of your data.
+
+A few things you can look into next with AWS Glue are:
+
+* Explore how the Data Catalog and Crawlers work to automatically detect schemas and tables for all of your data sources in AWS
+* Create a job that joins data from multiple sources
+* Create a job that uses a data connector to work with a non-AWS data source such as Snowflake

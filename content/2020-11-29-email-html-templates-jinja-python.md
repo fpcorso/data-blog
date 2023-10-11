@@ -9,7 +9,7 @@ Status: published
 
 When first creating emails in a new project in Python, I usually start by creating the email text within the Python code itself. This is quick and easy and gets the job done. 
 
-For example, one of my original email functions in my SAAS app, [SiteAlert](https://sitealert.io), looked like this:
+For example, one of my original email functions in my earlier SAAS apps, looked like this:
 
 ```
 :::python

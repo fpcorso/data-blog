@@ -7,7 +7,7 @@ Slug: aws-glue-csv-to-parquet-job
 Authors: Frank Corso
 Summary: Learn how to harness the power of AWS Glue's fully managed ETL service to effortlessly convert CSV files to Parquet format while performing data transformations
 Description: Transforming CSV to Parquet with AWS Glue is a breeze! This tutorial guides you through the process of ETL job creation. Unleash AWS Glue's capabilities for data integration and more.
-Status: draft
+Status: published
 ---
 
 AWS Glue has a variety of features, but one of the most useful is its fully managed ETL service. You can do many things using its ETL jobs, including transforming, joining, and moving data. 

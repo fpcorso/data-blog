@@ -31,17 +31,17 @@ We want to store many things about each pet owner in our table, including their 
 
 Here is a very basic diagram of our pet owners, displayed as an "entity-relationship diagram":
 
-![Diagram showing pet owners in the middle with name, email, and phone connecting to it.]({static}/images/erm-pet-owners.png)
+![Diagram showing pet owners in the middle with name, email, and phone connecting to it.]({static}/images/learn-how-databases-tables-structured/erm-pet-owners.png)
 
 These different attributes will become the "columns" of our table, where each attribute is its own column, as shown in the table.
 
-![Owners table with columns for id, name, email, and phone.]({static}/images/pet-owners-table.png)
+![Owners table with columns for id, name, email, and phone.]({static}/images/learn-how-databases-tables-structured/pet-owners-table.png)
 
 Now, you may have noticed there was an additional column we didn't have listed as an attribute. The "id" column is our "primary key." The primary key is what represents this data elsewhere in the database as well as throughout any application or site that uses the database.
 
 Let's add a few people into our pet owners table.
 
-![Owners table with three new rows in it.]({static}/images/pet-owners-table-filled.png)
+![Owners table with three new rows in it.]({static}/images/learn-how-databases-tables-structured/pet-owners-table-filled.png)
 
 As you can see, each entry we add into the table becomes a new "row" in the table. And, each entry gets its own primary key assigned to it.
 
@@ -49,7 +49,7 @@ As you can see, each entry we add into the table becomes a new "row" in the tabl
 
 Our pets will also have some data about them including their name, type of animal, and their birthday.
 
-![Diagram showing pets in the middle with name, type, and birthday connecting to it.]({static}/images/erm-pets.png)
+![Diagram showing pets in the middle with name, type, and birthday connecting to it.]({static}/images/learn-how-databases-tables-structured/erm-pets.png)
 
 The tables for our pet owners and their pets will be related. We want to know who owns which pet. This will be a "relationship," which is what we call the way two tables are connected.
 
@@ -57,11 +57,11 @@ There are many types of relationships that you will come across as you learn SQL
 
 For example, in our database, one pet owner can own many pets, but each pet will only have one owner.
 
-![Diagram showing the pet and owners diagrams connected by a line.]({static}/images/erm-owners-pets.png)
+![Diagram showing the pet and owners diagrams connected by a line.]({static}/images/learn-how-databases-tables-structured/erm-owners-pets.png)
 
 Let's add a few pets into a pets table.
 
-![Pets table with three rows in it representing the three pets.]({static}/images/pets-table.png)
+![Pets table with three rows in it representing the three pets.]({static}/images/learn-how-databases-tables-structured/pets-table.png)
 
 Now, you might have noticed another column that wasn't an attribute: the "owner_id" column. This is called a "foreign key." A foreign key is an identifier that matches a row's primary key from another table. This column tells us which pet owner owns this animal.
 
@@ -75,7 +75,7 @@ Next, let's consider what type of relationship this table will have with our pet
 
 This is where the 2nd most common relationship comes in: the "Many to Many" relationship.
 
-![Diagram showing the pet and toy diagrams connected by a line.]({static}/images/erm-pets-toys.png)
+![Diagram showing the pet and toy diagrams connected by a line.]({static}/images/learn-how-databases-tables-structured/erm-pets-toys.png)
 
 In a many-to-many relationship, each row in each table can be attached to multiple rows in the other table. For example, the pet Bambino might like both the ball and the mouse. But, the ball might be liked by the pets Bambino and Spot. 
 
@@ -83,17 +83,17 @@ In the one-to-many relationship before, we added a foreign key to represent whic
 
 Instead, in a many-to-many relationship, we'll create a separate table to represent this relationship.
 
-![Tables for toys and for pet and toys.]({static}/images/pet-toy-table.png)
+![Tables for toys and for pet and toys.]({static}/images/learn-how-databases-tables-structured/pet-toy-table.png)
 
 So, we will create a 3rd table for toys but then create a 4th table too. In this 4th table, which we'll call "pet_toy," we will keep a record of which pets like which toys. You may notice that pet_id and toy_id look similar to the owner_id from before, and you would be right. Each of these columns will be a foreign key that represents the pet or toy from their respective table.
 
 So, if we want to say Bambino likes the ball and mouse toys, we would add two new rows as shown.
 
-![Pet toy table with two rows filled in. Both with matching values in the pet id column.]({static}/images/pet-toy-table-filled.png)
+![Pet toy table with two rows filled in. Both with matching values in the pet id column.]({static}/images/learn-how-databases-tables-structured/pet-toy-table-filled.png)
 
 Then, to add the toys that Spot likes, we will add a few more rows.
 
-![Pet toy table with four rows filled in.]({static}/images/pet-toy-table-filled-2.png)
+![Pet toy table with four rows filled in.]({static}/images/learn-how-databases-tables-structured/pet-toy-table-filled-2.png)
 
 With our four tables set up, our database for the pet groomer is now ready!
 

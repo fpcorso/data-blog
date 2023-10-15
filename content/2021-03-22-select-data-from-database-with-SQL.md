@@ -9,7 +9,7 @@ Summary: Learn how to get data from a database using the SELECT, WHERE, and LIMI
 Description: Learn how to get data from a database using the SELECT, WHERE, and LIMIT statements.
 Status: published
 
-In [my previous article]({filename}/database-table-structure.md), I wrote about how databases and tables are structured. In this article, I will explore how to query those tables to get data from them.
+In [my previous article]({filename}/2021-02-01-database-table-structure.md), I wrote about how databases and tables are structured. In this article, I will explore how to query those tables to get data from them.
 
 We use a language called `SQL` for querying databases. The implementation for SQL will differ slightly between different database types, such as MySQL vs. Postgres, but the majority of the language will be consistent across all database engines.
 
@@ -44,7 +44,7 @@ In order to begin selecting data, we need to learn the two most common SQL state
 
 Let's look at a very basic example. We will use our Pets table that we outlined in my previous article. It looks like this:
 
-![Pets table with three rows in it representing the three pets.]({static}/images/pets-table.png) 
+![Pets table with three rows in it representing the three pets.]({static}/images/learn-how-databases-tables-structured/pets-table.png) 
 
 If we wanted to get all the data from this table, we would use this query:
 
@@ -68,7 +68,7 @@ FROM Pets;
 
 This will give us something that looks like this:
 
-![Name and animal type for three pets.]({static}/images/pets-table-name-type.png) 
+![Name and animal type for three pets.]({static}/images/select-data-from-database-using-sql/pets-table-name-type.png) 
 
 ## The WHERE Statement
 
@@ -87,7 +87,7 @@ WHERE type = 'cat';
 
 This will give us something that looks like this:
 
-![Name and birthday for only cat pets.]({static}/images/pets-table-name-bday-cats.png) 
+![Name and birthday for only cat pets.]({static}/images/select-data-from-database-using-sql/pets-table-name-bday-cats.png) 
 
 You can also have multiple conditions in your `WHERE` statement using either `AND` or `OR`. Let's say we wanted to get all dogs named "Spot". The SQL query would be:
 
@@ -100,7 +100,7 @@ WHERE type = 'dog' AND name = 'Spot';
 
 which would return this:
 
-![Name and birthday for dogs named Spot.]({static}/images/pets-table-dog-spot.png) 
+![Name and birthday for dogs named Spot.]({static}/images/select-data-from-database-using-sql/pets-table-dog-spot.png) 
 
 ## The LIMIT Statement
 

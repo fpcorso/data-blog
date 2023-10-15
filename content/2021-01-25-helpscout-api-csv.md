@@ -7,7 +7,7 @@ Authors: Frank Corso
 Summary: Learn how to download your conversations from Help Scout using their API and store them in a CSV file using Python.
 Status: published
 
-There are many times where you need to download data from an API and store it into a CSV. Perhaps, you want to analyze some data. Or, you want to combine the data with other data sets.
+There are many times when you need to download data from an API and store it into a CSV. Perhaps, you want to analyze some data. Or, you want to combine the data with other data sets.
 
 In this article, we are going to explore how to do this while using Help Scout's API. [Help Scout](https://www.helpscout.com/) is a help desk solution that teams use when communicating with their customers.
 
@@ -17,23 +17,23 @@ We will retrieve the "conversations" from one of our Help Scout mailboxes and st
 
 Before we can begin getting data from the Help Scout API, we need to generate an app ID and secret. First, log into HelpScout and go to "Your Profile."
 
-![Help Scout's profile page]({static}/images/help-scout-profile.png)
+![Help Scout's profile page]({static}/images/help-scout-api-csv/help-scout-profile.png)
 
 Click the "My Apps" in the left menu.
 
-![Help Scout's My Apps page with a "Create My App" button.]({static}/images/help-scout-my-apps.png)
+![Help Scout's My Apps page with a "Create My App" button.]({static}/images/help-scout-api-csv/help-scout-my-apps.png)
 
 Click the "Create My App" button and fill in a name. Since we won't have users authenticating with this app, you can enter any URL for the redirect. I usually just put the URL for the company's site.
 
-![Creating an app in Help Scout with two required fields: Name and redirect URL.]({static}/images/help-scout-create-custom-app.png)
+![Creating an app in Help Scout with two required fields: Name and redirect URL.]({static}/images/help-scout-api-csv/help-scout-create-custom-app.png)
 
 Click the "Create" button. Once created, you will see your app's ID and Secret.
 
-![My Apps page with the new app listed and showing its credentials.]({static}/images/help-scout-app-credentials.png)
+![My Apps page with the new app listed and showing its credentials.]({static}/images/help-scout-api-csv/help-scout-app-credentials.png)
 
 While in Help Scout, open the mailbox you want to retrieve the conversation for. In the URL, you will find the mailbox's ID, which we will need later:
 
-![Firefox's address bar with the URL ending in your mailbox id.]({static}/images/help-scout-mailbox-id.png)
+![Firefox's address bar with the URL ending in your mailbox id.]({static}/images/help-scout-api-csv/help-scout-mailbox-id.png)
 
 ## Getting Your Access Token
 

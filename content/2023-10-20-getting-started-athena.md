@@ -1,21 +1,21 @@
 ---
-Title: Getting started with AWS Athena to easily query data in S3 (TBD)
+Title: Getting Started With AWS Athena To Easily Query Data in S3
 Date: 10-20-2023 09:00:00
-Tags: aws, athena, s3, sql
+Tags: aws, athena, glue, s3, sql, csv
 Category: Data Engineering
 Slug: aws-athena
 Authors: Frank Corso
-Summary: TBD
-Description: TBD
+Summary: Explore the capabilities of AWS Athena, a versatile serverless query engine that empowers you to effortlessly interrogate unstructured, semi-structured, and structured data stored in Amazon S3 using SQL.
+Description: Explore AWS Athena for S3 data queries, cost-effective insights, and efficient data exploration. Unleash the power of SQL for data in S3!
 Status: draft
 ---
-If you use AWS for a lot of your engineering, you will often end up with large amounts of data that is not in a database, such as log files or extracted data file in S3. AWS Athena is a great tool that allows you to query this data without having to load it into a database. This post will walk through the basics of setting up Athena and querying data in S3.
+If you use AWS for a lot of your engineering, you will often end up with large amounts of data not in a database, such as log files or extracted data files in S3. AWS Athena is a great tool that allows you to query this data without loading it into a database. This post will walk through the basics of setting up Athena and querying data in S3.
 
-**Costs Note:** While I try to keep most tutorials within the AWS free tier, this is one that can incur some costs. While writing this tutorial, I went through setting up the crawler and tables multiple times and it cost roughly $0.50 USD. The costs are mostly from the Glue crawler, which charges per second, and Athena, which charges per TB scanned. So, if you have a lot of data, it can cost more. I have a small CSV file in the next section you can use which is fairly small that you can use for this tutorial which will keep the costs around the same as mine.
+**Costs Note:** While I try to keep most tutorials within the AWS free tier, this can incur some costs. While writing this tutorial, I went through setting up the crawler and tables multiple times, and it cost roughly $0.50 USD. It can cost more if you use a lot of data, so I recommend experimenting with a small CSV for this tutorial (I also provide one below).
 
-## What is AWS Athena?
+## What Is AWS Athena?
 
-AWS Athena is a serverless query engine that allows you to query data in S3 using SQL. Athena can query unstructured, semi-structured, and structured data including CSV, JSON and Parquet files. It is a great tool for ad-hoc querying of data that is not in a database. It is also a great tool for data exploration and analysis.
+AWS Athena is a serverless query engine that allows you to query data in S3 using SQL. Athena can query unstructured, semi-structured, and structured data, including CSV, JSON and Parquet files. It is an excellent tool for ad-hoc querying data not in a database. It is also a great tool for data exploration and analysis.
 
 AWS Athena charges per data scanned for each query and doesn't cost anything to set up. But, this means if you have a lot of data that you are querying a lot, it can be expensive. So, Athena tends to be best for ad-hoc or occasional querying of data.
 
@@ -24,9 +24,11 @@ Some of the times I have used Athena include:
 * Querying log files in S3 to find errors
 * Querying data in S3 to find data quality issues
 * Querying intermediate data in S3 that has been extracted from other sources but has not been transformed or loaded into a database yet
-* Querying archival data that is stored S3
+* Querying archival data stored in S3
 
-Another use case is when you are quickly creating a proof-of-concept or prototype, and you don't need to spend time setting up and managing a database yet. You can quickly load data into S3 and query it using Athena. I have done this recently when I wanted to explore how we might architect a new historical data feature. I loaded some of our data into an S3 bucket and set up Athena to query it and set up our backend to use Athena for the queries. Since it was only a small amount of data, it was very cheap to use Athena.
+Another use case is when you are quickly creating a proof-of-concept or prototype and don't need to spend time setting up and managing a database yet. You can quickly load data into S3 and query it using Athena.
+
+I have done this recently when I wanted to explore how we might architect a new historical data feature. I loaded some of our data into an S3 bucket, set up Athena to query it, and set up our backend to use Athena for the queries. Since it was only a small amount of data, it was very cheap to use Athena.
 
 ## Setting Up Our S3 Bucket
 
@@ -60,11 +62,11 @@ Since we are not setting up other users to use Glue, we can skip the first two s
 
 ![AWS Glue's choose a default service role step](/images/aws-glue-csv-to-parquet-job/aws-glue-choose-default-service-role.png)
 
-On this step, make sure the "Create the standard AWS Glue service role and set it as the default (recommended)" option is selected. This will create a new IAM role called "AWSGlueServiceRole" and attach permissions for Glue, s3, Cloudwatch, and a few other services to it.
+In this step, make sure the "Create the standard AWS Glue service role and set it as the default (recommended)" option is selected. This will create a new IAM role called "AWSGlueServiceRole" and attach permissions for Glue, s3, Cloudwatch, and a few other services to it.
 
 Click "Next" to go to the "Review and confirm" screen and then click "Apply Changes." After a few moments, you'll see a success message at the top of the screen.
 
-If you glance at the IAM console, you'll see a new role called "AWSGlueServiceRole" with the "AmazonS3FullAccess", "AWSGlueConsoleFullAccess", and "AWSGlueServiceRole" permissions attached to it. There will also be a new policy created and attached to the role. The role is now ready for most simple ETL jobs.
+If you glance at the IAM console, you'll see a new role called "AWSGlueServiceRole" with the "AmazonS3FullAccess", "AWSGlueConsoleFullAccess", and "AWSGlueServiceRole" permissions attached to it. There will also be a new policy created and attached to the role. The role is now ready for most simple crawlers and ETL jobs.
 
 ### Creating the Glue Database
 
@@ -104,11 +106,11 @@ Click the "Add an S3 data source button" to add the data source to the crawler. 
 
 ![Third step for creating a crawler in AWS Glue which needs an IAM role.](/images/aws-athena/aws-glue-add-crawler-step-3.png)
 
-On step 3, we need to select the IAM role that the crawler will use to access the data in S3. Select the "Choose an existing IAM role" option and then select the "AWSGlueServiceRole" role that we created earlier. Then, click "Next" to go to the next step.
+In step 3, we need to select the IAM role that the crawler will use to access the data in S3. Select the "Choose an existing IAM role" option and then select the "AWSGlueServiceRole" role that we created earlier. Then, click "Next" to go to the next step.
 
 ![Fourth step for creating a crawler in AWS Glue which needs a database and a schedule.](/images/aws-athena/aws-glue-add-crawler-step-4.png)
 
-On step 4, we select the database we created earlier. For the crawler schedule, make sure it's set to "On demand" as we will only want to run this once. We can leave all other options as their defaults. Click "Next" to go to the review step.
+In step 4, we select the database we created earlier. For the crawler schedule, make sure it's set to "On demand" as we will only want to run this once. We can leave all other options as their defaults. Click "Next" to go to the review step.
 
 Glance through the review sections to make sure everything looks correct. Then, click "Create crawler" to create the crawler. Once created, you'll be taken to the crawler's detail page. Click the "Run crawler" button to start a new run for the crawler.
 
@@ -138,7 +140,9 @@ Our Glue Data Catalog is now set up and ready to use with Athena.
 
 Now that we have Glue set up, it's time to set up Athena. Navigate to the Athena console and go to the "Query editor" page. Before we can start exploring the editor, we need to set up where to store the results. 
 
-While using the query editor in the console will make it feel like a regular query working with normal databases, that isn't exactly how Athena works. In Athena, queries cannot be automatic like it might be with regular databases as Athena needs to scan the files from the data source. So, the query runs asynchronously and then the results are stored in a different S3 bucket. This allows you to run the query and then come back later to see the results. This is important to note in the event you are using Athena from a script or application as you will need to handle the asynchronous nature of the query.
+While using the query editor in the console will make it feel like a regular query working with normal databases, that isn't exactly how Athena works. In Athena, queries cannot be synchronous like it might be with regular databases as Athena needs to scan the files from the data source.
+
+So, the query runs asynchronously, the results are stored in a different S3 bucket, and then they are shown to you in the query editor. This allows you to run the query and then come back later to see the results. This is important to note in the event you are using Athena from a script or application as you will need to handle the asynchronous nature of the query.
 
 Click the "Settings" tab along the top of the screen, then click the "Manage" button. For the "Location of query result" option, click the "Browse" button and locate the 2nd S3 bucket we created earlier. Then, click the "Save" button to save the changes.
 
@@ -168,4 +172,4 @@ Before you wrap up, if you want to undo everything you did in the tutorial, you 
 
 ## Next Steps
 
-Now that you have Athena set up, you can start querying data in S3. If you want to learn more about Athena, I recommend checking out the [AWS Athena documentation](https://docs.aws.amazon.com/athena/index.html). If you want to learn more about AWS Glue, I recommend checking out the [AWS Glue documentation](https://docs.aws.amazon.com/glue/index.html).
+Now that you have Athena set up, you can start querying data in S3. If you want to learn more about Athena, I recommend checking out the [AWS Athena documentation](https://docs.aws.amazon.com/athena/latest/ug/what-is.html). If you want to learn more about AWS Glue, I recommend checking out the [AWS Glue documentation](https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html).

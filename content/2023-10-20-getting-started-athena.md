@@ -5,7 +5,7 @@ Tags: aws, athena, glue, s3, sql, csv
 Category: Data Engineering
 Slug: aws-athena
 Authors: Frank Corso
-Summary: Explore the capabilities of AWS Athena, a versatile serverless query engine that empowers you to effortlessly interrogate unstructured, semi-structured, and structured data stored in Amazon S3 using SQL.
+Summary: Explore the capabilities of AWS Athena, a versatile serverless query engine that empowers you to effortlessly query unstructured, semi-structured, and structured data stored in Amazon S3 using SQL.
 Description: Explore AWS Athena for S3 data queries, cost-effective insights, and efficient data exploration. Unleash the power of SQL for data in S3!
 Status: published
 ---

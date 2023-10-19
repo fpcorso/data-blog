@@ -1,6 +1,6 @@
 ---
 Title: Getting Started With AWS Athena To Easily Query Data in S3
-Date: 10-20-2023 09:00:00
+Date: 10-19-2023 10:00:00
 Tags: aws, athena, glue, s3, sql, csv
 Category: Data Engineering
 Slug: aws-athena

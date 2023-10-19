@@ -9,7 +9,7 @@ Summary: Explore the capabilities of AWS Athena, a versatile serverless query en
 Description: Explore AWS Athena for S3 data queries, cost-effective insights, and efficient data exploration. Unleash the power of SQL for data in S3!
 Status: published
 ---
-If you use AWS for a lot of your engineering, you will often end up with large amounts of data not in a database, such as log files or extracted data files in S3. AWS Athena is a great tool that allows you to query this data without loading it into a database. This post will walk through the basics of setting up Athena and querying data in S3.
+In engineering, you will often end up with large amounts of data not in a database, such as log files or extracted data files in S3. AWS Athena is a great tool that allows you to query this data without loading it into a database. This post will walk through the basics of setting up Athena and querying data in S3.
 
 **Costs Note:** While I try to keep most tutorials within the AWS free tier, this can incur some costs. While writing this tutorial, I went through setting up the crawler and tables multiple times, and it cost roughly $0.50 USD. It can cost more if you use a lot of data, so I recommend experimenting with a small CSV for this tutorial (I also provide one below).
 

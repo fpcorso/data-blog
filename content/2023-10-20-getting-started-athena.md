@@ -7,7 +7,7 @@ Slug: aws-athena
 Authors: Frank Corso
 Summary: Explore the capabilities of AWS Athena, a versatile serverless query engine that empowers you to effortlessly interrogate unstructured, semi-structured, and structured data stored in Amazon S3 using SQL.
 Description: Explore AWS Athena for S3 data queries, cost-effective insights, and efficient data exploration. Unleash the power of SQL for data in S3!
-Status: draft
+Status: published
 ---
 If you use AWS for a lot of your engineering, you will often end up with large amounts of data not in a database, such as log files or extracted data files in S3. AWS Athena is a great tool that allows you to query this data without loading it into a database. This post will walk through the basics of setting up Athena and querying data in S3.
 

@@ -8,7 +8,7 @@ SITESUBTITLE = 'Data Lover | Software Engineer'
 SITEURL = 'localhost:8000'
 RELATIVE_URLS = True
 THEME = 'theme'
-GRAVATAR = 'https://secure.gravatar.com/avatar/3c79ff484379feb07f575dadee9b3562?s=100'
+GRAVATAR = 'https://secure.gravatar.com/avatar/3c79ff484379feb07f575dadee9b3562?s=200'
 PATH = 'content'
 TIMEZONE = 'America/New_York'
 DEFAULT_DATE_FORMAT = '%B %d, %Y'

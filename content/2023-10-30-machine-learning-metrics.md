@@ -47,9 +47,13 @@ Precision is the number of true positives divided by the number of true positive
 
 A good way to remember precision is that it answers the question "Out of all items the model predicted to be positive, how many actually were positive?".
 
+If the cost of a false positive is high, then we want to have a high precision. For example, let's say we are creating tests for detecting cancer. We might have an initial screening test for those who might have cancer. We then have a second test that detects cancer and, if it returns a positive result, we recommend invasive procedures such as chemotherapy or surgery. In this second test, we want to have a high precision as we don't want to go down the path of these invasive procedures to patients who don't have cancer. 
+
 ### Recall/Sensitivity
 
 $$Recall = \frac{True Positives}{True Positives + False Negatives}$$
+
+Recall is the number of true positives divided by the number of true positives plus the number of false negatives. It is a measure of how many of the actual positive cases were correctly predicted.
 
 A good way to remember recall is that it answers the question "Out of all items that are actually positive, how many were correctly predicted to be positive?".
 
@@ -57,11 +61,19 @@ A good way to remember recall is that it answers the question "Out of all items 
 
 $$F1 Score = \frac{2 * Precision * Recall}{Precision + Recall}$$
 
+We often want a single metric that can tell us how well our model is performing while also taking into account both precision and recall. This is what F1 score (and the F-beta score it is based on) does.
+
+In math, there are different types of mean. If we used the arithmetic mean -- what most people think of when we say "mean" or "average" -- then we would put equal weight on precision and recall. If we had two models, one with 100% precision with 1% recall and one with 45% precision and 43% recall, the first model would have an arithmetic mean of 50.5% while the second model would have an arithmetic mean of 44%. However, we would probably want to use the second model as it has a better balance of precision and recall.
+
+Instead, we use something called the harmonic mean. This works similar to the arithmetic mean except that it leans more towards the lower number, i.e. a much worse value will pull down the second value more. So, the same two models above would instead have a harmonic mean of 2% and 44% respectively. This means that the second model is better than the first model.
+
 ### Specificity
 
 $$Specificity = \frac{True Negatives}{True Negatives + False Positives}$$
 
+Specificity is more common in medical models. It is the number of true negatives divided by the number of true negatives plus the number of false positives. It is a measure of how many of the negative predictions were actually correct.
+
 A good way to remember specificity is that it answers the question "Out of all items that are actually negative, how many were correctly predicted to be negative?".
 
+## Next Steps
 
-NEXT STEPS

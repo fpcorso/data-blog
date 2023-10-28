@@ -1,12 +1,12 @@
 ---
-Title: TBD
+Title: Evaluating Machine Learning Models Using Accuracy, Precision, Recall, and More
 Date: 10-30-2023 10:00:00
 Tags: accuracy
 Category: Python
-Slug: machine-learning-metrics-overview
+Slug: classification-machine-learning-metrics-overview
 Authors: Frank Corso
-Summary: TBD
-Description: TBD
+Summary: Assessing your model's performance is a critical step. This article explores the key classification metrics such as accuracy, precision, recall, f1 score, and specificity. 
+Description: Dive into the metrics that matter in machine learning. Understand accuracy, precision, recall, and more to make informed decisions about your models.
 Status: draft
 ---
 
@@ -16,7 +16,7 @@ When using machine learning to solve a classification problem, such as spam dete
 
 Before we explore the metrics, we first need to discuss how we label a correct prediction. We can use the "confusion matrix" to help us understand this. The confusion matrix is a table that shows the number of correct and incorrect predictions made by the model compared to the actual outcomes.
 
-INSERT CONFUSION MATRIX IMAGE
+![Confusion Matrix](/images/classification-ml-metrics/confusion-matrix.png)
 
 Along the side of the matrix, we have the actual outcomes. For example, this could be "spam" and "not spam" for spam detection -- though this is more usually labelled positive and negative in most evaluations. Along the top side of the matrix, we have the predicted values, again normally labelled as positive and negative. The four created cells give us the four categories of predictions:
 
@@ -49,7 +49,7 @@ A good way to remember precision is that it answers the question "Out of all ite
 
 If the cost of a false positive is high, then we want to have a high precision. For example, let's say we are creating tests for detecting cancer. We might have an initial screening test for those who might have cancer. We then have a second test that detects cancer and, if it returns a positive result, we recommend invasive procedures such as chemotherapy or surgery. In this second test, we want to have a high precision as we don't want to go down the path of these invasive procedures to patients who don't have cancer. 
 
-### Recall/Sensitivity
+### Recall (AKA Sensitivity)
 
 $$Recall = \frac{True Positives}{True Positives + False Negatives}$$
 
@@ -61,11 +61,19 @@ A good way to remember recall is that it answers the question "Out of all items 
 
 $$F1 Score = \frac{2 * Precision * Recall}{Precision + Recall}$$
 
-We often want a single metric that can tell us how well our model is performing while also taking into account both precision and recall. This is what F1 score (and the F-beta score it is based on) does.
+We often want a single metric that can tell us how well our model is performing while also taking into account both precision and recall. This is what F1 score (and the F-beta score) does.
 
-In math, there are different types of mean. If we used the arithmetic mean -- what most people think of when we say "mean" or "average" -- then we would put equal weight on precision and recall. If we had two models, one with 100% precision with 1% recall and one with 45% precision and 43% recall, the first model would have an arithmetic mean of 50.5% while the second model would have an arithmetic mean of 44%. However, we would probably want to use the second model as it has a better balance of precision and recall.
+In math, there are different types of mean. If we used the arithmetic mean -- what most people think of when we say "mean" or "average" -- then we would put equal weight on precision and recall. If we had two models, one with 100% precision with 24% recall and one with 60% precision and 58% recall, the first model would have an arithmetic mean of 62% while the second model would have an arithmetic mean of 59%. However, we would probably want to use the second model as it has a better balance of precision and recall.
 
-Instead, we use something called the harmonic mean. This works similar to the arithmetic mean except that it leans more towards the lower number, i.e. a much worse value will pull down the second value more. So, the same two models above would instead have a harmonic mean of 2% and 44% respectively. This means that the second model is better than the first model.
+Instead, we use something called the harmonic mean. This works similar to the arithmetic mean except that it leans more towards the lower number, i.e. a much worse value will pull down the second value more. So, the same two models above would instead have a harmonic mean of 38.7% and 58.9% respectively. This shows that the second model is more balanced with higher values than the first model.
+
+### F-Beta Score
+
+$$FBeta Score = \frac{(1 + \beta^2) * Precision * Recall}{(\beta^2 * Precision) + Recall}$$
+
+The F-beta score is a generalization of the F1 score that introduces a parameter (beta) that allows us to control how much weight we put on precision versus recall. The F1 score is the same as the F-beta score when beta is 1.0. 
+
+When beta is less than 1.0, we put more weight on precision. When beta is greater than 1.0, we put more weight on recall. This helps us to create a single, balanced metric with more weight on the metric we might care about more.
 
 ### Specificity
 
@@ -76,4 +84,14 @@ Specificity is more common in medical models. It is the number of true negatives
 A good way to remember specificity is that it answers the question "Out of all items that are actually negative, how many were correctly predicted to be negative?".
 
 ## Next Steps
+
+For most models, you will want to use a combination of these metrics to evaluate your model.
+
+Most of the time, when I am just starting to explore training a new model, I will print out accuracy, precision, recall, and F1 score to start with. As I continue to refine the model, I may switch to F-beta score, depending on our objectives. For reporting to non-technical stakeholders, I will often use precision and recall but without calling them that, but rather, answering the questions that they represent.
+
+As you continue working with these metrics, you will want to:
+
+* Identify how to make these calculations in the frameworks you are using. Some, like scikit-learn, have built-in functions for these calculations.
+* Identify the objectives of the models you are working on and the cost of false positives and false negatives.
+* Identify different ways to report these metrics to different types of stakeholders.
 

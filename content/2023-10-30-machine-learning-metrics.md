@@ -1,12 +1,12 @@
 ---
-Title: Evaluating Machine Learning Models Using Accuracy, Precision, Recall, and More
+Title: Evaluating Classification Models Using Accuracy, Precision, Recall, and More
 Date: 10-30-2023 10:00:00
 Tags: accuracy
 Category: Python
 Slug: classification-machine-learning-metrics-overview
 Authors: Frank Corso
-Summary: Assessing your model's performance is a critical step. This article explores the key classification metrics such as accuracy, precision, recall, f1 score, and specificity. 
-Description: Dive into the metrics that matter in machine learning. Understand accuracy, precision, recall, and more to make informed decisions about your models.
+Summary: Assessing your classification model's performance is a critical step. This article explores the key classification metrics such as accuracy, precision, recall, f1 score, and specificity. 
+Description: Dive into the metrics that matter in classification models in machine learning. Understand accuracy, precision, recall, and more to make informed decisions about your models.
 Status: draft
 ---
 

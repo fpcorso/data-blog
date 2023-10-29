@@ -7,7 +7,7 @@ Slug: classification-machine-learning-metrics
 Authors: Frank Corso
 Summary: Assessing your classification model's performance is a critical step. This article explores the key classification metrics such as accuracy, precision, recall, f1 score, and specificity. 
 Description: Dive into the metrics that matter in classification models in machine learning. Understand accuracy, precision, recall, and more to make informed decisions about your models.
-Status: draft
+Status: published
 ---
 
 When using machine learning to solve a classification problem, such as spam detection and fraud detection, it is essential to measure the model's performance to see how well the model solves the problem. We can use a variety of metrics for this, with the most common being accuracy, precision, recall, sensitivity, specificity, and F1 score.

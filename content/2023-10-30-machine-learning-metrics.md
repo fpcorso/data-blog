@@ -55,7 +55,7 @@ If the cost of a false positive is high, then we want to have a high precision. 
 
 $$Recall = \frac{True Positives}{True Positives + False Negatives}$$
 
-Recall is the number of true positives divided by the number of true positives plus the number of false negatives. It is a measure of how many of the actual positive cases were correctly predicted.
+Recall — in medical models, this is often labeled as Sensitivity — is the number of true positives divided by the number of true positives plus the number of false negatives. It is a measure of how many of the actual positive cases were correctly predicted.
 
 A good way to remember recall is that it answers the question, "Out of all items that are actually positive, how many were correctly predicted to be positive?".
 
@@ -88,7 +88,6 @@ A good way to remember specificity is that it answers the question, "Out of all 
 ## Next Steps
 
 For most models, you will want to use a combination of these metrics to evaluate your model.
-
 
 Most of the time, when I am just starting to explore training a new model, I will print out the accuracy, precision, recall, and F1 score to begin with. As I continue to refine the model, I may switch to an F-beta score, depending on our objectives. For reporting to non-technical stakeholders, I will often use precision and recall without calling them that, but rather, answering the questions that they represent.
 

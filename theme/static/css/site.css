@@ -92,6 +92,12 @@ Sitewide Classes/IDs
 Header
 *****/
 
+header.site-header {
+    border-bottom: 1px solid green;
+    margin: 3rem 1.5rem;
+    padding-bottom: 6px;
+}
+
 /****
 Footer
 ****/

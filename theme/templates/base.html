@@ -17,19 +17,14 @@
 </head>
 <body>
     <div id="page">
-        <header class="site-header section">
+        <header class="site-header">
             <div class="level">
                 <div class="level-left">
                     <div class="level-item">
-                        <div class="has-text-centered-mobile">
-                            <p class="title is-2"><a href="/">{{ SITENAME }}</a></p>
-                            <p class="subtitle is-marginless is-4">{{ SITESUBTITLE }}</p>
-                        </div>
+                        <p class="title is-4"><a href="/">{{ SITENAME }}</a></p>
                     </div>
                 </div>
-            </div>
-            <div class="level">
-                <div class="level-left">
+                <div class="level-right">
                     <a class="level-item" href="/">Articles</a>
                     {% for title, link in MENUITEMS %}
                         <a class="level-item" href="{{ SITEURL }}/{{ link }}">{{ title }}</a>

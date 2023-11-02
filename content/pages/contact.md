@@ -7,14 +7,32 @@ Summary: Need to contact Frank Corso? Submit the contact form!
 
 Fill out the form below to send me a message.
 
-<div id="my-reform"></div>
+<form action="https://formspree.io/f/xbjvbgly" method="POST" data-dynamic-form="true">
+  <div class="field">
+    <label class="label">What's your name?</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Your name" name="name" required>
+    </div>
+  </div>
 
-<script>window.Reform=window.Reform||function(){(Reform.q=Reform.q||[]).push(arguments)};</script>
-<script id="reform-script" async src="https://embed.reform.app/v1/embed.js"></script>
-<script>
-    Reform('init', {
-        url: 'https://forms.reform.app/apLRmP/data-blog-contact/33tysq',
-        target: '#my-reform',
-        background: 'default',
-    })
-</script>
+  <div class="field">
+    <label class="label">What's your email?</label>
+    <div class="control">
+      <input class="input" type="email" placeholder="Your email" name="email" required>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">How can I help you?</label>
+    <div class="control">
+      <textarea class="textarea" placeholder="Your message" name="message" required></textarea>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <button class="button is-link" type="submit">Submit</button>
+    </div>
+    <p class="form-error help is-danger"></p>
+  </div>
+</form>

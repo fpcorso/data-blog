@@ -16,7 +16,6 @@ DEFAULT_PAGINATION = False
 
 # Social Networks
 GITHUB = 'https://github.com/fpcorso'
-INSTAGRAM = 'https://www.instagram.com/fpcorso/'
 DEVTO = 'https://dev.to/fpcorso'
 
 # Navigation settings

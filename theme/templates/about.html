@@ -1,0 +1,22 @@
+{% extends "page.html" %}
+{% block content %}
+<article class="entry">
+    <header class="entry-header">
+        <h1 class="entry-title title is-2 mb-1">{{ page.title }}</h1>
+    </header>
+    <div class="entry-content content">
+        <section>
+            {{ page.content }}
+        </section>
+        <section class="mt-6">
+            <h2>My Topics</h2>
+            <p class="mb-2">I write about a few different topics on this site. Here are the main topics:</p>
+            {% for category, articles in categories|sort %}
+                <article class="post">
+                    <p><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></p>
+                </article>
+            {% endfor %}
+        </section>
+    </div>
+</article>
+{% endblock content %}

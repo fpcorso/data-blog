@@ -4,6 +4,7 @@ Date: 2020-07-31 10:20
 Slug: about
 Authors: Frank Corso
 Summary: Want to know more about Frank Corso? Check out his about page!
+Template: about
 
 Hey there! I'm Frank Corso, and it is a pleasure to meet you. My journey in the tech realm commenced in 2009 when I dipped my toes into programming. My first software project was this humble Pong clone:
 

@@ -4,11 +4,8 @@ Frank's Blog JS Code
 
 document.querySelectorAll('form').forEach(form => {
     // if the form's data-dynamic-form attribute is set to true, add an event listener
-    console.log('Checking each form...', form.dataset);
     if (form.dataset.dynamicForm === 'true') {
-        console.log('Adding event listener to form');
         form.addEventListener('submit', event => {
-            console.log('Form being submitted');
             event.preventDefault();
             const formData = new FormData(form);
             const errorMessage = form.querySelector('.form-error');

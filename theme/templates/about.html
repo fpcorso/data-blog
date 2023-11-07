@@ -14,9 +14,11 @@
             <div class="columns is-multiline">
                 {% for category, articles in categories|sort %}
                     <div class="column is-one-third">
-                        <article class="post mb-0">
-                            <p><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></p>
-                        </article>
+                        <a href="{{ SITEURL }}/{{ category.url }}">
+                            <article class="post mb-0">
+                                <p>{{ category }}</p>
+                            </article>
+                        </a>
                     </div>
                 {% endfor %}
             </div>

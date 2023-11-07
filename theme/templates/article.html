@@ -39,6 +39,18 @@
             </ol>
         {% endif %}
         {{ article.content }}
+        <div>
+            <span class="icon">
+                <i class="fa fa-tags"></i>
+            </span>
+            <div class="tags is-inline">
+                {% if article.tags %}
+                    {% for tag in article.tags %}
+                        <span class="tag"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
     </section>
     {% if article.similar_posts %}
         <section class="mt-6 pt-6 similar-posts">

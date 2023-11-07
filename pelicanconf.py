@@ -16,7 +16,7 @@ DEFAULT_PAGINATION = False
 
 # Social Networks
 GITHUB = 'https://github.com/fpcorso'
-DEVTO = 'https://dev.to/fpcorso'
+THREADS = 'https://www.threads.net/@fpcorso'
 
 # Navigation settings
 DISPLAY_CATEGORIES_ON_MENU = False

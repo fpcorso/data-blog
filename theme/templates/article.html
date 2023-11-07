@@ -55,22 +55,26 @@
     {% if article.similar_posts %}
         <section class="mt-6 pt-6 similar-posts">
             <h2 class="title is-2">Similar Articles</h2>
-            {% for similar in article.similar_posts %}
-                <article class="post">
-                    <p class="meta has-text-grey-dark">
-                        <time class="published" datetime="{{ similar.date.isoformat() }}">{{ similar.locale_date }}</time>
-                        {% if similar.category %}
-                            in <a href="{{ SITEURL }}/{{ similar.category.url }}"><span class="has-text-weight-medium">{{ similar.category }}</span></a>
-                        {% endif %}
-                        {% if similar.series %}
-                        | Part of my {{ similar.series.name }} series
-                        {% endif %}
-                    </p>
-                    <h3 class="title is-3"><a href="{{ SITEURL }}/{{ similar.url }}" rel="bookmark">{{ similar.title }}</a></h3>
-                    <div class="summary">{{ similar.summary }}</div>
-                    <p class="has-text-right"><a href="{{ SITEURL }}/{{ similar.url }}" rel="bookmark">Read more...</a></p>
-                </article>
-            {% endfor %}
+            <div class="columns is-multiline">
+                {% for similar in article.similar_posts %}
+                <div class="column is-one-half">
+                    <article class="post">
+                        <p class="meta has-text-grey-dark">
+                            <time class="published" datetime="{{ similar.date.isoformat() }}">{{ similar.locale_date }}</time>
+                            {% if similar.category %}
+                                in <a href="{{ SITEURL }}/{{ similar.category.url }}"><span class="has-text-weight-medium">{{ similar.category }}</span></a>
+                            {% endif %}
+                            {% if similar.series %}
+                            | Part of my {{ similar.series.name }} series
+                            {% endif %}
+                        </p>
+                        <h3 class="title is-3"><a href="{{ SITEURL }}/{{ similar.url }}" rel="bookmark">{{ similar.title }}</a></h3>
+                        <div class="summary">{{ similar.summary }}</div>
+                        <p class="has-text-right"><a href="{{ SITEURL }}/{{ similar.url }}" rel="bookmark">Read more...</a></p>
+                    </article>
+                </div>
+                {% endfor %}
+            </div>
         </section>
     {% endif %}
     <script async data-uid="34af01b2b3" src="https://frank-corso.ck.page/34af01b2b3/index.js"></script>

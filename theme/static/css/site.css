@@ -119,11 +119,11 @@ Archives
     border-radius: 3px;
     padding: 10px;
     transition: all 0.2s;
-    box-shadow: 0 0.5em 1em -0.125em #2a8737;
+    box-shadow: 0 0.5em 1em -0.25em #2a8737;
 }
 
 .post:hover, .post:focus-within {
-    box-shadow: 0 0.7em 1.5em 0 #2a8737;
+    box-shadow: 0 0.5em 1em -0.125em #2a8737;
 }
 
 .post .tag {

@@ -8,7 +8,7 @@ Summary: Looking to learn SQL and other data analysis topics? Check out my cours
 <div class="grid">
     <article class="post">
         <span class="tag">Free</span>
-        <h2 class="title is-2 mt-0"><a href="https://frankcorso.dev/pages/sql-basics-email-course.html" rel="bookmark">SQL Basics Email Course</a></h2>
+        <h2 class="title is-4 mt-0"><a href="https://frankcorso.dev/pages/sql-basics-email-course.html" rel="bookmark">SQL Basics Email Course</a></h2>
         <div class="summary">
             <p>Looking to get started with SQL? Get my free "SQL Basics" email course! With the course, you will learn the basics on:</p>
             <ul>

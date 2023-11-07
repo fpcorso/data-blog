@@ -133,8 +133,8 @@ Archives
 }
 
 .post .meta {
-    line-height: 32px;
-    padding-bottom: 10px;
+    line-height: 1;
+    font-size: 0.8rem;
     color: #7a7a7a;
 }
 

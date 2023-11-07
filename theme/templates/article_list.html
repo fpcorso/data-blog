@@ -5,12 +5,8 @@
             {% if article.category %}
                 in <a href="{{ SITEURL }}/{{ article.category.url }}"><span class="has-text-weight-medium">{{ article.category }}</span></a>
             {% endif %}
-            {% if article.series %}
-            | Part of my {{ article.series.name }} series
-            {% endif %}
         </p>
-        <h2 class="title is-2"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a></h2>
+        <h2 class="title is-4 mt-3"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a></h2>
         <div class="summary">{{ article.summary }}</div>
-        <p class="has-text-right"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">Read more...</a></p>
     </article>
 {% endfor %}

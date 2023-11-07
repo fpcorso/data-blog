@@ -11,11 +11,15 @@
         <section class="mt-6">
             <h2>My Topics</h2>
             <p class="mb-2">I write about a few different topics on this site. Here are the main topics:</p>
-            {% for category, articles in categories|sort %}
-                <article class="post">
-                    <p><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></p>
-                </article>
-            {% endfor %}
+            <div class="columns is-multiline">
+                {% for category, articles in categories|sort %}
+                    <div class="column is-one-third">
+                        <article class="post mb-0">
+                            <p><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></p>
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
         </section>
     </div>
 </article>

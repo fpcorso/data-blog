@@ -1,7 +1,7 @@
 Title: How To Save Data From Help Scout’s API to CSV in Python
 Date: 2021-01-25 08:20
-Category: Python
-Tags: API
+Category: Data Engineering
+Tags: api, help scout, csv
 Slug: help-scout-api-csv
 Authors: Frank Corso
 Summary: Learn how to download your conversations from Help Scout using their API and store them in a CSV file using Python.
@@ -108,7 +108,7 @@ with open('conversations.csv', mode="w", newline='', encoding='utf-8') as fh:
 
 ## Downloading Our Conversations and Putting Them Into the CSV
 
-Now that we have our access token and our CSV opened, it's time to retrieve the conversations. Help Scout's API sends over the conversations in a paginated format.
+Now that we have our access token and our CSV opened, it's time to retrieve the conversations. Help Scout's Mailbox API has a "List Conversations" endpoint that sends over the conversations in a paginated format. You can view all of the available parameters for the endpoint [in their endpoint developer documentation](https://developer.helpscout.com/mailbox-api/endpoints/conversations/list/).
 
 Remember to keep all of this indented inside the `with open()` statement so we can write to our CSV.  
 

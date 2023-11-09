@@ -1,10 +1,9 @@
 ---
 Title: Querying Athena from Python
-Date: 11-25-2022 09:00:00
-Tags: python
-Category: python
+Date: 11-13-2023 09:00:00
+Tags: aws, athena
+Category: Data Engineering
 Slug: querying-athena-python
-Series: ""
 Authors: Frank Corso
 Summary: TBD
 Description: TBD
@@ -14,10 +13,9 @@ INTRO
 
 WHAT IS ATHENA
 
-SETTING UP s3 BUCKET
-
-SETTING UP ATHENA DB
-
 PYTHON CODE
+- INITIATE QUERY
+- CHECK QUERY STATUS
+- GET QUERY RESULTS
 
 NEXT STEPS

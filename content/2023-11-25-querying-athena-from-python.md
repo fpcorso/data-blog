@@ -36,12 +36,132 @@ I have done this recently when I wanted to explore how we might architect a new 
 
 **Note:** This article assumes you already have an Athena DB and tables set up. If you do not have any set up, you can refer to [my article on setting up Athena]({filename}2023-10-19-getting-started-athena.md) to get started.
 
+For this code, I will be using the Athena DB I set up in [my article on setting up Athena]({filename}2023-10-19-getting-started-athena.md) which included data on the top 10,000 IMDB movies.
+
+In order to work with Athena, we need to use the `boto3` library to create a client for Athena. We can then use this client for all the operations we will do. You can [view the Athena client in boto3 here](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#client).
+
+```python
+import boto3
+athena_client = boto3.client('athena')
+```
+
 ### Initiating the Query
 
+Our first step is to create the SQL for our query and then start the query execution in Athena. We can do this using the `start_query_execution` method. You can view the [start_query_execution documentation here](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena/client/start_query_execution.html).
 
+The `start_query_execution` method takes the following parameters:
+
+* `QueryString` - The SQL query to run
+* `QueryExecutionContext` - The database to run the query in
+* `ResultConfiguration` - The location in S3 to store the results. For most systems, you will use the same location that you set up when you set up Athena in the "Location of query result" option. However, as you scale up your system or team, you may start storing results into different places.
+
+This method will return a dict with the "QueryExecutionId" value which we will need to use later.
+
+```python
+query = '''SELECT * FROM frank_athena_example_bucket
+    WHERE year > 2012 AND metascore > 80 AND certificate IN ('G', 'PG')
+    LIMIT 10;'''
+query_execution = athena_client.start_query_execution(
+    QueryString=query,
+    QueryExecutionContext={
+        'Database': 'mydata',
+    },
+    ResultConfiguration={
+        'OutputLocation': 's3://frank-example-athena-results',
+    }
+)
+execution_id = query_execution['QueryExecutionId']
+```
 
 ### Checking the Query Status
 
+Now that we have initialized the query, we cannot get the results until the query execution state is set to "SUCCEEDED". 
+
+We can check the status of the query using the `get_query_execution` method, which takes the execution ID and returns a dict with a variety of information about the query. You can [view the get_query_execution documentation here](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena/client/get_query_execution.html).
+
+We need to check the state of the status which we can do like this:
+
+```python
+query_details = athena_client.get_query_execution(
+        QueryExecutionId=execution_id
+    )
+state = query_details['QueryExecution']['Status']['State']
+```
+
+The state can have several values, such as `QUEUED`, `RUNNING`, `SUCCEEDED`, `FAILED`, and `CANCELLED`. We want to wait until the state is `SUCCEEDED` before we continue.
+
 ### Getting the Query Results
 
+Once the query has succeeded, we can get the results using the `get_query_results` method. You can [view the get_query_results documentation here](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena/client/get_query_results.html).
+
+This method takes the execution ID and returns a dict with the results. The dict will contain both the result as rows and metadata, such as the column info.
+
+```python
+response_query_result = athena_client.get_query_results(
+        QueryExecutionId=execution_id
+    )
+print(response_query_result['ResultSet']['Rows'])
+```
+
+TODO: SHOW RESPONSE!!
+
+### Waiting for Success
+
+In most cases, you will not only check the state once but keep checking until the query has finished. We have two main ways to achieve this.
+
+#### Waiting for a set number of cycles
+
+The first way is to check the state a set number of times, with some waiting in between. This is useful for times where you have a maximum amount of time your script can take.
+
+For example, if you are running in a Lambda function attached to an API endpoint, you may only have 30 or 60 seconds. In that case, you may want to end the check early to show a timeout message or similar if the query is taking too long.
+
+To achieve this, we set up a for loop and sleep:
+
+```python
+import time
+
+for i in range(10):
+    time.sleep(5)
+    query_details = athena_client.get_query_execution(
+        QueryExecutionId=execution_id
+    )
+    state = query_details['QueryExecution']['Status']['State']
+    if state == 'SUCCEEDED':
+        response_query_result = athena_client.get_query_results(
+            QueryExecutionId=execution_id
+        )
+        # Do something with results
+
+# Do something if we never got a success
+```
+
+#### Waiting until success
+
+The second way is to keep checking until the query has succeeded. This is useful for times when you don't have a maximum amount of time your script can take.
+
+To achieve this, we set up a while loop and sleep:
+
+```python
+import time
+
+while True:
+    time.sleep(5)
+    query_details = athena_client.get_query_execution(
+        QueryExecutionId=execution_id
+    )
+    state = query_details['QueryExecution']['Status']['State']
+    if state == 'SUCCEEDED':
+        response_query_result = athena_client.get_query_results(
+            QueryExecutionId=execution_id
+        )
+        # Do something with results
+        break
+```
+
 ## Next Steps
+
+Now that you have your results, you can do whatever you want with them. There are some more things you can do with the Athena client:
+
+* Set up pagination to get to paginate through larger results
+* Adjust the `ResultReuseConfiguration` to reuse the results of a query in short windows of time
+* Adjust the `ResultConfiguration` to change the encryption or ownership of the results

@@ -123,7 +123,3 @@ LIMIT 1;
 You are now ready to get out and start querying some data from databases. But, we have only looked at the most basic versions of each of these statements, and there is much more that you can do.
 
 You will want to look into aggregation functions, such as `COUNT()` and `SUM()`, as well as more advanced statements, such as `ORDER BY`, `GROUP BY`, and `HAVING`. Lastly, you will want to learn about joining tables together using `JOIN`.
-
-Be sure to subscribe below to get notified when the next entry in this SQL 101 series (and other articles on SQL + data) is published!
-
-

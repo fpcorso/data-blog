@@ -84,5 +84,3 @@ If you are following along and are finished testing your rule, you can disable o
 ## Next Steps
 
 Now that you have set up a Lambda function and set it up on a recurring schedule, there is so much you can do such as having a Twitter bot tweet on a recurring schedule or having a script to clean your data that gets run every hour. In future articles, I'll look at safely passing credentials to it and add other Python libraries to it.
-
-Be sure to subscribe below to get notified when the next article is published!

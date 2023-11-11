@@ -303,5 +303,3 @@ If you want to expand on this, some things you can try include:
 
 1. Update the `get_tweet` function to have a few variations of the daily tweet that the method will randomly choose from.
 2. Create a list of holidays and, if that day is a holiday, include what holiday that day is in the tweet. You can take this a step further by finding a larger dataset of holidays to add a CSV or a holidays API to pull from.
-
-Be sure to subscribe below to get notified when the next article is published!

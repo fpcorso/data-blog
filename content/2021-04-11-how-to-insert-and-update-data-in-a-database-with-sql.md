@@ -109,5 +109,3 @@ Now that you can select, insert, and update data within a database, you are on y
 
 1. Look into how to delete data using the DELETE statement
 2. Start learning how to join multiple tables together
-
-Be sure to subscribe below to get notified when the next entry in this SQL 101 series (and other articles on SQL + data) is published!

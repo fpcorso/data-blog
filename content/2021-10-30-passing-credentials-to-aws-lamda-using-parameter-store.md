@@ -178,5 +178,3 @@ We see our secret that was saved in Parameter Store has made it to the Lambda fu
 ## Next Steps
 
 Now that you have stored values in Parameter Store and retrieved them from a Lambda function, you can start setting up Lambda functions that can access databases and other services. For example, you can set up a Twitter bot and keep your access keys in Parameter Store. Or, you can set up a recurring monitor that checks your database and sends results to Slack.
-
-Be sure to subscribe below to get notified when the next article is published!

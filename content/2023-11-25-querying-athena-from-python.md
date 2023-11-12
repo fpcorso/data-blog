@@ -1,7 +1,7 @@
 ---
 Title: Querying Athena from Python
 Date: 11-13-2023 09:00:00
-Tags: aws, athena
+Tags: aws, athena, boto3
 Category: Data Engineering
 Slug: querying-athena-python
 Authors: Frank Corso
@@ -103,7 +103,23 @@ response_query_result = athena_client.get_query_results(
 print(response_query_result['ResultSet']['Rows'])
 ```
 
-TODO: SHOW RESPONSE!!
+The results in the "Rows" key will be a list where the first item is a dict for the column names and the other items is the data.
+
+For example, we can show the first two items like this:
+
+```python
+for row in response_query_result['ResultSet']['Rows'][:2]:
+    print(row['Data'])
+```
+
+which shows us:
+
+```python
+[{'VarCharValue': 'title'}, {'VarCharValue': 'year'}, {'VarCharValue': 'runtime'}, {'VarCharValue': 'certificate'}, {'VarCharValue': 'rating'}, {'VarCharValue': 'metascore'}, {'VarCharValue': 'votes'}, {'VarCharValue': 'gross'}]
+[{'VarCharValue': 'Spider-Man: Across the Spider-Verse'}, {'VarCharValue': '2023'}, {'VarCharValue': '140'}, {'VarCharValue': 'PG'}, {'VarCharValue': '8.9'}, {'VarCharValue': '86.0'}, {'VarCharValue': '203042'}, {}]
+```
+
+Notice that all values are strings. You will need to convert them to the correct type for your use case.
 
 ### Waiting for Success
 

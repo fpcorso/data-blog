@@ -1,17 +1,17 @@
 ---
-Title: Querying Athena from Python
+Title: How to Query Athena using Python
 Date: 11-13-2023 09:00:00
 Tags: aws, athena, boto3
 Category: Data Engineering
 Slug: querying-athena-python
 Authors: Frank Corso
-Summary: TBD
-Description: TBD
+Summary: Using AWS Athena? Learn how to perform queries from Python to get data from Athena.
+Description: Using AWS Athena? Learn how to perform queries from Python to get data from Athena.
 Status: draft
 ---
-AWS Athena is a great tool for querying large amounts of data in S3. However, querying from Python is not as straightforward as a normal SQL request.
+AWS Athena is a great tool for querying large amounts of data in S3. However, querying from Python is not as straightforward as a standard SQL request.
 
-In Athena, the queries are run asynchronously as it has to perform the scan of the data in S3. This means that when you run a query, you have to wait until the query's status is complete before getting retrieving the results.
+In Athena, the queries run asynchronously as it has to perform the scan of the data in S3. This means that when you run a query, you have to wait until the query's status is complete before retrieving the results.
 
 In this article, I'll explore how to achieve this in Python.
 
@@ -32,7 +32,7 @@ Another use case is when you are quickly creating a proof-of-concept or prototyp
 
 I have done this recently when I wanted to explore how we might architect a new historical data feature. I loaded some of our data into an S3 bucket, set up Athena to query it, and set up our backend to use Athena for the queries. Since it was only a small amount of data, it was very cheap to use Athena.
 
-## Writing our Python Code
+## Writing Our Python Code
 
 **Note:** This article assumes you already have an Athena DB and tables set up. If you do not have any set up, you can refer to [my article on setting up Athena]({filename}2023-10-19-getting-started-athena.md) to get started.
 
@@ -125,7 +125,7 @@ Notice that all values are strings. You will need to convert them to the correct
 
 In most cases, you will not only check the state once but keep checking until the query has finished. We have two main ways to achieve this.
 
-#### Waiting for a set number of cycles
+#### Waiting for a Set Number of Cycles
 
 The first way is to check the state a set number of times, with some waiting in between. This is useful for times where you have a maximum amount of time your script can take.
 
@@ -151,7 +151,7 @@ for i in range(10):
 # Do something if we never got a success
 ```
 
-#### Waiting until success
+#### Waiting Until Success
 
 The second way is to keep checking until the query has succeeded. This is useful for times when you don't have a maximum amount of time your script can take.
 
@@ -181,3 +181,4 @@ Now that you have your results, you can do whatever you want with them. There ar
 * Set up pagination to get to paginate through larger results
 * Adjust the `ResultReuseConfiguration` to reuse the results of a query in short windows of time
 * Adjust the `ResultConfiguration` to change the encryption or ownership of the results
+* Our code above assumes the query will always succeed. You may want to adjust your code to handle other states, such as `FAILED` or `CANCELLED`

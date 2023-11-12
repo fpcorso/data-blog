@@ -5,9 +5,9 @@ Tags: aws, athena, boto3
 Category: Data Engineering
 Slug: querying-athena-python
 Authors: Frank Corso
-Summary: Using AWS Athena? Learn how to perform queries from Python to get data from Athena.
-Description: Using AWS Athena? Learn how to perform queries from Python to get data from Athena.
-Status: draft
+Summary: Using AWS Athena? Learn how to use Python to perform queries to get data from Athena.
+Description: Using AWS Athena? Learn how to use Python to perform queries to get data from Athena.
+Status: published
 ---
 AWS Athena is a great tool for querying large amounts of data in S3. However, querying from Python is not as straightforward as a standard SQL request.
 
@@ -38,7 +38,7 @@ I have done this recently when I wanted to explore how we might architect a new 
 
 For this code, I will be using the Athena DB I set up in [my article on setting up Athena]({filename}2023-10-19-getting-started-athena.md) which included data on the top 10,000 IMDB movies.
 
-In order to work with Athena, we need to use the `boto3` library to create a client for Athena. We can then use this client for all the operations we will do. You can [view the Athena client in boto3 here](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#client).
+In order to work with Athena, we need to use the `boto3` library to create a client for Athena. We can then use this client for all the operations we will do. You can [view the Athena client in boto3 documentation here](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#client).
 
 ```python
 import boto3
@@ -136,8 +136,8 @@ To achieve this, we set up a for loop and sleep:
 ```python
 import time
 
-for i in range(10):
-    time.sleep(5)
+for i in range(15):
+    time.sleep(1)
     query_details = athena_client.get_query_execution(
         QueryExecutionId=execution_id
     )
@@ -161,7 +161,7 @@ To achieve this, we set up a while loop and sleep:
 import time
 
 while True:
-    time.sleep(5)
+    time.sleep(1)
     query_details = athena_client.get_query_execution(
         QueryExecutionId=execution_id
     )

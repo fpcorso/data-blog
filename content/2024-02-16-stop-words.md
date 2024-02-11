@@ -1,12 +1,12 @@
 ---
-Title: Removing Stop Words In Python
+Title: Removing Stop Words Using Python
 Date: 02-16-2024 09:00:00
 Tags: machine learning, nlp, nltk, scikit, spacy
 Category: Data Science
 Slug: stop-words
 Authors: Frank Corso
-Summary: TBD
-Description: TBD
+Summary: Working with text data for analysis or machine learning? You probably will need to remove stop words. Learn how in this article!
+Description: Working with text data for analysis or machine learning? Learn how to remove stop words to avoid them messing up the output.
 Status: draft
 ---
 
@@ -22,7 +22,7 @@ We call words like this "stop words" and in this article, I will explore ways yo
 
 Let's say that we wanted to determine the most common topics written about on this blog. One very simplistic approach could be to simply see what words are used the most.
 
-So, I can combine all the text across all of the blog posts and then create a word count for all instances of each word. For this article, we'll assume I've already cleaned the text and prepared it for this type of analysis.
+So, I can combine all the text across all the blog posts and then create a word count for all instances of each word. For this article, we'll assume I've already cleaned the text and prepared it for this type of analysis.
 
 Our first attempt might look something like this:
 

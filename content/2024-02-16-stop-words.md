@@ -50,28 +50,143 @@ Counter(my_cleaned_text.split()).most_common(10)
 We can see that most of our top words are not really "topics" but rather filler words, such as "the" and "to". The "stop words" are messing up our analysis. If we removed stop words, we would get a different set like this:
 
 ```python
-['data',
- 'python',
- 'sql',
- 'athena',
- 's3',
- 'table',
- 'aws',
- 'query',
- 'analysis',
- 'seaborn']
+[('data', 129),
+ ('query', 56),
+ ('python', 56),
+ ('athena', 54),
+ ('s3', 47),
+ ('table', 41),
+ ('aws', 35),
+ ('values', 35),
+ ('analysis', 33),
+ ('seaborn', 31)]
 ```
 
-As you can see, this list better represents what this text is about and what meaningful words I've used in my blog posts.
+This list better represents what this text is about and what meaningful words I've used in my blog posts.
 
 ## How do we remove stop words?
 
-TODO: Include note about weirdness in stop word lists.
+So, how can we remove the stop words? There are a few different ways we can do this depending on the frameworks you are using, the text you have, and your objectives.
+
+Each library that can remove stop words has options to use different stop words lists. You will want to review the different options to find ones that align with what you want to remove and what you want to keep.
+
+Important Note: Some of the stop word lists have unexpected words in them, such as "computer". If you are removing stop words as part of an important analysis, be sure to carefully review what words are in the list.
 
 ### NLTK
 
+One of the most popular Python packages for removing stop words is NLTK. This package has many tools for analyzing and working with text.
+
+If you are using this package, you can use its `word_tokenize` and `FreqDist` functions to create our counted instances list.
+
+From there, we can use its `stopwords` to remove words using its "english" stop words list.
+
+```python
+from nltk.probability import FreqDist
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+
+# Convert to list of words
+tokens = word_tokenize(my_cleaned_text)
+
+# Create frequency distribution, but remove stopwords
+fdist = FreqDist(tokens)
+for word in stopwords.words('english'):
+    if word in fdist:
+        del fdist[word]
+
+fdist.most_common(10)
+```
+
+```python
+[('data', 129),
+ ('query', 56),
+ ('python', 56),
+ ('athena', 54),
+ ('s3', 47),
+ ('table', 41),
+ ('aws', 35),
+ ('values', 35),
+ ('analysis', 33),
+ ('seaborn', 31)]
+```
+
+When using this approach, we can also add a few more stop words to our list by using a simple union, such as:
+
+```python
+for word in (set(stopwords.words('english')).union({'create', 'need'})):
+    if word in fdist:
+        del fdist[word]
+```
+
 ### spaCy
 
+When using spaCy, we can achieve the same thing using its `token.is_stop` property after we convert our text to an nlp doc.
+
+```python
+import spacy
+from collections import Counter
+
+# Load the spacy model we want to use.
+nlp = spacy.load("en_core_web_sm")
+
+# Convert to list of words, removing stop words.
+doc = nlp(my_cleaned_text)
+words = [token.text for token in doc if not token.is_stop]
+
+# Count the frequency of each word
+Counter(words).most_common(10)
+```
+
+```python
+[('data', 129),
+ ('query', 56),
+ ('python', 56),
+ ('athena', 54),
+ ('use', 51),
+ ('s3', 47),
+ ('table', 41),
+ ('aws', 35),
+ ('values', 35),
+ ('analysis', 33)]
+```
+
+Notice how the list that spacy uses keeps the word `use` so it appears in our list when it did not when using NLTK.
+
 ### scikit-learn
+
+While scikit-learn isn't the go to for natural language processing and text analysis, we can achieve our goal using its `CountVectorizer`. This will provide us our words and their frequencies in the scikit way of index and feature names which we can then zip up and sort. 
+
+```python
+from sklearn.feature_extraction.text import CountVectorizer
+
+# Initialize CountVectorizer with stop words.
+vectorizer = CountVectorizer(stop_words='english')
+
+# Get our frequency distribution. Note: This accepts a list so, 
+# if we only have 1 like we do here, make sure to pass it as a list.
+word_freq = vectorizer.fit_transform([my_cleaned_text]).toarray()[0]
+
+# Get our words.
+words = vectorizer.get_feature_names_out()
+
+# Create a dictionary of word frequencies.
+word_freq_dict = dict(zip(words, word_freq))
+
+# Sort the words based on frequency.
+sorted(word_freq_dict.items(), key=lambda x: x[1], reverse=True)[:10]
+```
+
+```python
+[('data', 129),
+ ('query', 56),
+ ('python', 56),
+ ('athena', 54),
+ ('use', 51),
+ ('s3', 47),
+ ('table', 41),
+ ('using', 38),
+ ('aws', 35),
+ ('values', 35),]
+```
 
 ## Next Steps

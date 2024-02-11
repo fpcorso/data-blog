@@ -1,7 +1,7 @@
 ---
-Title: Stop Words
+Title: Removing Stop Words In Python
 Date: 02-16-2024 09:00:00
-Tags: machine learning, nlp, scikit
+Tags: machine learning, nlp, nltk, scikit, spacy
 Category: Data Science
 Slug: stop-words
 Authors: Frank Corso
@@ -29,7 +29,7 @@ Our first attempt might look something like this:
 ```python
 from collections import Counter
 
-my_cleaned_text = '' # Some cleaned text we've prepared, possibly also used lemmatization/stemming
+my_cleaned_text = '' # Some cleaned text we've prepared
 
 Counter(my_cleaned_text.split()).most_common(10)
 ```
@@ -74,7 +74,7 @@ Important Note: Some of the stop word lists have unexpected words in them, such 
 
 ### NLTK
 
-One of the most popular Python packages for removing stop words is NLTK. This package has many tools for analyzing and working with text.
+One of the most popular Python packages for removing stop words is [NLTK](https://www.nltk.org/). This package has many tools for analyzing and working with text.
 
 If you are using this package, you can use its `word_tokenize` and `FreqDist` functions to create our counted instances list.
 
@@ -120,7 +120,7 @@ for word in (set(stopwords.words('english')).union({'create', 'need'})):
 
 ### spaCy
 
-When using spaCy, we can achieve the same thing using its `token.is_stop` property after we convert our text to an nlp doc.
+Another popular Python package when working with text data is [spaCy](https://spacy.io/). With spaCy, we can achieve the same thing using its `token.is_stop` property after we convert our text to an nlp doc.
 
 ```python
 import spacy
@@ -154,7 +154,7 @@ Notice how the list that spacy uses keeps the word `use` so it appears in our li
 
 ### scikit-learn
 
-While scikit-learn isn't the go to for natural language processing and text analysis, we can achieve our goal using its `CountVectorizer`. This will provide us our words and their frequencies in the scikit way of index and feature names which we can then zip up and sort. 
+While [scikit-learn](https://scikit-learn.org/) isn't the go to for natural language processing and text analysis, we can achieve our goal using its `CountVectorizer`. This will provide us our words and their frequencies in the scikit way of index and feature names which we can then zip up and sort. 
 
 ```python
 from sklearn.feature_extraction.text import CountVectorizer
@@ -186,7 +186,9 @@ sorted(word_freq_dict.items(), key=lambda x: x[1], reverse=True)[:10]
  ('table', 41),
  ('using', 38),
  ('aws', 35),
- ('values', 35),]
+ ('values', 35)]
 ```
 
 ## Next Steps
+
+Now that you have worked with using stop words, you should explore using them in any of your text analysis. You can take this a step farther by reviewing the words in the stop words lists and removing or adding words based on your objectives and text. For example, if you are working with tweets from X, you might want to add "rt" or "like" to the list.

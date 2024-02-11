@@ -12,7 +12,7 @@ Status: draft
 
 When creating machine learning models or doing data analysis on text data, you may quickly discover there are a lot of words that are messing up your output.
 
-For example, let's say you have 100 posts and wanted to see what were the most common words being used in across them. You could count each word instance, sum them up, and then show the top 10.
+For example, let's say you have 100 posts and want to see the most common words used across them. You could count each word instance, sum them up, and then show the top 10.
 
 However, you will find that most of the words in that top ten are words like "the", "an", "and", "a", etc... These words do not provide any value to our analysis and can get in the way of our actual objectives.
 
@@ -20,7 +20,7 @@ We call words like this "stop words" and in this article, I will explore ways yo
 
 ## What are stop words?
 
-Let's say that we wanted to determine the most common topics written about on this blog. One very simplistic approach could be to simply see what words are used the most.
+Let's say that we wanted to determine the most common topics written about on this blog. One very simplistic approach could be seeing what words I used the most across my blog posts.
 
 So, I can combine all the text across all the blog posts and then create a word count for all instances of each word. For this article, we'll assume I've already cleaned the text and prepared it for this type of analysis.
 
@@ -66,9 +66,9 @@ This list better represents what this text is about and what meaningful words I'
 
 ## How do we remove stop words?
 
-So, how can we remove the stop words? There are a few different ways we can do this depending on the frameworks you are using, the text you have, and your objectives.
+So, how can we remove the stop words? We can do this in a few different ways depending on the frameworks you are using, the text you have, and your objectives.
 
-Each library that can remove stop words has options to use different stop words lists. You will want to review the different options to find ones that align with what you want to remove and what you want to keep.
+Each library that can remove stop words has options to use different stop word lists. You will want to review the various options to find ones that align with what you want to remove and what you want to keep.
 
 Important Note: Some of the stop word lists have unexpected words in them, such as "computer". If you are removing stop words as part of an important analysis, be sure to carefully review what words are in the list.
 
@@ -150,11 +150,11 @@ Counter(words).most_common(10)
  ('analysis', 33)]
 ```
 
-Notice how the list that spacy uses keeps the word `use` so it appears in our list when it did not when using NLTK.
+Notice how the list that spaCy uses keeps the word `use` so it appears in our list when it did not when using NLTK.
 
 ### scikit-learn
 
-While [scikit-learn](https://scikit-learn.org/) isn't the go to for natural language processing and text analysis, we can achieve our goal using its `CountVectorizer`. This will provide us our words and their frequencies in the scikit way of index and feature names which we can then zip up and sort. 
+While [scikit-learn](https://scikit-learn.org/) isn't the go to for natural language processing and text analysis, we can achieve our goal using its `CountVectorizer`. CountVectorizer will provide us with our words and their frequencies in the scikit way of indexing and feature names, which we can then zip up and sort.
 
 ```python
 from sklearn.feature_extraction.text import CountVectorizer
@@ -163,7 +163,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 vectorizer = CountVectorizer(stop_words='english')
 
 # Get our frequency distribution. Note: This accepts a list so, 
-# if we only have 1 like we do here, make sure to pass it as a list.
+# if we only have one, as we do here, make sure to pass it as a list.
 word_freq = vectorizer.fit_transform([my_cleaned_text]).toarray()[0]
 
 # Get our words.
@@ -191,4 +191,4 @@ sorted(word_freq_dict.items(), key=lambda x: x[1], reverse=True)[:10]
 
 ## Next Steps
 
-Now that you have worked with using stop words, you should explore using them in any of your text analysis. You can take this a step farther by reviewing the words in the stop words lists and removing or adding words based on your objectives and text. For example, if you are working with tweets from X, you might want to add "rt" or "like" to the list.
+Now that you have worked with using stop words, you should explore using them in any of your text analyses. You can take this further by reviewing the words in the stop words lists and removing or adding words based on your objectives and text. For example, if you are working with tweets from X, you might want to add "rt" or "like" to the list.

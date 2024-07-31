@@ -1,28 +1,28 @@
 ---
-Title: TBD
+Title: Scraping Web Pages in Python Using Requests and Beautiful Soup
 Date: 08-01-2024 09:00:00
 Tags: html, requests, beautifulsoup
 Category: Data Engineering
 Slug: scraping-websites-requests-beautiful-soup
 Authors: Frank Corso
-Summary: TBD
-Description: TBD
+Summary: Do you need to extract content or links from a webpage programmatically? You can do so in Python using Requests and Beautiful Soup!
+Description: Do you need to extract content or links from a webpage programmatically? You can do so in Python using Requests and Beautiful Soup!
 Status: draft
 ---
 
-INTRO
+Do you need to extract content or links from a webpage programmatically? You can do so in Python using Requests and Beautiful Soup!
 
-## How does web scraping work?
+## How Does Web Scraping Work?
 
 Before we get into the code, let's think through how this process works.
 
-If we want to scrape a specific page, we need to make a request to get the web page. We then need to search through the page for the HTML element(s) we want to find and then extract out the information.
+If we want to scrape a specific page, we need to make an HTTP request to get the web page. We then need to search the page for the HTML element(s) we want to find and extract the information.
 
-When we are creating a web scraping step, this is often for many URLs. So, we'll have some list of web pages that we want to cycle over to extra information out of and then do something with that data.
+When we are creating a web scraping script, this is often for many URLs. So, we'll have some list of web pages that we want to cycle over to extra information out of and then do something with that data.
 
 For the first step of getting the web page, there are many ways to do this but the `requests` package is one of the most popular choices and one I normally try using first.
 
-## Using requests
+## Using Requests
 
 To get started, first we need to install requests:
 
@@ -63,7 +63,7 @@ There's a lot more we could get from the response, such as cookies and header da
 
 We can use this response text to then look for the data we need. To do this, we first need to set up Beautiful Soup.
 
-## Using beautiful soup
+## Using Beautiful Soup
 
 To get started, we first need to install the Beautiful Soup package:
 
@@ -119,7 +119,7 @@ for link in scraper_soup.find_all('a'):
 
 Of course, if we were actually looking for social links, we'd probably want something more that searches for certain domains in the href.
 
-## Putting it all together
+## Putting It All Together
 
 Now, let's assume we have a list of URLs that we want to scrape for potential facebook links. We can put everything together like this:
 

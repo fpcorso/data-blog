@@ -1,7 +1,7 @@
 ---
 Title: TBD
 Date: 08-01-2024 09:00:00
-Tags: requests
+Tags: html, requests, beautifulsoup
 Category: Data Engineering
 Slug: scraping-websites-requests-beautiful-soup
 Authors: Frank Corso
@@ -139,12 +139,18 @@ for url in urls:
     
     # Get the web page.
     response = requests.get(url)
+    
+    # Check that status code.
+    if response.status_code != 200:
+        print(f"Error getting web page for {url}! Status code: {response.status_code}")
+        continue
 
     # Create our soup object.
     scraper_soup = BeautifulSoup(response.text, 'html.parser')
 
     # Cycle over links looking for what we are looking for.
     for link in scraper_soup.find_all('a'):
+        # Some anchor elements don't have href attributes so I always check here first.
         if not link.has_attr('href'):
             continue
     
@@ -158,3 +164,9 @@ print(extracted_data) # Do something with found data!
 We have now scraped some data from web pages! Of course, if we were actually scraping for social pages, we'd want to have some validation process after this. And, if we were scraping some text data, we'd normally then do something with that data beyond printing it out.
 
 ## Next Steps
+
+Now that we've scraped some data, there are a few other considerations:
+
+* Many sites require JavaScript to use. So, `requests` will not work there. Instead, you will need to replace it with `selenium` or similar
+* Some sites require authentication so you would need to review `requests` documentation for exploring those parameters.
+* If you are scraping a lot of webpages within the same site or sites managed by similar security systems or networks, you might get blocked or rate limited. You can use `sleep(1)` or similar to introduce small waits. Or, you can look into use proxies to do your scraping through.

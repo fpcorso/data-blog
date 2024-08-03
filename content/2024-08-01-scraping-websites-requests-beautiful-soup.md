@@ -1,13 +1,13 @@
 ---
 Title: Scraping Web Pages in Python Using Requests and Beautiful Soup
-Date: 08-01-2024 09:00:00
+Date: 08-04-2024 09:00:00
 Tags: html, requests, beautifulsoup
 Category: Data Engineering
 Slug: scraping-websites-requests-beautiful-soup
 Authors: Frank Corso
 Summary: Do you need to extract content or links from a webpage programmatically? You can do so in Python using Requests and Beautiful Soup!
 Description: Do you need to extract content or links from a webpage programmatically? You can do so in Python using Requests and Beautiful Soup!
-Status: draft
+Status: published
 ---
 
 Do you need to extract content or links from a webpage programmatically? You can do so in Python using Requests and Beautiful Soup!

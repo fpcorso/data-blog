@@ -13,10 +13,10 @@ Template: landing_template
             <div class="columns is-vcentered">
                 <div class="column is-full">
                     <h1 class="title">
-                        Master Git with Our Upcoming Video Course
+                        Upcoming Getting Started with Git Video Course
                     </h1>
                     <p class="subtitle">
-                        Learn version control and collaboration like a pro. Sign up now to get notified when the course goes live!
+                        Learn how version control works with my new "Getting Started with Git" course. Sign up now to get notified when the course goes live!
                     </p>
                     <!-- Signup Form -->
                     <div class="box">

@@ -21,7 +21,7 @@ THREADS = 'https://www.threads.net/@fpcorso'
 # Navigation settings
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
-MENUITEMS = (('About', 'pages/about.html'), ('Contact', 'pages/contact.html'),)
+MENUITEMS = (('Git Course', 'pages/git-course-signup.html'), ('About', 'pages/about.html'), ('Contact', 'pages/contact.html'),)
 
 # Pelican Sitemape plugin
 SITEMAP = {

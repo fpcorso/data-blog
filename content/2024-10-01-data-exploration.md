@@ -12,3 +12,15 @@ Status: draft
 
 INTRO
 
+WHAT IS EXPLORATORY DATA ANALYSIS?
+
+APPROACHES
+
+-- Univariate Analysis
+
+-- Bivariate Analysis
+
+-- Multivariate Analysis
+
+NEXT STEPS
+

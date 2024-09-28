@@ -10,17 +10,30 @@ Description: TBD
 Status: draft
 ---
 
-INTRO
-
-WHAT IS EXPLORATORY DATA ANALYSIS?
-
-APPROACHES
-
+OUTLINE
+- INTRO
+- WHAT IS EXPLORATORY DATA ANALYSIS?
+- APPROACHES
 -- Univariate Analysis
-
 -- Bivariate Analysis
-
 -- Multivariate Analysis
+- NEXT STEPS
 
-NEXT STEPS
-
+POTENTIAL KEYWORDS
+Data Exploration
+Data Profiling
+Data Discovery
+Data Inspection
+Data Investigation
+Statistical Analysis
+Data Analysis
+Data Visualization
+Data Cleaning
+Data Preprocessing
+Data Quality
+Data Integrity
+Data Validation
+Statistical Modeling
+Machine Learning
+Data Science
+Business Intelligence

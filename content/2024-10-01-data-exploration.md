@@ -44,6 +44,22 @@ Let's explore these approaches individually.
 
 ### Univariate Analysis
 
+In this first step of exploration, one looks at individual attributes. We want to see what the data looks like and identify potential issues.
+
+Some potential issues might include:
+
+1. Missing values,
+2. Incorrect values,
+3. Outliers
+
+For example, let's look at some sample data points for a "height" attribute from a dataset about people:
+
+> **Height (in inches)**: 63, 0, 64, 66, 70, 67, 78, 65, 182, 66
+
+There are two things to observe in this sample. First, the `0` which in many data sets represent a missing value though this could also have been an incorrect value. Second, the 182 would mean the person is over 15 ft tall which is impossible. This was likely entered incorrectly.
+
+
+
 ### Bivariate Analysis
 
 ### Multivariate Analysis

@@ -58,6 +58,11 @@ For example, let's look at some sample data points for a "height" attribute from
 
 There are two things to observe in this sample. First, the `0` which in many data sets represent a missing value though this could also have been an incorrect value. Second, the 182 would mean the person is over 15 ft tall which is impossible. This was likely entered incorrectly.
 
+My first step is normally to create two visualizations: histogram and box plot. The histogram helps visualize the overall shape and distribution of the data. In a perfect world, the data would be a normal distribution. However, the data is often skewed or spread out in a way that may need adjustments. I also want to see if the distribution aligns with my expectations. If not, I'd want to double check to make sure the data set is complete and not incorrect.
+
+INSERT HISTOGRAM.
+
+From there, I use a box plot to help visualize the distribution with more of a focus around key metrics: median, quartiles, and outliers. Here, I am looking at potential outliers that could be incorrect or may need to dealt with. Additionally, I am reviewing the overall distribution again to see
 
 
 ### Bivariate Analysis

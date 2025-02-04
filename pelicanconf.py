@@ -17,6 +17,7 @@ DEFAULT_PAGINATION = False
 # Social Networks
 GITHUB = 'https://github.com/fpcorso'
 THREADS = 'https://www.threads.net/@fpcorso'
+BLUESKY = 'https://bsky.app/profile/fpcorso.bsky.social'
 
 # Navigation settings
 DISPLAY_CATEGORIES_ON_MENU = False

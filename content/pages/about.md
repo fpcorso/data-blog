@@ -12,7 +12,7 @@ Hey there! I'm Frank Corso, and it is a pleasure to meet you. My journey in the 
 
 I created an Xbox 360 game called "A Game of Hockey" which was basically a clone of Pong but with 4 paddles. I released it in the Xbox Live Indie Games program that was relatively new at the time.
 
-Looking back, that game was plagued with bugs, and I often wonder how anyone bought it. Yet, they did, and this little experiment ignited a passion within me for crafting software. I recently recreated this game and uploaded it to itch.io if you want to [play it yourself](https://chronosstudio.itch.io/a-game-of-hockey) to see how awful it was 😅.
+Looking back, that game was plagued with bugs, and I often wonder how anyone bought it. Yet, they did, and this little experiment ignited a passion within me for crafting software. I recently recreated this game and uploaded it to itch.io if you want to [play it yourself](https://whiviostudios.itch.io/a-game-of-hockey) to see how awful it was 😅.
 
 Now, 13 years later, I have worked on a variety of different projects and businesses from many different industries. In my most recent role, I was the Head of Engineering at [Podchaser](https://podchaser.com) where I led a team of 12 engineers and data scientists.
 

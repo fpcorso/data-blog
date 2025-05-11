@@ -14,7 +14,7 @@ INTRO
 
 ## What is Exploratory Data Analysis?
 
-An important step of working with data, the exploratory data analysis process requires you to review individual attributes (AKA variables, columns, etc...) of the dataset as well as how the attributes work with each other. We want to understand what areas might be a concern as well as what areas might be useful.
+An important step of working with data, the exploratory data analysis process requires you to review individual attributes (AKA features, variables, columns, etc...) of the dataset as well as how the attributes work with each other. We want to understand what areas might be a concern as well as what areas might be useful.
 
 This process can help both by quickly understanding what the data looks like and identifying ways that you will be able to use the data.
 

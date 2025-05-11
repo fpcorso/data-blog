@@ -24,7 +24,7 @@ main {
     padding: 0 1.5rem;
 }
 
-button {
+button, a.button {
     background-color: #257942 !important;
     color: #fff !important;
 }
